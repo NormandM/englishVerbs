@@ -14,6 +14,11 @@
 		8E0E07D31D8DC3BF0065BC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */; };
 		8E0E07DE1D8DC3BF0065BC87 /* EnglishVerbsQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07DD1D8DC3BF0065BC87 /* EnglishVerbsQuizTests.swift */; };
 		8E0E07E91D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07E81D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift */; };
+		8E0E07F71D8DC3DC0065BC87 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E0E07F61D8DC3DC0065BC87 /* AllVerbs.plist */; };
+		8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07F81D8DC4540065BC87 /* DataStructure.swift */; };
+		8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */; };
+		8ED3AC311D8F017C008A6FEC /* VerbListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */; };
+		8ED3AC351D9188D2008A6FEC /* VerbeFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		8E0E07E41D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnglishVerbsQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0E07E81D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishVerbsQuizUITests.swift; sourceTree = "<group>"; };
 		8E0E07EA1D8DC3BF0065BC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E0E07F61D8DC3DC0065BC87 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
+		8E0E07F81D8DC4540065BC87 /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
+		8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeVerbTenseTableViewController.swift; sourceTree = "<group>"; };
+		8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbListTableViewController.swift; sourceTree = "<group>"; };
+		8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbeFinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				8E0E07C81D8DC3BF0065BC87 /* AppDelegate.swift */,
-				8E0E07CA1D8DC3BF0065BC87 /* ViewController.swift */,
 				8E0E07CC1D8DC3BF0065BC87 /* Main.storyboard */,
+				8E0E07F81D8DC4540065BC87 /* DataStructure.swift */,
+				8E0E07CA1D8DC3BF0065BC87 /* ViewController.swift */,
+				8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */,
+				8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */,
+				8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */,
+				8E0E07F61D8DC3DC0065BC87 /* AllVerbs.plist */,
 				8E0E07CF1D8DC3BF0065BC87 /* Assets.xcassets */,
 				8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */,
 				8E0E07D41D8DC3BF0065BC87 /* Info.plist */,
@@ -232,6 +247,7 @@
 				8E0E07D31D8DC3BF0065BC87 /* LaunchScreen.storyboard in Resources */,
 				8E0E07D01D8DC3BF0065BC87 /* Assets.xcassets in Resources */,
 				8E0E07CE1D8DC3BF0065BC87 /* Main.storyboard in Resources */,
+				8E0E07F71D8DC3DC0065BC87 /* AllVerbs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */,
+				8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */,
 				8E0E07CB1D8DC3BF0065BC87 /* ViewController.swift in Sources */,
 				8E0E07C91D8DC3BF0065BC87 /* AppDelegate.swift in Sources */,
+				8ED3AC351D9188D2008A6FEC /* VerbeFinalViewController.swift in Sources */,
+				8ED3AC311D8F017C008A6FEC /* VerbListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +504,7 @@
 				8E0E07EF1D8DC3BF0065BC87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E0E07F01D8DC3BF0065BC87 /* Build configuration list for PBXNativeTarget "EnglishVerbsQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +513,7 @@
 				8E0E07F21D8DC3BF0065BC87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E0E07F31D8DC3BF0065BC87 /* Build configuration list for PBXNativeTarget "EnglishVerbsQuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +522,7 @@
 				8E0E07F51D8DC3BF0065BC87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

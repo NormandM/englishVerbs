@@ -9,9 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var verbsArray: NSArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let plistPath = NSBundle.mainBundle().pathForResource("AllVerbs", ofType: "plist"),
+            verbArray = NSArray(contentsOfFile: plistPath){
+            verbsArray = verbArray
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,7 +23,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showVerbList"{
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+            let controller = segue.destinationViewController as! VerbListTableViewController
+            controller.verbArray = verbsArray
+        }
+    }
 }
 

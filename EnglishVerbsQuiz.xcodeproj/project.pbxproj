@@ -14,12 +14,15 @@
 		8E0E07D31D8DC3BF0065BC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */; };
 		8E0E07DE1D8DC3BF0065BC87 /* EnglishVerbsQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07DD1D8DC3BF0065BC87 /* EnglishVerbsQuizTests.swift */; };
 		8E0E07E91D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07E81D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift */; };
-		8E0E07F71D8DC3DC0065BC87 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E0E07F61D8DC3DC0065BC87 /* AllVerbs.plist */; };
 		8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07F81D8DC4540065BC87 /* DataStructure.swift */; };
+		8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */; };
+		8E46BC641DA44C51005AD256 /* 100MostUseEnglishVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */; };
+		8E46BC661DA44C64005AD256 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC651DA44C64005AD256 /* AllVerbs.plist */; };
 		8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */; };
 		8ED3AC311D8F017C008A6FEC /* VerbListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */; };
 		8ED3AC351D9188D2008A6FEC /* VerbeFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */; };
-		8ED97F5D1D93257700EC7F93 /* IrregularVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED97F5C1D93257700EC7F93 /* IrregularVerbs.plist */; };
+		8EE194221D9C570800BCC811 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE194211D9C570800BCC811 /* QuizViewController.swift */; };
+		8EFDD5221DA2F3ED00D4D4B9 /* IrregularVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EFDD5211DA2F3ED00D4D4B9 /* IrregularVerbs.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +56,15 @@
 		8E0E07E41D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnglishVerbsQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0E07E81D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishVerbsQuizUITests.swift; sourceTree = "<group>"; };
 		8E0E07EA1D8DC3BF0065BC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E0E07F61D8DC3DC0065BC87 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
 		8E0E07F81D8DC4540065BC87 /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
+		8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionListTableViewController.swift; sourceTree = "<group>"; };
+		8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 100MostUseEnglishVerbs.plist; sourceTree = "<group>"; };
+		8E46BC651DA44C64005AD256 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
 		8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeVerbTenseTableViewController.swift; sourceTree = "<group>"; };
 		8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbListTableViewController.swift; sourceTree = "<group>"; };
 		8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbeFinalViewController.swift; sourceTree = "<group>"; };
-		8ED97F5C1D93257700EC7F93 /* IrregularVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IrregularVerbs.plist; sourceTree = "<group>"; };
+		8EE194211D9C570800BCC811 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		8EFDD5211DA2F3ED00D4D4B9 /* IrregularVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IrregularVerbs.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,11 @@
 				8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */,
 				8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */,
 				8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */,
-				8ED97F5C1D93257700EC7F93 /* IrregularVerbs.plist */,
-				8E0E07F61D8DC3DC0065BC87 /* AllVerbs.plist */,
+				8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */,
+				8EE194211D9C570800BCC811 /* QuizViewController.swift */,
+				8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */,
+				8EFDD5211DA2F3ED00D4D4B9 /* IrregularVerbs.plist */,
+				8E46BC651DA44C64005AD256 /* AllVerbs.plist */,
 				8E0E07CF1D8DC3BF0065BC87 /* Assets.xcassets */,
 				8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */,
 				8E0E07D41D8DC3BF0065BC87 /* Info.plist */,
@@ -247,11 +256,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFDD5221DA2F3ED00D4D4B9 /* IrregularVerbs.plist in Resources */,
 				8E0E07D31D8DC3BF0065BC87 /* LaunchScreen.storyboard in Resources */,
+				8E46BC661DA44C64005AD256 /* AllVerbs.plist in Resources */,
 				8E0E07D01D8DC3BF0065BC87 /* Assets.xcassets in Resources */,
-				8ED97F5D1D93257700EC7F93 /* IrregularVerbs.plist in Resources */,
 				8E0E07CE1D8DC3BF0065BC87 /* Main.storyboard in Resources */,
-				8E0E07F71D8DC3DC0065BC87 /* AllVerbs.plist in Resources */,
+				8E46BC641DA44C51005AD256 /* 100MostUseEnglishVerbs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */,
 				8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */,
 				8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */,
+				8EE194221D9C570800BCC811 /* QuizViewController.swift in Sources */,
 				8E0E07CB1D8DC3BF0065BC87 /* ViewController.swift in Sources */,
 				8E0E07C91D8DC3BF0065BC87 /* AppDelegate.swift in Sources */,
 				8ED3AC351D9188D2008A6FEC /* VerbeFinalViewController.swift in Sources */,

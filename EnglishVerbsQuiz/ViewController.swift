@@ -24,13 +24,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+
         if segue.identifier == "showVerbList"{
-            let backItem = UIBarButtonItem()
-            backItem.title = ""
-            navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
             let controller = segue.destinationViewController as! VerbListTableViewController
             controller.verbArray = verbsArray
+        }else if segue.identifier == "showQuizVerbSelection" {
+            let controller = segue.destinationViewController as! OptionListTableViewController
+            controller.verbArray = verbsArray
+   
+            
         }
+        
     }
 }
 

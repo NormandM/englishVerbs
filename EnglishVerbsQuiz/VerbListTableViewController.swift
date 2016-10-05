@@ -23,6 +23,12 @@ class VerbListTableViewController: UITableViewController {
        for verbs in verbsArray {
            verbInfinitive.append(verbs[0] as! String)
         }
+        func alpha (s1: String, s2: String) -> Bool {
+            return s1 < s2
+        }
+        verbInfinitive = verbInfinitive.sort(alpha)
+        
+        
     }
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;

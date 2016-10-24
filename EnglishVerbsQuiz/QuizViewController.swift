@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class QuizViewController: UIViewController {
+class QuizViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    
+    let dataController = DataController.sharedInstance
+    
     @IBOutlet weak var verbeInfinitif: UILabel!
     @IBOutlet weak var tempsVerbe: UILabel!
     @IBOutlet weak var un: UILabel!
@@ -17,16 +21,13 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var quatre: UILabel!
     @IBOutlet weak var cinq: UILabel!
     @IBOutlet weak var six: UILabel!
+    @IBOutlet weak var goodResponseMessage: UILabel!
     @IBOutlet weak var premier: UITextField!
     @IBOutlet weak var deuxieme: UITextField!
     @IBOutlet weak var troisieme: UITextField!
     @IBOutlet weak var quatrieme: UITextField!
     @IBOutlet weak var cinquieme: UITextField!
     @IBOutlet weak var sixieme: UITextField!
-    
-    
-    
-
     
     enum TempsDeVerbe: String {
         case Present
@@ -43,7 +44,7 @@ class QuizViewController: UIViewController {
         case FuturPerfect
         case Imperative
     }
-
+    var hint: String = ""
     var first: String = ""
     var second: String = ""
     var third: String = ""
@@ -54,11 +55,22 @@ class QuizViewController: UIViewController {
     var arraySelection: [String] = []
     var verbArray: NSArray = []
     var indexChoice: Int = 0
+    var textIndex: Int = 0
+    var message: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification , object: nil)
+        optionSlected()
         
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+// Mark: Function chhosing verb randomly according to chosen parameters
+    func optionSlected () {
         arrayVerb = verbArray as! [[String]]
         if arraySelection.contains("100 most Common Verbs"){
             if let plistPath = NSBundle.mainBundle().pathForResource("100MostUseEnglishVerbs", ofType: "plist"),
@@ -67,7 +79,6 @@ class QuizViewController: UIViewController {
                 let random100 = Int(arc4random_uniform(UInt32(numberOfVerbs)))
                 let array100Verbs = verb100Verbs as! [[String]]
                 let verbChoisi100 = array100Verbs[random100][0]
-                
                 var n = 0
                 for verb in arrayVerb {
                     if let index100Verbs = verb.indexOf(verbChoisi100){
@@ -76,9 +87,8 @@ class QuizViewController: UIViewController {
                     }
                     n = n + 1
                 }
-
             }
-
+            
         }else if arraySelection.contains("Irregular Verbs"){
             if let plistPath = NSBundle.mainBundle().pathForResource("IrregularVerbs", ofType: "plist"),
                 irregularVerb = NSArray(contentsOfFile: plistPath){
@@ -97,133 +107,43 @@ class QuizViewController: UIViewController {
                 }
             }
         }else if arraySelection.contains("All 1000 Verbs!"){
-                let numberAllVerb = arrayVerb.count
-                indexChoice = Int(arc4random_uniform(UInt32(numberAllVerb)))
+            let numberAllVerb = arrayVerb.count
+            indexChoice = Int(arc4random_uniform(UInt32(numberAllVerb)))
         }
         
-        chooseVerb()
+        toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)
+        first = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[0]
+        second = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[1]
+        third = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[2]
+        fourth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[3]
+        fifth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[4]
+        sixth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[5]
+        hint = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[6]
+        
         verbeInfinitif.text = "to \(verbArray[indexChoice][0] as! String)"
         tempsVerbe.text = arraySelection[1]
-    }
-//MARK: NOTIFICATION FOR KEYBOARD
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    func chooseVerb() {
-        let choixVerbe = AllVerbs(allVerbs: verbArray, n: indexChoice)
-        
-            var temps = arraySelection[1]
-            temps = temps.stringByReplacingOccurrencesOfString(" ", withString: "")
-            if let tempsDeVerbe = TempsDeVerbe(rawValue: temps){
-                switch tempsDeVerbe {
-                case .Futur:
-                    let verbeFinal = Futur(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                    
-                case .FuturContinuous:
-                    let verbeFinal = FuturContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .FuturPerfect:
-                    let verbeFinal = FuturPerfect(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .FuturPerfectContinuous:
-                    let verbeFinal = FuturPerfectContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .Imperative:
-                    let verbeFinal = Imperative(allVerbs: choixVerbe)
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                case .PastContinuous:
-                    let verbeFinal = PastContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PastPerfect:
-                    let verbeFinal = PastPerfect(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PastPerfectContinuous:
-                    let verbeFinal = PastPerfectContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .Present:
-                    let verbeFinal = Present(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PresentContinuous:
-                    let verbeFinal = PresentContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .Preterite:
-                    let verbeFinal = Preterite(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PresentPerfectContinuous:
-                    let verbeFinal = PresentPerfectContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PresentPerfect:
-                    let verbeFinal = PresentPerfect(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                }
-            }
+        if arraySelection[1] == "Imperative"{
+            un.text = ""
+            deux.text = "(you)"
+            trois.text = ""
+            quatre.text = "(we)"
+            cinq.text = "(you)"
+            six.text = ""
+            premier.borderStyle = .None
+            premier.backgroundColor = UIColor.clearColor()
+            deuxieme.backgroundColor = UIColor.greenColor()
+            deuxieme.userInteractionEnabled = true
+            troisieme.borderStyle = .None
+            troisieme.backgroundColor = UIColor.clearColor()
+            sixieme.borderStyle = .None
+            sixieme.backgroundColor = UIColor.clearColor()
+            
+        }
+
+       
     }
 
-
+//MARK: Notification for keyboard
     
      func keyboardWillShow(notification: NSNotification){
 
@@ -231,24 +151,36 @@ class QuizViewController: UIViewController {
     }
     func textFieldShouldReturn(reponse: UITextField) -> Bool {
         if premier.editing{
-            print(textFieldAnswer(premier, personne: first))
+            textFieldAnswer(premier, personne: first)
         }
         if deuxieme.editing{
-            print(textFieldAnswer(deuxieme, personne: second))
+            textFieldAnswer(deuxieme, personne: second)
         }
         if troisieme.editing{
-            print(textFieldAnswer(troisieme, personne: third))
+            textFieldAnswer(troisieme, personne: third)
         }
         if quatrieme.editing{
-            print(textFieldAnswer(quatrieme, personne: fourth))
+            textFieldAnswer(quatrieme, personne: fourth)
         }
         if cinquieme.editing{
-            print(textFieldAnswer(cinquieme, personne: fifth))
+            textFieldAnswer(cinquieme, personne: fifth)
         }
         if sixieme.editing{
-            print(textFieldAnswer(sixieme, personne: sixth))
+            textFieldAnswer(sixieme, personne: sixth)
         }
 
+        if message == "true"{
+            goodResponseMessage.text = "Great!"
+        }else if message == "false" {
+            let verb = verbeInfinitif.text
+            let tense = arraySelection[1]
+            let item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: dataController.managedObjectContext) as! Item
+            item.verb = verb
+            item.tence = tense
+            item.noBad = 1
+            dataController.saveContext()
+            performSegueWithIdentifier("showRightAnswer", sender: nil)
+        }
         premier.resignFirstResponder()
         deuxieme.resignFirstResponder()
         troisieme.resignFirstResponder()
@@ -258,40 +190,155 @@ class QuizViewController: UIViewController {
         return true
         
     }
+    
+//Mark: Function verifies in the User response is Good or Bad
     func textFieldAnswer(chosenTextField: UITextField, personne: String) -> String {
-        let message: String
-        if chosenTextField.text == personne {
-            if first == second{
-                deuxieme.text = second
+        if arraySelection[1] != "Imperative" {
+            if chosenTextField.text == personne {
+                premier.backgroundColor = UIColor.whiteColor()
+                if personne == second {
+                    deuxieme.text = second
+                    deuxieme.backgroundColor = UIColor.whiteColor()
+                }else if textIndex == 0{
+                    deuxieme.backgroundColor = UIColor.greenColor()
+                    deuxieme.userInteractionEnabled = true
+                }
+                if personne == third || second == third || first == third{
+                    troisieme.text = third
+                    troisieme.backgroundColor = UIColor.whiteColor()
+                }else if textIndex < 2{
+                    if textIndex != 0 || personne == fourth {
+                        troisieme.backgroundColor = UIColor.greenColor()
+                        troisieme.userInteractionEnabled = true
+                    }
+                }
+                if personne == fourth || (second == fourth && textIndex > 0){
+                    quatrieme.text = fourth
+                    quatrieme.backgroundColor = UIColor.whiteColor()
+                }
+                if personne == fifth || (second == fifth && textIndex > 0) {
+                    cinquieme.text = fifth
+                    cinquieme.backgroundColor = UIColor.whiteColor()
+                }
+                if personne == sixth || (second == sixth && textIndex > 0) {
+                    sixieme.text = sixth
+                    sixieme.backgroundColor = UIColor.whiteColor()
+                }
+                textIndex = textIndex + 1
+                print(troisieme.text)
+                if troisieme.text != "" && cinquieme.text != "" {
+                    print(message)
+                    message = "true"
+                }
+            }else{
+                message = "false"
             }
-            if first == third{
-                troisieme.text = third
-            }
-            if first == fourth{
-                quatrieme.text = fourth
-            }
-            if first == fifth{
-                cinquieme.text = fifth
-            }
-            if first == sixth{
-                sixieme.text = sixth
-            }
-            message = "Good Answer"
         }else{
-            message = personne
+            print(arraySelection[1])
+            if chosenTextField.text == personne {
+                if personne == second {
+                    deuxieme.backgroundColor = UIColor.whiteColor()
+                }
+                if personne == fourth {
+                    quatrieme.text = fourth
+                    quatrieme.backgroundColor = UIColor.whiteColor()
+                }else{
+                    quatrieme.backgroundColor = UIColor.greenColor()
+                    quatrieme.userInteractionEnabled = true
+                }
+                if personne == fifth {
+                    cinquieme.text = fifth
+                    cinquieme.backgroundColor = UIColor.whiteColor()
+                }
+                if deuxieme.text != "" && quatrieme.text != "" {
+                    message = "true"
+                }
+
+
+            }else{
+                message = "false"
+            }
         }
         return message
     }
 
+    @IBAction func another(sender: AnyObject) {
+        optionSlected()
+        textIndex = 0
+        goodResponseMessage.text = ""
+        message = ""
+        if arraySelection[1] == "Imperative"{
+            deuxieme.text = ""
+            quatrieme.text = ""
+            quatrieme.backgroundColor = UIColor.lightGrayColor()
+            quatrieme.userInteractionEnabled = false
+            cinquieme.text = ""
+            cinquieme.backgroundColor = UIColor.lightGrayColor()
+            cinquieme.userInteractionEnabled = false
+            
+            
+        }else{
+            premier.text = ""
+            premier.backgroundColor = UIColor.greenColor()
+            premier.userInteractionEnabled = true
+            deuxieme.text = ""
+            deuxieme.backgroundColor = UIColor.lightGrayColor()
+            deuxieme.userInteractionEnabled = false
+            troisieme.text = ""
+            troisieme.backgroundColor = UIColor.lightGrayColor()
+            troisieme.userInteractionEnabled = false
+            quatrieme.text = ""
+            quatrieme.backgroundColor = UIColor.lightGrayColor()
+            quatrieme.userInteractionEnabled = false
+            cinquieme.text = ""
+            cinquieme.backgroundColor = UIColor.lightGrayColor()
+            cinquieme.userInteractionEnabled = false
+            sixieme.text = ""
+            sixieme.backgroundColor = UIColor.lightGrayColor()
+            sixieme.userInteractionEnabled = false
+            
+        }
 
-    /*
+    }
+
+
+  
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showRightAnswer"{
+            let controller = segue.destinationViewController as! RightAnswerViewController
+            premier.text = ""
+            deuxieme.text = ""
+            troisieme.text = ""
+            quatrieme.text = ""
+            cinquieme.text = ""
+            sixieme.text = ""
+            message = ""
+            controller.first = first
+            controller.second = second
+            controller.third = third
+            controller.fourth = fourth
+            controller.fifth = fifth
+            controller.sixth = sixth
+            controller.tempsFinal = arraySelection[1]
+            controller.infinitifFinal = verbeInfinitif.text!
+        }
     }
-    */
+    func showAlert () {
+        let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .ActionSheet)
+        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: dismissAlert)
+        print(hint)
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    func dismissAlert(sender: UIAlertAction) {
+        
+    }
+
+    @IBAction func hintButton(sender: AnyObject) {
+        showAlert()
+    }
 
 }

@@ -13,6 +13,7 @@ class OptionListTableViewController: UITableViewController{
     var verbArray: NSArray = []
     var arraySectionCount: Int = 0
     var arrayCount: Int = 0
+    
 
     let sectionArray: [String] = ["Choose a group of verb", "Choose a tense"]
     let tenseArray: [[String]] = [[ "All 1000 Verbs!", "100 most Common Verbs", "Irregular Verbs"], ["Present", "Preterite", "Present Perfect", "Past Perfect", "Present Continuous", "Past Continuous", "Past Perfect Continuous", "Futur Continuous", "Present Perfect Continuous", "Futur Perfect Continuous", "Futur", "FuturPerfect", "Imperative"]]
@@ -22,18 +23,13 @@ class OptionListTableViewController: UITableViewController{
         header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
         header.textLabel!.textColor = UIColor.whiteColor() //make the text white
         header.alpha = 1.0 //make the header transparent
-        
     }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.title = "Choose content of your Quiz"
     }
 
     override func didReceiveMemoryWarning() {
@@ -133,6 +129,7 @@ class OptionListTableViewController: UITableViewController{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuiz"{
             let controller = segue.destinationViewController as! QuizViewController
+            print(arraySelection)
             if arraySelection[1] == "All 1000 Verbs!" || arraySelection[1] == "100 most Common Verbs" || arraySelection[1] == "Irregular Verbs"{
                 let transfer = arraySelection[1]
                 arraySelection[1] = arraySelection[0]
@@ -142,6 +139,26 @@ class OptionListTableViewController: UITableViewController{
             controller.verbArray = verbArray
         }
     }
-
+    func showAlert () {
+        let alertController = UIAlertController(title: "Choose Options", message: "You have to choose both a Group of Verb and a Verb Tense", preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: dismissAlert)
+        
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    func dismissAlert(sender: UIAlertAction) {
+        
+    }
+    @IBAction func OK(sender: AnyObject) {
+        print(arraySelection)
+        let i = arraySelection.count
+        if i == 2 && (arraySelection.contains("All 1000 Verbs!") || arraySelection.contains("100 most Common Verbs") || arraySelection.contains("Irregular Verbs")){
+            performSegueWithIdentifier("showQuiz", sender: UIBarButtonItem.self)
+        }else{
+            showAlert()
+        }
+    }
 
 }

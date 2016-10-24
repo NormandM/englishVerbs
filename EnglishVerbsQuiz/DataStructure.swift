@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+
 struct AllVerbs {
     let base: String
     let past: String
@@ -23,6 +25,7 @@ struct AllVerbs {
 }
 struct Present {
     let allVerbs: AllVerbs
+    var hint: String {return "I 'walk' to school every day"}
     var first: String{return  allVerbs.base}
     var second: String{return allVerbs.base}
     var third: String{return  allVerbs.thirdPerson}
@@ -31,6 +34,7 @@ struct Present {
     var sixth: String{return  allVerbs.base}
 }
 struct Preterite {
+    var hint: String {return "I 'walked' in the park yesterday"}
     let allVerbs: AllVerbs
     var first: String{return allVerbs.past}
     var second: String{return allVerbs.past}
@@ -41,6 +45,7 @@ struct Preterite {
     }
 struct PresentPerfect {
     let allVerbs: AllVerbs
+    var hint: String {return "You have 'walked' often to work"}
     var first: String{return "have \(allVerbs.participle)"}
     var second: String{return "have \(allVerbs.participle)"}
     var third: String{return "has \(allVerbs.participle)"}
@@ -50,6 +55,7 @@ struct PresentPerfect {
 }
 struct PastPerfect{
     let allVerbs: AllVerbs
+    var hint: String {return "I had never 'walked' so much before I met you"}
     var first: String{return "had \(allVerbs.participle)"}
     var second: String{return "had \(allVerbs.participle)"}
     var third: String{return "had \(allVerbs.participle)"}
@@ -61,6 +67,7 @@ struct PastPerfect{
 
 struct PresentContinuous {
     let allVerbs: AllVerbs
+    var hint: String {return "Now I 'am walking' to get there"}
     var first: String{return "am \(allVerbs.ingForm)"}
     var second: String{return "are \(allVerbs.ingForm)"}
     var third: String{return "is \(allVerbs.ingForm)"}
@@ -71,6 +78,7 @@ struct PresentContinuous {
 
 struct PastContinuous{
     let allVerbs: AllVerbs
+    var hint: String {return "I 'was walking' when I met her"}
     var first: String{return "was \(allVerbs.ingForm)"}
     var second: String{return "were \(allVerbs.ingForm)"}
     var third: String{return "was \(allVerbs.ingForm)"}
@@ -80,6 +88,7 @@ struct PastContinuous{
 }
 struct PastPerfectContinuous {
     let allVerbs: AllVerbs
+    var hint: String {return "They 'had been walking' for over an hour when the bus arrived "}
     var first: String{return "had been \(allVerbs.ingForm)"}
     var second: String{return "had been \(allVerbs.ingForm)"}
     var third: String{return "had been \(allVerbs.ingForm)"}
@@ -89,6 +98,7 @@ struct PastPerfectContinuous {
 }
 struct FuturContinuous{
     let allVerbs: AllVerbs
+    var hint: String {return "I 'will be walking' until I reach you"}
     var first: String{return "will be \(allVerbs.ingForm)"}
     var second: String{return "will be \(allVerbs.ingForm)"}
     var third: String{return "will be \(allVerbs.ingForm)"}
@@ -98,6 +108,7 @@ struct FuturContinuous{
 }
 struct PresentPerfectContinuous{
     let allVerbs: AllVerbs
+    var hint: String {return "I 'have been walking' for the past hour"}
     var first: String{return "have been \(allVerbs.ingForm)"}
     var second: String{return "have been \(allVerbs.ingForm)"}
     var third: String{return "has been \(allVerbs.ingForm)"}
@@ -108,6 +119,7 @@ struct PresentPerfectContinuous{
 }
 struct FuturPerfectContinuous{
     let allVerbs: AllVerbs
+    var hint: String {return "I 'will have been walking' for two hours when I will finally arrive"}
     var first: String{return "will have been \(allVerbs.ingForm)"}
     var second: String{return "will have been \(allVerbs.ingForm)"}
     var third: String{return "will have been \(allVerbs.ingForm)"}
@@ -118,6 +130,7 @@ struct FuturPerfectContinuous{
 }
 struct Futur{
     let allVerbs: AllVerbs
+    var hint: String {return "I 'will walk' to tomorrow to do my weekly exercise"}
     var first: String{return "will \(allVerbs.base)"}
     var second: String{return "will \(allVerbs.base)"}
     var third: String{return "will \(allVerbs.base)"}
@@ -127,6 +140,7 @@ struct Futur{
 }
 struct FuturPerfect{
     let allVerbs: AllVerbs
+    var hint: String {return "I 'will have walked' twenty kilometers before you arrive"}
     var first: String{return "will have \(allVerbs.past)"}
     var second: String{return "will have \(allVerbs.past)"}
     var third: String{return "will have \(allVerbs.past)"}
@@ -140,12 +154,58 @@ struct Infinitive{
 }
 struct Imperative{
     let allVerbs: AllVerbs
+    var hint: String {return "'Walk' until you arrive"}
     var second: String{return allVerbs.base}
-    var third: String{return allVerbs.base}
-    var fourth: String{return allVerbs.base}
+    var fourth: String{return "let's \(allVerbs.base)"}
+    var fifth: String{return allVerbs.base}
 }
 
-
+public class DataController: NSObject {
+    
+    static let sharedInstance = DataController()
+    
+    private override init() {}
+    
+    private lazy var applicationDocumentDirectory: NSURL = {
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        return urls[urls.endIndex.predecessor()]
+    }()
+    
+    private lazy var managerObjectModel: NSManagedObjectModel = {
+        let modelURL = NSBundle.mainBundle().URLForResource("TodoList", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOfURL: modelURL)!
+    }()
+    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managerObjectModel)
+        let url = self.applicationDocumentDirectory.URLByAppendingPathComponent("TodoList.sqlite")
+        
+        do {
+            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+        } catch {
+            let userInfo: [String: AnyObject] = [NSLocalizedDescriptionKey: "Failed to initialized the application's saved data", NSLocalizedFailureReasonErrorKey: "There was an error creating or loading the application's saved data", NSUnderlyingErrorKey: error as NSError]
+            let wrappedError = NSError(domain: "Normand", code: 9999, userInfo: userInfo)
+            print("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            abort()
+        }
+        return coordinator
+    }()
+    
+    public lazy var managedObjectContext: NSManagedObjectContext = {
+        let coordinator = self.persistentStoreCoordinator
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }()
+    public func saveContext() {
+        if managedObjectContext.hasChanges{
+            do {
+                try managedObjectContext.save()
+            } catch let error as NSError{
+                print("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
+    }
+}
 
 
 

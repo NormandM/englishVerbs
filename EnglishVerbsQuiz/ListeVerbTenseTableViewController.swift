@@ -9,6 +9,7 @@
 import UIKit
 
 class ListeVerbTenseTableViewController: UITableViewController {
+    
     var verbeInfinitif: String = ""
     var verbArray: NSArray = []
     var index = 0
@@ -22,23 +23,6 @@ class ListeVerbTenseTableViewController: UITableViewController {
     
     var tenseArray: [String] = ["Present", "Preterite", "Present Perfect", "Past Perfect", "Present Continuous", "Past Continuous", "Past Perfect Continuous", "Futur Continuous", "Present Perfect Continuous", "Futur Perfect Continuous", "Futur", "FuturPerfect", "Imperative"]
     
-    
-    enum TempsDeVerbe: String {
-        case Present
-        case Preterite
-        case PresentPerfect
-        case PastPerfect
-        case PresentContinuous
-        case PastContinuous
-        case PastPerfectContinuous
-        case FuturContinuous
-        case PresentPerfectContinuous
-        case FuturPerfectContinuous
-        case Futur
-        case FuturPerfect
-        case Imperative
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose Verb Tense"
@@ -47,7 +31,6 @@ class ListeVerbTenseTableViewController: UITableViewController {
             n = n + 1
         }
         index = n
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,128 +56,21 @@ class ListeVerbTenseTableViewController: UITableViewController {
         cell.textLabel!.text = self.tenseArray[indexPath.row]
         return cell
     }
- 
 
-
-    func chooseVerb() {
-        let choixVerbe = AllVerbs(allVerbs: verbArray, n: index)
-        if let indexPath = self.tableView.indexPathForSelectedRow {
-            temps = tenseArray[indexPath.row]
-            temps = temps.stringByReplacingOccurrencesOfString(" ", withString: "")
-            if let tempsDeVerbe = TempsDeVerbe(rawValue: temps){
-                switch tempsDeVerbe {
-                case .Futur:
-                    let verbeFinal = Futur(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                    
-                case .FuturContinuous:
-                    let verbeFinal = FuturContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .FuturPerfect:
-                    let verbeFinal = FuturPerfect(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .FuturPerfectContinuous:
-                    let verbeFinal = FuturPerfectContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .Imperative:
-                    let verbeFinal = Imperative(allVerbs: choixVerbe)
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                case .PastContinuous:
-                    let verbeFinal = PastContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PastPerfect:
-                    let verbeFinal = PastPerfect(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PastPerfectContinuous:
-                    let verbeFinal = PastPerfectContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .Present:
-                    let verbeFinal = Present(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PresentContinuous:
-                    let verbeFinal = PresentContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .Preterite:
-                    let verbeFinal = Preterite(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PresentPerfectContinuous:
-                    let verbeFinal = PresentPerfectContinuous(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                case .PresentPerfect:
-                    let verbeFinal = PresentPerfect(allVerbs: choixVerbe)
-                    first = verbeFinal.first
-                    second = verbeFinal.second
-                    third = verbeFinal.third
-                    fourth = verbeFinal.fourth
-                    fifth = verbeFinal.fifth
-                    sixth = verbeFinal.sixth
-                }
-            }
-        }
-    }
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            temps = tenseArray[indexPath.row]
         if segue.identifier == "showFinalVerb"{
-            chooseVerb()
+            first = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[0]
+            print(first)
+            second = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[1]
+            third = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[2]
+            fourth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[3]
+            fifth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[4]
+            sixth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[5]
+            
             let controller = segue.destinationViewController as! VerbeFinalViewController
             let backItem = UIBarButtonItem()
             backItem.title = ""
@@ -203,7 +79,7 @@ class ListeVerbTenseTableViewController: UITableViewController {
             controller.personVerb = personVerb
             controller.temps = temps
             controller.verbeInfinitif = verbeInfinitif
-            
+            }
         }
     }
  

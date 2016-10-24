@@ -34,10 +34,13 @@ class ViewController: UIViewController {
         }else if segue.identifier == "showQuizVerbSelection" {
             let controller = segue.destinationViewController as! OptionListTableViewController
             controller.verbArray = verbsArray
-   
+            
+        }else if segue.identifier == "showListController"{
+            
+            let controller = segue.destinationViewController as! ListController
+            controller.verbArray = verbsArray
             
         }
-        
     }
 }
 

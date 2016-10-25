@@ -27,7 +27,8 @@ class ListeVerbTenseTableViewController: UITableViewController {
         super.viewDidLoad()
         self.title = "Choose Verb Tense"
         var n = 0
-        while verbeInfinitif != verbArray[n][0] as! String{
+        let arrayTrans = verbArray as! [[String]]
+        while verbeInfinitif != arrayTrans[n][0]{
             n = n + 1
         }
         index = n

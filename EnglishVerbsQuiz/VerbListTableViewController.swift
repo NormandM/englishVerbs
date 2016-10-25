@@ -10,7 +10,7 @@ import UIKit
 
 class VerbListTableViewController: UITableViewController {
     var verbArray: NSArray = []
-    var verbsArray: NSArray = []
+    var verbsArray:[[String]] = []
     var verbInfinitive: [String] = []
     var searchActive : Bool = false
     var filtered:[String] = []
@@ -19,9 +19,9 @@ class VerbListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          self.title = "Choose Verb"
-        verbsArray = verbArray
+        verbsArray = verbArray as! [[String]]
        for verbs in verbsArray {
-           verbInfinitive.append(verbs[0] as! String)
+           verbInfinitive.append(verbs[0])
         }
         func alpha (s1: String, s2: String) -> Bool {
             return s1 < s2

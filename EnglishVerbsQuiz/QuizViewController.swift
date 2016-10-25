@@ -74,7 +74,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         arrayVerb = verbArray as! [[String]]
         if arraySelection.contains("100 most Common Verbs"){
             if let plistPath = NSBundle.mainBundle().pathForResource("100MostUseEnglishVerbs", ofType: "plist"),
-                verb100Verbs = NSArray(contentsOfFile: plistPath){
+                let verb100Verbs = NSArray(contentsOfFile: plistPath){
                 let numberOfVerbs = verb100Verbs.count
                 let random100 = Int(arc4random_uniform(UInt32(numberOfVerbs)))
                 let array100Verbs = verb100Verbs as! [[String]]
@@ -91,7 +91,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
         }else if arraySelection.contains("Irregular Verbs"){
             if let plistPath = NSBundle.mainBundle().pathForResource("IrregularVerbs", ofType: "plist"),
-                irregularVerb = NSArray(contentsOfFile: plistPath){
+                let irregularVerb = NSArray(contentsOfFile: plistPath){
                 let numberIrregular = irregularVerb.count
                 indexChoice = Int(arc4random_uniform(UInt32(numberIrregular)))
                 let arrayIrregular = irregularVerb as! [[String]]
@@ -119,8 +119,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         fifth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[4]
         sixth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[5]
         hint = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[6]
-        
-        verbeInfinitif.text = "to \(verbArray[indexChoice][0] as! String)"
+        let verbTran = verbArray as! [[String]]
+        verbeInfinitif.text = "to \(verbTran[indexChoice][0])"
         tempsVerbe.text = arraySelection[1]
         if arraySelection[1] == "Imperative"{
             un.text = ""
@@ -327,8 +327,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
     func showAlert () {
         let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .ActionSheet)
+        alertController.popoverPresentationController?.sourceView = self.view
         let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: dismissAlert)
-        print(hint)
         alertController.addAction(okAction)
         
         presentViewController(alertController, animated: true, completion: nil)

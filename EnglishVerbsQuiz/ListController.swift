@@ -112,8 +112,9 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
             verbe = String(verbe.characters.dropFirst(3))
             
             var n = 0
-            for verb in verbArray {
-                if verbe == verb[0] as! String {
+            let arrayTrans = verbArray as! [[String]]
+            for verb in arrayTrans {
+                if verbe == verb[0] {
                     indexVerb = n
                 }
                 n = n + 1

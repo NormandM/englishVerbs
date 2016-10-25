@@ -328,6 +328,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     func showAlert () {
         let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .ActionSheet)
         alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = tempsVerbe.frame
+
         let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: dismissAlert)
         alertController.addAction(okAction)
         

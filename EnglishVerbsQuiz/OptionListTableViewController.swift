@@ -18,10 +18,10 @@ class OptionListTableViewController: UITableViewController{
     let sectionArray: [String] = ["Choose a group of verb", "Choose a tense"]
     let tenseArray: [[String]] = [[ "All 1000 Verbs!", "100 most Common Verbs", "Irregular Verbs"], ["Present", "Preterite", "Present Perfect", "Past Perfect", "Present Continuous", "Past Continuous", "Past Perfect Continuous", "Futur Continuous", "Present Perfect Continuous", "Futur Perfect Continuous", "Futur", "FuturPerfect", "Imperative"]]
     // Changing backgroung colors of the header of sections
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0 //make the header transparent
     }
 
@@ -40,95 +40,95 @@ class OptionListTableViewController: UITableViewController{
 
 
     // MARK: - Table view data source
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return sectionArray[section]
     }
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         arraySectionCount = sectionArray.count
         return arraySectionCount
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         arrayCount = tenseArray[section].count
         return arrayCount
     }
     // Next code is to enable checks for each cell selected
-    func configure(cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func configure(_ cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
         
-        if indexPath.section == 0 {
+        if (indexPath as NSIndexPath).section == 0 {
             var n = 0
             while n < 3 {
-                let indexPath2 = NSIndexPath(forRow: n, inSection: 0)
-                let cellInd = tableView.cellForRowAtIndexPath(indexPath2)
-                cellInd?.accessoryType = .None
+                let indexPath2 = IndexPath(row: n, section: 0)
+                let cellInd = tableView.cellForRow(at: indexPath2)
+                cellInd?.accessoryType = .none
                 n = n + 1
-                    if let text = cellInd?.textLabel?.text, i = arraySelection.indexOf(text){
-                        arraySelection.removeAtIndex(i)
+                    if let text = cellInd?.textLabel?.text, let i = arraySelection.index(of: text){
+                        arraySelection.remove(at: i)
                     }
 
             }
-        }else if indexPath.section == 1 {
+        }else if (indexPath as NSIndexPath).section == 1 {
             var n = 0
             while n < 14 {
-                let indexPath2 = NSIndexPath(forRow: n, inSection: 1)
-                let cellInd = tableView.cellForRowAtIndexPath(indexPath2)
-                cellInd?.accessoryType = .None
+                let indexPath2 = IndexPath(row: n, section: 1)
+                let cellInd = tableView.cellForRow(at: indexPath2)
+                cellInd?.accessoryType = .none
                 n = n + 1
-                if let text = cellInd?.textLabel?.text, i = arraySelection.indexOf(text){
-                    arraySelection.removeAtIndex(i)
+                if let text = cellInd?.textLabel?.text, let i = arraySelection.index(of: text){
+                    arraySelection.remove(at: i)
                 }
             }
 
         }
 
-        if selectedTimeVerbes.containsObject(indexPath) {
+        if selectedTimeVerbes.contains(indexPath) {
             // selected
-            cell.accessoryType = .Checkmark
-            arraySelection.append(self.tenseArray[indexPath.section][indexPath.row])
+            cell.accessoryType = .checkmark
+            arraySelection.append(self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
         }
         else {
             // not selected
-            cell.accessoryType = .None
+            cell.accessoryType = .none
         }
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel!.text = self.tenseArray[indexPath.section][indexPath.row]
-        cell.selectionStyle = .None
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        cell.selectionStyle = .none
         configure(cell, forRowAtIndexPath: indexPath)
         return cell
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
-        if selectedTimeVerbes.containsObject(indexPath) {
+        if selectedTimeVerbes.contains(indexPath) {
             // deselect
-            selectedTimeVerbes.removeObject(indexPath)
-           let cell2 = tableView.cellForRowAtIndexPath(indexPath)!
-           if let text = cell2.textLabel?.text, n = arraySelection.indexOf(text){
-               arraySelection.removeAtIndex(n)
+            selectedTimeVerbes.remove(indexPath)
+           let cell2 = tableView.cellForRow(at: indexPath)!
+           if let text = cell2.textLabel?.text, let n = arraySelection.index(of: text){
+               arraySelection.remove(at: n)
             }
             
         }
         else {
             // select
             selectedTimeVerbes.removeAllObjects()
-            selectedTimeVerbes.addObject(indexPath)
-            arraySelection.append(self.tenseArray[indexPath.section][indexPath.row])
+            selectedTimeVerbes.add(indexPath)
+            arraySelection.append(self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
         }
  
-        let cell = tableView.cellForRowAtIndexPath(indexPath)!
+        let cell = tableView.cellForRow(at: indexPath)!
         configure(cell, forRowAtIndexPath: indexPath)
     }
  
 
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showQuiz"{
-            let controller = segue.destinationViewController as! QuizViewController
+            let controller = segue.destination as! QuizViewController
             print(arraySelection)
             if arraySelection[1] == "All 1000 Verbs!" || arraySelection[1] == "100 most Common Verbs" || arraySelection[1] == "Irregular Verbs"{
                 let transfer = arraySelection[1]
@@ -140,22 +140,22 @@ class OptionListTableViewController: UITableViewController{
         }
     }
     func showAlert () {
-        let alertController = UIAlertController(title: "Choose Options", message: "You have to choose both a Group of Verb and a Verb Tense", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Choose Options", message: "You have to choose both a Group of Verb and a Verb Tense", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: dismissAlert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
         
         alertController.addAction(okAction)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
-    func dismissAlert(sender: UIAlertAction) {
+    func dismissAlert(_ sender: UIAlertAction) {
         
     }
-    @IBAction func OK(sender: AnyObject) {
+    @IBAction func OK(_ sender: AnyObject) {
         print(arraySelection)
         let i = arraySelection.count
         if i == 2 && (arraySelection.contains("All 1000 Verbs!") || arraySelection.contains("100 most Common Verbs") || arraySelection.contains("Irregular Verbs")){
-            performSegueWithIdentifier("showQuiz", sender: UIBarButtonItem.self)
+            performSegue(withIdentifier: "showQuiz", sender: UIBarButtonItem.self)
         }else{
             showAlert()
         }

@@ -23,33 +23,33 @@ class VerbListTableViewController: UITableViewController {
        for verbs in verbsArray {
            verbInfinitive.append(verbs[0])
         }
-        func alpha (s1: String, s2: String) -> Bool {
+        func alpha (_ s1: String, s2: String) -> Bool {
             return s1 < s2
         }
-        verbInfinitive = verbInfinitive.sort(alpha)
+        verbInfinitive = verbInfinitive.sorted(by: alpha)
         
         
     }
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
     }
     
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchActive = false;
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
     }
     //Filtering with search text
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filtered = verbInfinitive.filter({ (text) -> Bool in
-            let tmp: NSString = text
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let tmp: NSString = text as NSString
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return range.location != NSNotFound
         })
         if(filtered.count == 0){
@@ -67,12 +67,12 @@ class VerbListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive) {
             return filtered.count
         }
@@ -81,21 +81,21 @@ class VerbListTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if(searchActive){
-            cell.textLabel?.text = filtered[indexPath.row]
+            cell.textLabel?.text = filtered[(indexPath as NSIndexPath).row]
         } else {
-            cell.textLabel!.text = verbInfinitive[indexPath.row]
+            cell.textLabel!.text = verbInfinitive[(indexPath as NSIndexPath).row]
         }
         return cell
     }
     // MARK: - Navigation
 
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "showTense"{
-                let controller = segue.destinationViewController as! ListeVerbTenseTableViewController
-                    if let indexPath = self.tableView.indexPathForSelectedRow, let verbeChoisi = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text {
+                let controller = segue.destination as! ListeVerbTenseTableViewController
+                    if let indexPath = self.tableView.indexPathForSelectedRow, let verbeChoisi = tableView.cellForRow(at: indexPath)?.textLabel?.text {
                         let backItem = UIBarButtonItem()
                         backItem.title = ""
                         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed

@@ -41,28 +41,28 @@ class ListeVerbTenseTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return tenseArray.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel!.text = self.tenseArray[indexPath.row]
+        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).row]
         return cell
     }
 
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            temps = tenseArray[indexPath.row]
+            temps = tenseArray[(indexPath as NSIndexPath).row]
         if segue.identifier == "showFinalVerb"{
             first = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[0]
             print(first)
@@ -72,7 +72,7 @@ class ListeVerbTenseTableViewController: UITableViewController {
             fifth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[4]
             sixth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[5]
             
-            let controller = segue.destinationViewController as! VerbeFinalViewController
+            let controller = segue.destination as! VerbeFinalViewController
             let backItem = UIBarButtonItem()
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed

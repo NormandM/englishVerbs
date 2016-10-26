@@ -56,8 +56,8 @@ class RightAnswerViewController: UIViewController {
     }
     
 
-    @IBAction func done(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil)
+    @IBAction func done(_ sender: AnyObject) {
+        self.dismiss(animated: false, completion: nil)
     }
     
  

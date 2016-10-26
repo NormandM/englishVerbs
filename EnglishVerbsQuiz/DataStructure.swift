@@ -15,12 +15,12 @@ struct AllVerbs {
     let participle: String
     let thirdPerson: String
     let ingForm: String
-    init(allVerbs: NSArray, n: Int){
-        base = allVerbs[n][0] as! String
-        past = allVerbs[n][1] as! String
-        participle = allVerbs[n][2] as! String
-        thirdPerson = allVerbs[n][3] as! String
-        ingForm = allVerbs[n][4] as! String
+    init(allVerbs: Array<[String]>, n: Int){
+        base = allVerbs[n][0]
+        past = allVerbs[n][1]
+        participle = allVerbs[n][2]
+        thirdPerson = allVerbs[n][3]
+        ingForm = allVerbs[n][4]
     }
 }
 struct Present {
@@ -160,29 +160,29 @@ struct Imperative{
     var fifth: String{return allVerbs.base}
 }
 
-public class DataController: NSObject {
+open class DataController: NSObject {
     
     static let sharedInstance = DataController()
     
-    private override init() {}
+    fileprivate override init() {}
     
-    private lazy var applicationDocumentDirectory: NSURL = {
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.endIndex.predecessor()]
+    fileprivate lazy var applicationDocumentDirectory: URL = {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return urls[(urls.endIndex - 1)]
     }()
     
-    private lazy var managerObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("TodoList", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+    fileprivate lazy var managerObjectModel: NSManagedObjectModel = {
+        let modelURL = Bundle.main.url(forResource: "TodoList", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
     }()
-    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    fileprivate lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managerObjectModel)
-        let url = self.applicationDocumentDirectory.URLByAppendingPathComponent("TodoList.sqlite")
+        let url = self.applicationDocumentDirectory.appendingPathComponent("TodoList.sqlite")
         
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         } catch {
-            let userInfo: [String: AnyObject] = [NSLocalizedDescriptionKey: "Failed to initialized the application's saved data", NSLocalizedFailureReasonErrorKey: "There was an error creating or loading the application's saved data", NSUnderlyingErrorKey: error as NSError]
+            let userInfo: [String: AnyObject] = [NSLocalizedDescriptionKey: "Failed to initialized the application's saved data" as AnyObject, NSLocalizedFailureReasonErrorKey: "There was an error creating or loading the application's saved data" as AnyObject, NSUnderlyingErrorKey: error as NSError]
             let wrappedError = NSError(domain: "Normand", code: 9999, userInfo: userInfo)
             print("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
             abort()
@@ -190,13 +190,13 @@ public class DataController: NSObject {
         return coordinator
     }()
     
-    public lazy var managedObjectContext: NSManagedObjectContext = {
+    open lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
-        let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
-    public func saveContext() {
+    open func saveContext() {
         if managedObjectContext.hasChanges{
             do {
                 try managedObjectContext.save()

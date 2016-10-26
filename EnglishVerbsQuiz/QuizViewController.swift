@@ -60,7 +60,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
         optionSlected()
         
     }
@@ -73,7 +73,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     func optionSlected () {
         arrayVerb = verbArray as! [[String]]
         if arraySelection.contains("100 most Common Verbs"){
-            if let plistPath = NSBundle.mainBundle().pathForResource("100MostUseEnglishVerbs", ofType: "plist"),
+            if let plistPath = Bundle.main.path(forResource: "100MostUseEnglishVerbs", ofType: "plist"),
                 let verb100Verbs = NSArray(contentsOfFile: plistPath){
                 let numberOfVerbs = verb100Verbs.count
                 let random100 = Int(arc4random_uniform(UInt32(numberOfVerbs)))
@@ -81,8 +81,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 let verbChoisi100 = array100Verbs[random100][0]
                 var n = 0
                 for verb in arrayVerb {
-                    if let index100Verbs = verb.indexOf(verbChoisi100){
-                        index100Verbs
+                    if verb.index(of: verbChoisi100) != nil{
                         indexChoice = n
                     }
                     n = n + 1
@@ -90,7 +89,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             }
             
         }else if arraySelection.contains("Irregular Verbs"){
-            if let plistPath = NSBundle.mainBundle().pathForResource("IrregularVerbs", ofType: "plist"),
+            if let plistPath = Bundle.main.path(forResource: "IrregularVerbs", ofType: "plist"),
                 let irregularVerb = NSArray(contentsOfFile: plistPath){
                 let numberIrregular = irregularVerb.count
                 indexChoice = Int(arc4random_uniform(UInt32(numberIrregular)))
@@ -99,8 +98,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 print(verbeChoisiIrregular)
                 var n = 0
                 for verb in arrayVerb {
-                    if let indexIrregular = verb.indexOf(verbeChoisiIrregular){
-                        indexIrregular
+                    if verb.index(of: verbeChoisiIrregular) != nil{
                         indexChoice = n
                     }
                     n = n + 1
@@ -111,7 +109,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             indexChoice = Int(arc4random_uniform(UInt32(numberAllVerb)))
         }
         
-        toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)
         first = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[0]
         second = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[1]
         third = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[2]
@@ -129,14 +126,14 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             quatre.text = "(we)"
             cinq.text = "(you)"
             six.text = ""
-            premier.borderStyle = .None
-            premier.backgroundColor = UIColor.clearColor()
-            deuxieme.backgroundColor = UIColor.greenColor()
-            deuxieme.userInteractionEnabled = true
-            troisieme.borderStyle = .None
-            troisieme.backgroundColor = UIColor.clearColor()
-            sixieme.borderStyle = .None
-            sixieme.backgroundColor = UIColor.clearColor()
+            premier.borderStyle = .none
+            premier.backgroundColor = UIColor.clear
+            deuxieme.backgroundColor = UIColor.green
+            deuxieme.isUserInteractionEnabled = true
+            troisieme.borderStyle = .none
+            troisieme.backgroundColor = UIColor.clear
+            sixieme.borderStyle = .none
+            sixieme.backgroundColor = UIColor.clear
             
         }
 
@@ -145,27 +142,27 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
 
 //MARK: Notification for keyboard
     
-     func keyboardWillShow(notification: NSNotification){
+     func keyboardWillShow(_ notification: Notification){
 
         
     }
-    func textFieldShouldReturn(reponse: UITextField) -> Bool {
-        if premier.editing{
+    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
+        if premier.isEditing{
             textFieldAnswer(premier, personne: first)
         }
-        if deuxieme.editing{
+        if deuxieme.isEditing{
             textFieldAnswer(deuxieme, personne: second)
         }
-        if troisieme.editing{
+        if troisieme.isEditing{
             textFieldAnswer(troisieme, personne: third)
         }
-        if quatrieme.editing{
+        if quatrieme.isEditing{
             textFieldAnswer(quatrieme, personne: fourth)
         }
-        if cinquieme.editing{
+        if cinquieme.isEditing{
             textFieldAnswer(cinquieme, personne: fifth)
         }
-        if sixieme.editing{
+        if sixieme.isEditing{
             textFieldAnswer(sixieme, personne: sixth)
         }
 
@@ -174,12 +171,12 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }else if message == "false" {
             let verb = verbeInfinitif.text
             let tense = arraySelection[1]
-            let item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: dataController.managedObjectContext) as! Item
+            let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: dataController.managedObjectContext) as! Item
             item.verb = verb
             item.tence = tense
             item.noBad = 1
             dataController.saveContext()
-            performSegueWithIdentifier("showRightAnswer", sender: nil)
+            performSegue(withIdentifier: "showRightAnswer", sender: nil)
         }
         premier.resignFirstResponder()
         deuxieme.resignFirstResponder()
@@ -192,37 +189,37 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
     
 //Mark: Function verifies in the User response is Good or Bad
-    func textFieldAnswer(chosenTextField: UITextField, personne: String) -> String {
+    @discardableResult func textFieldAnswer(_ chosenTextField: UITextField, personne: String) -> String {
         if arraySelection[1] != "Imperative" {
             if chosenTextField.text == personne {
-                premier.backgroundColor = UIColor.whiteColor()
+                premier.backgroundColor = UIColor.white
                 if personne == second {
                     deuxieme.text = second
-                    deuxieme.backgroundColor = UIColor.whiteColor()
+                    deuxieme.backgroundColor = UIColor.white
                 }else if textIndex == 0{
-                    deuxieme.backgroundColor = UIColor.greenColor()
-                    deuxieme.userInteractionEnabled = true
+                    deuxieme.backgroundColor = UIColor.green
+                    deuxieme.isUserInteractionEnabled = true
                 }
                 if personne == third || second == third || first == third{
                     troisieme.text = third
-                    troisieme.backgroundColor = UIColor.whiteColor()
+                    troisieme.backgroundColor = UIColor.white
                 }else if textIndex < 2{
                     if textIndex != 0 || personne == fourth {
-                        troisieme.backgroundColor = UIColor.greenColor()
-                        troisieme.userInteractionEnabled = true
+                        troisieme.backgroundColor = UIColor.green
+                        troisieme.isUserInteractionEnabled = true
                     }
                 }
                 if personne == fourth || (second == fourth && textIndex > 0){
                     quatrieme.text = fourth
-                    quatrieme.backgroundColor = UIColor.whiteColor()
+                    quatrieme.backgroundColor = UIColor.white
                 }
                 if personne == fifth || (second == fifth && textIndex > 0) {
                     cinquieme.text = fifth
-                    cinquieme.backgroundColor = UIColor.whiteColor()
+                    cinquieme.backgroundColor = UIColor.white
                 }
                 if personne == sixth || (second == sixth && textIndex > 0) {
                     sixieme.text = sixth
-                    sixieme.backgroundColor = UIColor.whiteColor()
+                    sixieme.backgroundColor = UIColor.white
                 }
                 textIndex = textIndex + 1
                 print(troisieme.text)
@@ -237,18 +234,18 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             print(arraySelection[1])
             if chosenTextField.text == personne {
                 if personne == second {
-                    deuxieme.backgroundColor = UIColor.whiteColor()
+                    deuxieme.backgroundColor = UIColor.white
                 }
                 if personne == fourth {
                     quatrieme.text = fourth
-                    quatrieme.backgroundColor = UIColor.whiteColor()
+                    quatrieme.backgroundColor = UIColor.white
                 }else{
-                    quatrieme.backgroundColor = UIColor.greenColor()
-                    quatrieme.userInteractionEnabled = true
+                    quatrieme.backgroundColor = UIColor.green
+                    quatrieme.isUserInteractionEnabled = true
                 }
                 if personne == fifth {
                     cinquieme.text = fifth
-                    cinquieme.backgroundColor = UIColor.whiteColor()
+                    cinquieme.backgroundColor = UIColor.white
                 }
                 if deuxieme.text != "" && quatrieme.text != "" {
                     message = "true"
@@ -262,7 +259,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         return message
     }
 
-    @IBAction func another(sender: AnyObject) {
+    @IBAction func another(_ sender: AnyObject) {
         optionSlected()
         textIndex = 0
         goodResponseMessage.text = ""
@@ -270,32 +267,32 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if arraySelection[1] == "Imperative"{
             deuxieme.text = ""
             quatrieme.text = ""
-            quatrieme.backgroundColor = UIColor.lightGrayColor()
-            quatrieme.userInteractionEnabled = false
+            quatrieme.backgroundColor = UIColor.lightGray
+            quatrieme.isUserInteractionEnabled = false
             cinquieme.text = ""
-            cinquieme.backgroundColor = UIColor.lightGrayColor()
-            cinquieme.userInteractionEnabled = false
+            cinquieme.backgroundColor = UIColor.lightGray
+            cinquieme.isUserInteractionEnabled = false
             
             
         }else{
             premier.text = ""
-            premier.backgroundColor = UIColor.greenColor()
-            premier.userInteractionEnabled = true
+            premier.backgroundColor = UIColor.green
+            premier.isUserInteractionEnabled = true
             deuxieme.text = ""
-            deuxieme.backgroundColor = UIColor.lightGrayColor()
-            deuxieme.userInteractionEnabled = false
+            deuxieme.backgroundColor = UIColor.lightGray
+            deuxieme.isUserInteractionEnabled = false
             troisieme.text = ""
-            troisieme.backgroundColor = UIColor.lightGrayColor()
-            troisieme.userInteractionEnabled = false
+            troisieme.backgroundColor = UIColor.lightGray
+            troisieme.isUserInteractionEnabled = false
             quatrieme.text = ""
-            quatrieme.backgroundColor = UIColor.lightGrayColor()
-            quatrieme.userInteractionEnabled = false
+            quatrieme.backgroundColor = UIColor.lightGray
+            quatrieme.isUserInteractionEnabled = false
             cinquieme.text = ""
-            cinquieme.backgroundColor = UIColor.lightGrayColor()
-            cinquieme.userInteractionEnabled = false
+            cinquieme.backgroundColor = UIColor.lightGray
+            cinquieme.isUserInteractionEnabled = false
             sixieme.text = ""
-            sixieme.backgroundColor = UIColor.lightGrayColor()
-            sixieme.userInteractionEnabled = false
+            sixieme.backgroundColor = UIColor.lightGray
+            sixieme.isUserInteractionEnabled = false
             
         }
 
@@ -305,9 +302,9 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
   
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRightAnswer"{
-            let controller = segue.destinationViewController as! RightAnswerViewController
+            let controller = segue.destination as! RightAnswerViewController
             premier.text = ""
             deuxieme.text = ""
             troisieme.text = ""
@@ -326,20 +323,20 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
     }
     func showAlert () {
-        let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .actionSheet)
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = tempsVerbe.frame
 
-        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: dismissAlert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
         alertController.addAction(okAction)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
-    func dismissAlert(sender: UIAlertAction) {
+    func dismissAlert(_ sender: UIAlertAction) {
         
     }
 
-    @IBAction func hintButton(sender: AnyObject) {
+    @IBAction func hintButton(_ sender: AnyObject) {
         showAlert()
     }
 

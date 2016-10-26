@@ -20,8 +20,8 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
     
     let managedObjectContext = DataController.sharedInstance.managedObjectContext
     
-    lazy var fetchRequest: NSFetchRequest = {
-        let request  = NSFetchRequest(entityName: Item.identifier)
+    lazy var fetchRequest: NSFetchRequest<NSFetchRequestResult> = {
+        let request  = NSFetchRequest<NSFetchRequestResult>(entityName: Item.identifier)
         let sortDescriptor = NSSortDescriptor(key: "verb", ascending: true)
         
         request.sortDescriptors = [sortDescriptor]
@@ -29,7 +29,7 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
         return request
     }()
     
-    lazy var fetchedResultsController: NSFetchedResultsController = {
+    lazy var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> = {
         let controller = NSFetchedResultsController(fetchRequest: self.fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         controller.delegate = self
         return controller
@@ -58,24 +58,24 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = fetchedResultsController.sections?[section] else { return 0 }
         return section.numberOfObjects
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
 
         return configureCell(cell, atIndexPath: indexPath)
     }
-    private func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let item = fetchedResultsController.objectAtIndexPath(indexPath) as! Item
+    fileprivate func configureCell(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell{
+        let item = fetchedResultsController.object(at: indexPath) as! Item
         cell.textLabel?.text = item.verb!
         cell.detailTextLabel?.text = item.tence!
         return cell
@@ -84,9 +84,9 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
     
 
     // MARK: Table view Delete
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let item = fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
-        managedObjectContext.deleteObject(item)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let item = fetchedResultsController.object(at: indexPath) as! NSManagedObject
+        managedObjectContext.delete(item)
         DataController.sharedInstance.saveContext()
         
  
@@ -94,8 +94,8 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
      }
 
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .Delete
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
     }
 
 
@@ -103,11 +103,11 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
     
     // MARK: - Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var indexVerb: Int = 0
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            var verbe = verbList[indexPath.row]
-            let temps = verbTemp[indexPath.row]
+            var verbe = verbList[(indexPath as NSIndexPath).row]
+            let temps = verbTemp[(indexPath as NSIndexPath).row]
             print(temps)
             verbe = String(verbe.characters.dropFirst(3))
             
@@ -125,7 +125,7 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
                 let backItem = UIBarButtonItem()
                 backItem.title = ""
                 navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-                let controller = segue.destinationViewController as! VerbeFinalViewController
+                let controller = segue.destination as! VerbeFinalViewController
                 controller.personVerb = personVerb
                 controller.verbeInfinitif = verbe
                 controller.temps = temps
@@ -149,7 +149,7 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
             n = n + 1
         }
     }
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         verbList = []
         verbTemp = []
         fetch()

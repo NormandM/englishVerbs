@@ -37,10 +37,10 @@ var indexChoice: Int = 0
 var tempsChoisi: String = ""
 
 
-    func chooseVerb (temps temps: String, indexChoice: Int, verbArray: NSArray) -> [String]{
-let choixVerbe = AllVerbs(allVerbs: verbArray, n: indexChoice)
+    func chooseVerb (temps: String, indexChoice: Int, verbArray: NSArray) -> [String]{
+let choixVerbe = AllVerbs(allVerbs: verbArray as! Array<[String]>, n: indexChoice)
     
-    tempsChoisi = temps.stringByReplacingOccurrencesOfString(" ", withString: "")
+    tempsChoisi = temps.replacingOccurrences(of: " ", with: "")
 
     if let tempsDeVerbe = TempsDeVerbe(rawValue: tempsChoisi){
         switch tempsDeVerbe {

@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var verbsArray: NSArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Choose an Option"
         if let plistPath = Bundle.main.path(forResource: "AllVerbs", ofType: "plist"),
             let verbArray = NSArray(contentsOfFile: plistPath){
             verbsArray = verbArray
@@ -36,7 +37,10 @@ class ViewController: UIViewController {
             controller.verbArray = verbsArray
             
         }else if segue.identifier == "showListController"{
-            
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+
             let controller = segue.destination as! ListController
             controller.verbArray = verbsArray
             

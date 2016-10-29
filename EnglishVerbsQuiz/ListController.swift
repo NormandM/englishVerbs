@@ -38,8 +38,7 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Improvement List"
-        
-        
+        self.tabBarController?.tabBar.isHidden = false
         let myString: NSString = "List of wrong Quiz answers. \n Click to see conjugation or Swipe to Delete"
         var myMutableString = NSMutableAttributedString()
         myMutableString = NSMutableAttributedString(string: myString as
@@ -47,10 +46,14 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
         myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSFontAttributeName: UIFont(name: "Georgia", size: 18)!])
         myMutableString.addAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 12)!], range: NSRange(location: 29, length: 44 ))
         headerText.attributedText = myMutableString
+        
+        self.tabBarController?.tabBar.isHidden = true
         fetch()
         
         
     }
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

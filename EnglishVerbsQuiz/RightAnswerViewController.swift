@@ -47,18 +47,18 @@ class RightAnswerViewController: UIViewController {
         cinquieme.text = fifth
         sixieme.text = sixth
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
 
     @IBAction func done(_ sender: AnyObject) {
         self.dismiss(animated: false, completion: nil)
     }
+
     
  
 

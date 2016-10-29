@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AudioToolbox
 
 class QuizViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
@@ -28,6 +29,16 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     @IBOutlet weak var quatrieme: UITextField!
     @IBOutlet weak var cinquieme: UITextField!
     @IBOutlet weak var sixieme: UITextField!
+    
+    @IBOutlet weak var totalQuestion: UIProgressView!
+    
+    
+    @IBOutlet weak var textFieldTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textFieldTopConstraint2: NSLayoutConstraint!
+    
+    var soundURL: NSURL?
+    var soundID:SystemSoundID = 0
+
     
     enum TempsDeVerbe: String {
         case Present
@@ -57,10 +68,18 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     var indexChoice: Int = 0
     var textIndex: Int = 0
     var message: String = ""
+    var progress: Float = 0.0
+    var progressInt: Float = 0.0
+    var goodResponse: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Quiz"
+        totalQuestion.progress = 0.0
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
+ 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         optionSlected()
         
     }
@@ -69,7 +88,256 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-// Mark: Function chhosing verb randomly according to chosen parameters
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRightAnswer" {
+            let controller = segue.destination as! RightAnswerViewController
+            premier.text = ""
+            deuxieme.text = ""
+            troisieme.text = ""
+            quatrieme.text = ""
+            cinquieme.text = ""
+            sixieme.text = ""
+            message = ""
+            controller.first = first
+            controller.second = second
+            controller.third = third
+            controller.fourth = fourth
+            controller.fifth = fifth
+            controller.sixth = sixth
+            controller.tempsFinal = arraySelection[1]
+            controller.infinitifFinal = verbeInfinitif.text!
+        }
+        if segue.identifier == "showQuizResult" {
+            let controller = segue.destination as! QuizResultViewController
+            controller.goodResponse = goodResponse
+        }
+    }
+
+// MARK: All buttons
+    @IBAction func hintButton(_ sender: AnyObject) {
+        showAlert()
+    }
+    
+    @IBAction func another(_ sender: AnyObject) {
+        optionSlected()
+        reinitializeTextFields()
+        
+    }
+
+    
+ /////////////////////////////////////////////////////////
+ // MARK: All functions
+    func reinitializeTextFields() {
+        textIndex = 0
+        goodResponseMessage.text = ""
+        message = ""
+        if arraySelection[1] == "Imperative"{
+            deuxieme.text = ""
+            quatrieme.text = ""
+            quatrieme.backgroundColor = UIColor.lightGray
+            quatrieme.isUserInteractionEnabled = false
+            cinquieme.text = ""
+            cinquieme.backgroundColor = UIColor.lightGray
+            cinquieme.isUserInteractionEnabled = false
+            
+            
+        }else{
+            premier.text = ""
+            premier.backgroundColor = UIColor.green
+            premier.isUserInteractionEnabled = true
+            deuxieme.text = ""
+            deuxieme.backgroundColor = UIColor.lightGray
+            deuxieme.isUserInteractionEnabled = false
+            troisieme.text = ""
+            troisieme.backgroundColor = UIColor.lightGray
+            troisieme.isUserInteractionEnabled = false
+            quatrieme.text = ""
+            quatrieme.backgroundColor = UIColor.lightGray
+            quatrieme.isUserInteractionEnabled = false
+            cinquieme.text = ""
+            cinquieme.backgroundColor = UIColor.lightGray
+            cinquieme.isUserInteractionEnabled = false
+            sixieme.text = ""
+            sixieme.backgroundColor = UIColor.lightGray
+            sixieme.isUserInteractionEnabled = false
+            
+        }
+
+    }
+// This is the function displaying the content for the Hint button
+    func showAlert () {
+        let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .actionSheet)
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = tempsVerbe.frame
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    func dismissAlert(_ sender: UIAlertAction) {
+        
+    }
+    func resultQuiz () {
+
+    }
+
+    
+//MARK: Function verifies in the User response is Good or Bad
+    @discardableResult func textFieldAnswer(_ chosenTextField: UITextField, personne: String) -> String {
+        if arraySelection[1] != "Imperative" {
+            if chosenTextField.text == personne {
+                premier.backgroundColor = UIColor.white
+                if personne == second {
+                    deuxieme.text = second
+                    deuxieme.backgroundColor = UIColor.white
+                }else if textIndex == 0{
+                    deuxieme.backgroundColor = UIColor.green
+                    deuxieme.isUserInteractionEnabled = true
+                }
+                if personne == third || second == third || first == third{
+                    troisieme.text = third
+                    troisieme.backgroundColor = UIColor.white
+                }else if textIndex < 2{
+                    if textIndex != 0 || personne == fourth {
+                        troisieme.backgroundColor = UIColor.green
+                        troisieme.isUserInteractionEnabled = true
+                    }
+                }
+                if personne == fourth || (second == fourth && textIndex > 0){
+                    quatrieme.text = fourth
+                    quatrieme.backgroundColor = UIColor.white
+                }
+                if personne == fifth || (second == fifth && textIndex > 0) {
+                    cinquieme.text = fifth
+                    cinquieme.backgroundColor = UIColor.white
+                }
+                if personne == sixth || (second == sixth && textIndex > 0) {
+                    sixieme.text = sixth
+                    sixieme.backgroundColor = UIColor.white
+                }
+                textIndex = textIndex + 1
+                if troisieme.text != "" && cinquieme.text != "" {
+                    print(message)
+                    message = "true"
+                }
+            }else{
+                message = "false"
+            }
+        }else{
+            if chosenTextField.text == personne {
+                if personne == second {
+                    deuxieme.backgroundColor = UIColor.white
+                }
+                if personne == fourth {
+                    quatrieme.text = fourth
+                    quatrieme.backgroundColor = UIColor.white
+                }else{
+                    quatrieme.backgroundColor = UIColor.green
+                    quatrieme.isUserInteractionEnabled = true
+                }
+                if personne == fifth {
+                    cinquieme.text = fifth
+                    cinquieme.backgroundColor = UIColor.white
+                }
+                if deuxieme.text != "" && quatrieme.text != "" {
+                    message = "true"
+                }
+                
+            }else{
+                message = "false"
+            }
+        }
+        
+        return message
+    }
+//
+    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
+        if premier.isEditing{
+            textFieldAnswer(premier, personne: first)
+        }
+        if deuxieme.isEditing{
+            textFieldAnswer(deuxieme, personne: second)
+        }
+        if troisieme.isEditing{
+            textFieldAnswer(troisieme, personne: third)
+        }
+        if quatrieme.isEditing{
+            textFieldAnswer(quatrieme, personne: fourth)
+        }
+        if cinquieme.isEditing{
+            textFieldAnswer(cinquieme, personne: fifth)
+        }
+        if sixieme.isEditing{
+            textFieldAnswer(sixieme, personne: sixth)
+        }
+        
+        if message == "true"{
+            goodResponseMessage.text = "Great!"
+            let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
+            soundURL = NSURL(fileURLWithPath: filePath!)
+            AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+            AudioServicesPlaySystemSound(soundID)
+
+            progressClaculation()
+            goodResponse = goodResponse + 1
+        }else if message == "false" {
+            let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
+            soundURL = NSURL(fileURLWithPath: filePath!)
+            AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+            AudioServicesPlaySystemSound(soundID)
+
+            progressClaculation()
+            let verb = verbeInfinitif.text
+            let tense = arraySelection[1]
+            let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: dataController.managedObjectContext) as! Item
+            item.verb = verb
+            item.tence = tense
+            item.noBad = 1
+            dataController.saveContext()
+            if progressInt != 10.0 {
+                performSegue(withIdentifier: "showRightAnswer", sender: nil)
+            }
+        }
+        premier.resignFirstResponder()
+        deuxieme.resignFirstResponder()
+        troisieme.resignFirstResponder()
+        quatrieme.resignFirstResponder()
+        cinquieme.resignFirstResponder()
+        sixieme.resignFirstResponder()
+        if progressInt == 10.0 {
+            performSegue(withIdentifier: "showQuizResult", sender: nil)        }
+        
+        return true
+        
+    }
+//MARK: Notification for keyboard
+    
+    func keyboardWillShow(_ notification: Notification){
+        if troisieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+            UIView.animate(withDuration: 1.5, animations: {
+                self.textFieldTopConstraint.constant = 1
+                self.textFieldTopConstraint2.constant = 1
+                self.view.layoutIfNeeded()
+                
+            })
+        }
+    }
+    func keyboardWillHide (_ notification: Notification){
+        if troisieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+            UIView.animate(withDuration: 1.5, animations: {
+                self.textFieldTopConstraint.constant = 20
+                self.textFieldTopConstraint2.constant = 20
+                
+                self.view.layoutIfNeeded()
+            })
+        }
+        
+    }
+// Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
         arrayVerb = verbArray as! [[String]]
         if arraySelection.contains("100 most Common Verbs"){
@@ -108,7 +376,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             let numberAllVerb = arrayVerb.count
             indexChoice = Int(arc4random_uniform(UInt32(numberAllVerb)))
         }
-        
         first = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[0]
         second = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[1]
         third = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[2]
@@ -136,208 +403,21 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             sixieme.backgroundColor = UIColor.clear
             
         }
-
-       
     }
-
-//MARK: Notification for keyboard
-    
-     func keyboardWillShow(_ notification: Notification){
-
-        
-    }
-    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
-        if premier.isEditing{
-            textFieldAnswer(premier, personne: first)
-        }
-        if deuxieme.isEditing{
-            textFieldAnswer(deuxieme, personne: second)
-        }
-        if troisieme.isEditing{
-            textFieldAnswer(troisieme, personne: third)
-        }
-        if quatrieme.isEditing{
-            textFieldAnswer(quatrieme, personne: fourth)
-        }
-        if cinquieme.isEditing{
-            textFieldAnswer(cinquieme, personne: fifth)
-        }
-        if sixieme.isEditing{
-            textFieldAnswer(sixieme, personne: sixth)
-        }
-
-        if message == "true"{
-            goodResponseMessage.text = "Great!"
-        }else if message == "false" {
-            let verb = verbeInfinitif.text
-            let tense = arraySelection[1]
-            let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: dataController.managedObjectContext) as! Item
-            item.verb = verb
-            item.tence = tense
-            item.noBad = 1
-            dataController.saveContext()
-            performSegue(withIdentifier: "showRightAnswer", sender: nil)
-        }
-        premier.resignFirstResponder()
-        deuxieme.resignFirstResponder()
-        troisieme.resignFirstResponder()
-        quatrieme.resignFirstResponder()
-        cinquieme.resignFirstResponder()
-        sixieme.resignFirstResponder()
-        return true
-        
-    }
-    
-//Mark: Function verifies in the User response is Good or Bad
-    @discardableResult func textFieldAnswer(_ chosenTextField: UITextField, personne: String) -> String {
-        if arraySelection[1] != "Imperative" {
-            if chosenTextField.text == personne {
-                premier.backgroundColor = UIColor.white
-                if personne == second {
-                    deuxieme.text = second
-                    deuxieme.backgroundColor = UIColor.white
-                }else if textIndex == 0{
-                    deuxieme.backgroundColor = UIColor.green
-                    deuxieme.isUserInteractionEnabled = true
-                }
-                if personne == third || second == third || first == third{
-                    troisieme.text = third
-                    troisieme.backgroundColor = UIColor.white
-                }else if textIndex < 2{
-                    if textIndex != 0 || personne == fourth {
-                        troisieme.backgroundColor = UIColor.green
-                        troisieme.isUserInteractionEnabled = true
-                    }
-                }
-                if personne == fourth || (second == fourth && textIndex > 0){
-                    quatrieme.text = fourth
-                    quatrieme.backgroundColor = UIColor.white
-                }
-                if personne == fifth || (second == fifth && textIndex > 0) {
-                    cinquieme.text = fifth
-                    cinquieme.backgroundColor = UIColor.white
-                }
-                if personne == sixth || (second == sixth && textIndex > 0) {
-                    sixieme.text = sixth
-                    sixieme.backgroundColor = UIColor.white
-                }
-                textIndex = textIndex + 1
-                print(troisieme.text)
-                if troisieme.text != "" && cinquieme.text != "" {
-                    print(message)
-                    message = "true"
-                }
-            }else{
-                message = "false"
-            }
-        }else{
-            print(arraySelection[1])
-            if chosenTextField.text == personne {
-                if personne == second {
-                    deuxieme.backgroundColor = UIColor.white
-                }
-                if personne == fourth {
-                    quatrieme.text = fourth
-                    quatrieme.backgroundColor = UIColor.white
-                }else{
-                    quatrieme.backgroundColor = UIColor.green
-                    quatrieme.isUserInteractionEnabled = true
-                }
-                if personne == fifth {
-                    cinquieme.text = fifth
-                    cinquieme.backgroundColor = UIColor.white
-                }
-                if deuxieme.text != "" && quatrieme.text != "" {
-                    message = "true"
-                }
-
-
-            }else{
-                message = "false"
-            }
-        }
-        return message
-    }
-
-    @IBAction func another(_ sender: AnyObject) {
+    @IBAction func unwindToLast(segue: UIStoryboardSegue) {
         optionSlected()
-        textIndex = 0
-        goodResponseMessage.text = ""
-        message = ""
-        if arraySelection[1] == "Imperative"{
-            deuxieme.text = ""
-            quatrieme.text = ""
-            quatrieme.backgroundColor = UIColor.lightGray
-            quatrieme.isUserInteractionEnabled = false
-            cinquieme.text = ""
-            cinquieme.backgroundColor = UIColor.lightGray
-            cinquieme.isUserInteractionEnabled = false
-            
-            
-        }else{
-            premier.text = ""
-            premier.backgroundColor = UIColor.green
-            premier.isUserInteractionEnabled = true
-            deuxieme.text = ""
-            deuxieme.backgroundColor = UIColor.lightGray
-            deuxieme.isUserInteractionEnabled = false
-            troisieme.text = ""
-            troisieme.backgroundColor = UIColor.lightGray
-            troisieme.isUserInteractionEnabled = false
-            quatrieme.text = ""
-            quatrieme.backgroundColor = UIColor.lightGray
-            quatrieme.isUserInteractionEnabled = false
-            cinquieme.text = ""
-            cinquieme.backgroundColor = UIColor.lightGray
-            cinquieme.isUserInteractionEnabled = false
-            sixieme.text = ""
-            sixieme.backgroundColor = UIColor.lightGray
-            sixieme.isUserInteractionEnabled = false
+        reinitializeTextFields()
+        if progressInt == 10.0{
+            progressInt = 0.0
+            progress = 0.0
+            goodResponse = 0
+            totalQuestion.progress = 0.0
             
         }
-
     }
-
-
-  
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRightAnswer"{
-            let controller = segue.destination as! RightAnswerViewController
-            premier.text = ""
-            deuxieme.text = ""
-            troisieme.text = ""
-            quatrieme.text = ""
-            cinquieme.text = ""
-            sixieme.text = ""
-            message = ""
-            controller.first = first
-            controller.second = second
-            controller.third = third
-            controller.fourth = fourth
-            controller.fifth = fifth
-            controller.sixth = sixth
-            controller.tempsFinal = arraySelection[1]
-            controller.infinitifFinal = verbeInfinitif.text!
-        }
+    func progressClaculation() {
+        progressInt = progressInt + 1
+        progress = progressInt / 10
+        totalQuestion.progress = progress
     }
-    func showAlert () {
-        let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .actionSheet)
-        alertController.popoverPresentationController?.sourceView = self.view
-        alertController.popoverPresentationController?.sourceRect = tempsVerbe.frame
-
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    func dismissAlert(_ sender: UIAlertAction) {
-        
-    }
-
-    @IBAction func hintButton(_ sender: AnyObject) {
-        showAlert()
-    }
-
 }

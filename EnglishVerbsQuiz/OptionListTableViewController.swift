@@ -29,7 +29,6 @@ class OptionListTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Choose content of your Quiz"
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,12 +128,15 @@ class OptionListTableViewController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showQuiz"{
             let controller = segue.destination as! QuizViewController
-            print(arraySelection)
-            if arraySelection[1] == "All 1000 Verbs!" || arraySelection[1] == "100 most Common Verbs" || arraySelection[1] == "Irregular Verbs"{
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+           if arraySelection[1] == "All 1000 Verbs!" || arraySelection[1] == "100 most Common Verbs" || arraySelection[1] == "Irregular Verbs"{
                 let transfer = arraySelection[1]
-                arraySelection[1] = arraySelection[0]
+                let transfer2 = arraySelection[0]
+                arraySelection[1] = transfer2
                 arraySelection[0] = transfer
-            }
+           }
             controller.arraySelection = arraySelection
             controller.verbArray = verbArray
         }

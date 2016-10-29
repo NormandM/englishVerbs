@@ -111,7 +111,6 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
         if let indexPath = self.tableView.indexPathForSelectedRow {
             var verbe = verbList[(indexPath as NSIndexPath).row]
             let temps = verbTemp[(indexPath as NSIndexPath).row]
-            print(temps)
             verbe = String(verbe.characters.dropFirst(3))
             
             var n = 0
@@ -157,8 +156,25 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
         verbTemp = []
         fetch()
         tableView.reloadData()
-        print(verbList)
     }
 
-   
+    @IBAction func deleteAll(_ sender: Any) {
+        do {
+            let items = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
+            
+            for item in items {
+                managedObjectContext.delete(item)
+            }
+            
+            // Save Changes
+            try managedObjectContext.save()
+            
+        } catch {
+            // Error Handling
+            // ...
+        }
+
+        
+    }
+    
 }

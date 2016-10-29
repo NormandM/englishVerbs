@@ -221,7 +221,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 }
                 textIndex = textIndex + 1
                 if troisieme.text != "" && cinquieme.text != "" {
-                    print(message)
                     message = "true"
                 }
             }else{
@@ -363,7 +362,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 indexChoice = Int(arc4random_uniform(UInt32(numberIrregular)))
                 let arrayIrregular = irregularVerb as! [[String]]
                 let verbeChoisiIrregular = arrayIrregular[indexChoice][0]
-                print(verbeChoisiIrregular)
                 var n = 0
                 for verb in arrayVerb {
                     if verb.index(of: verbeChoisiIrregular) != nil{

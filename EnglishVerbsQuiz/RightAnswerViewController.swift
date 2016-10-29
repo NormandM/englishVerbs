@@ -47,6 +47,21 @@ class RightAnswerViewController: UIViewController {
         cinquieme.text = fifth
         sixieme.text = sixth
         
+        if tempsFinal == "Imperative" {
+            un.text = ""
+            deux.text = "(you)"
+            trois.text = ""
+            quatre.text = "(we)"
+            cinq.text = "(you)"
+            six.text = ""
+            premier.backgroundColor = UIColor(red: 165/255, green: 200/255, blue: 233/255, alpha: 1.0)
+            troisieme.backgroundColor = UIColor(red: 165/255, green: 200/255, blue: 233/255, alpha: 1.0)
+            sixieme.backgroundColor = UIColor(red: 165/255, green: 200/255, blue: 233/255, alpha: 1.0)
+            premier.borderStyle = .none
+            troisieme.borderStyle = .none
+            sixieme.borderStyle = .none
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

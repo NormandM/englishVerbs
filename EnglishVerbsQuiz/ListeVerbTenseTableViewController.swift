@@ -65,7 +65,6 @@ class ListeVerbTenseTableViewController: UITableViewController {
             temps = tenseArray[(indexPath as NSIndexPath).row]
         if segue.identifier == "showFinalVerb"{
             first = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[0]
-            print(first)
             second = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[1]
             third = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[2]
             fourth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[3]

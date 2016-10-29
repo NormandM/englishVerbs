@@ -53,6 +53,13 @@ class OptionListTableViewController: UITableViewController{
         return arrayCount
     }
     // Next code is to enable checks for each cell selected
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        cell.selectionStyle = .none
+        return cell
+    }
+    
     func configure(_ cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
         
         if (indexPath as NSIndexPath).section == 0 {
@@ -91,17 +98,10 @@ class OptionListTableViewController: UITableViewController{
             cell.accessoryType = .none
         }
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
-        cell.selectionStyle = .none
-        configure(cell, forRowAtIndexPath: indexPath)
-        return cell
-    }
+
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
         if selectedTimeVerbes.contains(indexPath) {
             // deselect
             selectedTimeVerbes.remove(indexPath)
@@ -117,11 +117,10 @@ class OptionListTableViewController: UITableViewController{
             selectedTimeVerbes.add(indexPath)
             arraySelection.append(self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
         }
- 
         let cell = tableView.cellForRow(at: indexPath)!
         configure(cell, forRowAtIndexPath: indexPath)
-    }
- 
+      }
+
 
     // MARK: - Navigation
 
@@ -154,7 +153,6 @@ class OptionListTableViewController: UITableViewController{
         
     }
     @IBAction func OK(_ sender: AnyObject) {
-        print(arraySelection)
         let i = arraySelection.count
         if i == 2 && (arraySelection.contains("All 1000 Verbs!") || arraySelection.contains("100 most Common Verbs") || arraySelection.contains("Irregular Verbs")){
             performSegue(withIdentifier: "showQuiz", sender: UIBarButtonItem.self)

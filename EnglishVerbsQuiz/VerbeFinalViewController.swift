@@ -77,8 +77,8 @@ class VerbeFinalViewController: UIViewController {
             second.text = deuxieme
             second.attributedText = myMutableString
             
-            let troisieme = "(we) let's   " + personVerb[3]
-            stringColor(troisieme, pronom: "(we) let's   ")
+            let troisieme = "(we) " + personVerb[3]
+            stringColor(troisieme, pronom: "(we)  ")
             third.text = troisieme
             third.attributedText = myMutableString
             

@@ -71,6 +71,24 @@ class ListeVerbTenseTableViewController: UITableViewController {
             fifth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[4]
             sixth = toChooseVerb().chooseVerb(temps: temps, indexChoice: index, verbArray: verbArray)[5]
             
+            if verbeInfinitif == "be"{
+                if temps == "Present"{
+                    first = "am"
+                    second = "are"
+                    third = "is"
+                    fourth = "are"
+                    fifth = "are"
+                    sixth = "are"
+                }else if temps == "Preterite"{
+                    first = "was"
+                    second = "were"
+                    third = "was"
+                    fourth = "were"
+                    fifth = "were"
+                    sixth = "were"
+                }
+
+            }
             let controller = segue.destination as! VerbeFinalViewController
             let backItem = UIBarButtonItem()
             backItem.title = ""

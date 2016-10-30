@@ -384,6 +384,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         let verbTran = verbArray as! [[String]]
         verbeInfinitif.text = "to \(verbTran[indexChoice][0])"
         tempsVerbe.text = arraySelection[1]
+        print(arraySelection)
         if arraySelection[1] == "Imperative"{
             un.text = ""
             deux.text = "(you)"
@@ -399,6 +400,29 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             troisieme.backgroundColor = UIColor.clear
             sixieme.borderStyle = .none
             sixieme.backgroundColor = UIColor.clear
+            
+        }
+        if verbeInfinitif.text == "to be"{
+            if arraySelection[1] == "Present"{
+                first = "am"
+                second = "are"
+                third = "is"
+                fourth = "are"
+                fifth = "are"
+                sixth = "are"
+            }else if arraySelection[1] == "Preterite"{
+                first = "was"
+                second = "were"
+                third = "was"
+                fourth = "were"
+                fifth = "were"
+                sixth = "were"
+
+            }else if arraySelection[1] == "Imperative"{
+                second = "be"
+                fourth = "let's be"
+                fifth = "be"
+            }
             
         }
     }

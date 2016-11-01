@@ -52,13 +52,13 @@ class OptionListTableViewController: UITableViewController{
         arrayCount = tenseArray[section].count
         return arrayCount
     }
-    // Next code is to enable checks for each cell selected
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         cell.selectionStyle = .none
         return cell
     }
+      // Next code is to enable checks for each cell selected
     
     func configure(_ cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
         
@@ -69,10 +69,10 @@ class OptionListTableViewController: UITableViewController{
                 let cellInd = tableView.cellForRow(at: indexPath2)
                 cellInd?.accessoryType = .none
                 n = n + 1
-                    if let text = cellInd?.textLabel?.text, let i = arraySelection.index(of: text){
-                        arraySelection.remove(at: i)
-                    }
-
+                if let text = cellInd?.textLabel?.text, let i = arraySelection.index(of: text){
+                    arraySelection.remove(at: i)
+                }
+                
             }
         }else if (indexPath as NSIndexPath).section == 1 {
             var n = 0
@@ -85,9 +85,9 @@ class OptionListTableViewController: UITableViewController{
                     arraySelection.remove(at: i)
                 }
             }
-
+            
         }
-
+        
         if selectedTimeVerbes.contains(indexPath) {
             // selected
             cell.accessoryType = .checkmark
@@ -98,16 +98,16 @@ class OptionListTableViewController: UITableViewController{
             cell.accessoryType = .none
         }
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if selectedTimeVerbes.contains(indexPath) {
             // deselect
             selectedTimeVerbes.remove(indexPath)
-           let cell2 = tableView.cellForRow(at: indexPath)!
-           if let text = cell2.textLabel?.text, let n = arraySelection.index(of: text){
-               arraySelection.remove(at: n)
+            let cell2 = tableView.cellForRow(at: indexPath)!
+            if let text = cell2.textLabel?.text, let n = arraySelection.index(of: text){
+                arraySelection.remove(at: n)
             }
             
         }
@@ -119,8 +119,7 @@ class OptionListTableViewController: UITableViewController{
         }
         let cell = tableView.cellForRow(at: indexPath)!
         configure(cell, forRowAtIndexPath: indexPath)
-      }
-
+    }
 
     // MARK: - Navigation
 
@@ -136,6 +135,7 @@ class OptionListTableViewController: UITableViewController{
                 arraySelection[1] = transfer2
                 arraySelection[0] = transfer
            }
+            print(arraySelection)
             controller.arraySelection = arraySelection
             controller.verbArray = verbArray
         }
@@ -150,14 +150,19 @@ class OptionListTableViewController: UITableViewController{
         present(alertController, animated: true, completion: nil)
     }
     func dismissAlert(_ sender: UIAlertAction) {
-        
-    }
+        print(arraySelection)
+     }
     @IBAction func OK(_ sender: AnyObject) {
-        let i = arraySelection.count
+        var i = arraySelection.count
+        while i > 2 {
+            arraySelection.removeFirst()
+            i = arraySelection.count
+        }
         if i == 2 && (arraySelection.contains("All 1000 Verbs!") || arraySelection.contains("100 most Common Verbs") || arraySelection.contains("Irregular Verbs")){
             performSegue(withIdentifier: "showQuiz", sender: UIBarButtonItem.self)
         }else{
             showAlert()
+            print(arraySelection)
         }
     }
 

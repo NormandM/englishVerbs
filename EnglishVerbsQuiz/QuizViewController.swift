@@ -384,7 +384,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         let verbTran = verbArray as! [[String]]
         verbeInfinitif.text = "to \(verbTran[indexChoice][0])"
         tempsVerbe.text = arraySelection[1]
-        print(arraySelection)
         if arraySelection[1] == "Imperative"{
             un.text = ""
             deux.text = "(you)"

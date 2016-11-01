@@ -22,25 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72j-zu-rta">
-                                <rect key="frame" x="16" y="518" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72j-zu-rta">
+                                <rect key="frame" x="16" y="125" width="288" height="30"/>
                                 <state key="normal" title="Verb list"/>
                                 <connections>
                                     <segue destination="bwL-Fk-dS6" kind="show" identifier="showVerbList" id="tRX-5h-iTd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-Zk-F5B">
+                                <rect key="frame" x="32" y="489" width="272" height="30"/>
+                                <state key="normal" title="improvementList"/>
+                                <connections>
+                                    <segue destination="MZ6-ug-IM8" kind="show" identifier="showListController" id="xNB-Ob-EB0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqn-f0-gp2">
                                 <rect key="frame" x="144" y="269" width="32" height="30"/>
                                 <state key="normal" title="Quiz"/>
                                 <connections>
-                                    <segue destination="HrO-bL-3xN" kind="show" identifier="showQuizVerbSelection" id="ODv-cY-jhu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-Zk-F5B">
-                                <rect key="frame" x="24" y="375" width="272" height="30"/>
-                                <state key="normal" title="improvementList"/>
-                                <connections>
-                                    <segue destination="MZ6-ug-IM8" kind="show" identifier="showListController" id="xNB-Ob-EB0"/>
+                                    <segue destination="o6E-Eh-jIM" kind="show" identifier="showQuizVerbSelection" id="jkk-IV-uk8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,11 +77,11 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc6-S2-60f" id="b6Q-1i-2zi">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YMQ-R3-0Mb">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -485,11 +485,11 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wvU-lI-3Q4" id="oji-vJ-ZNQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehe-1n-Hyx">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -526,11 +526,11 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGT-xf-YfJ" id="giu-gO-kYv">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lY5-d5-aLU">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -941,6 +941,138 @@
             </objects>
             <point key="canvasLocation" x="2246" y="672"/>
         </scene>
+        <!--Option Mode Verbe View Controller-->
+        <scene sceneID="Qrn-qd-SYR">
+            <objects>
+                <viewController id="o6E-Eh-jIM" customClass="OptionModeVerbeViewController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yHo-VO-FGi"/>
+                        <viewControllerLayoutGuide type="bottom" id="f8T-hc-2Cq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YzI-YR-us6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This ia a good place to start. These are the most common verbs of the english language. It is important to know them all" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdV-q7-ql7">
+                                <rect key="frame" x="16" y="115" width="288" height="100"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="59v-wM-VDu"/>
+                                    <constraint firstAttribute="height" constant="100" id="BdH-mV-Bzu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVO-7Q-EnO">
+                                <rect key="frame" x="16" y="280" width="288" height="100"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="KKu-BM-KlH"/>
+                                    <constraint firstAttribute="height" constant="100" id="x96-ub-att"/>
+                                </constraints>
+                                <string key="text">The most important difficulty of English verbs are irrugalar verbs. Practice in particular the "Preterite and the "Present Perfect"</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More than 400 irregular verbs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyA-A2-Ozb">
+                                <rect key="frame" x="16" y="223" width="288" height="57.5"/>
+                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="G6q-3G-U5C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fFc-Al-8bc" appends="YES" id="Gcg-JR-jiM"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the verbs: More than 1300 verbs " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HY-LN-raD">
+                                <rect key="frame" x="16" y="388.5" width="288" height="57.5"/>
+                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="Up0-sJ-MNI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="THD-79-nut" appends="YES" id="Vs3-C0-C80"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this section the whole data base is open. So you can be quized on any of the more 13000 verbs." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-rh-lCB">
+                                <rect key="frame" x="16" y="448" width="288" height="100"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="tYy-kt-Pga"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 of the most common verbs in English" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN0-cp-LSw">
+                                <rect key="frame" x="16" y="64" width="288" height="57.5"/>
+                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="jG3-sL-J3g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SA0-sz-FQf" appends="YES" id="ehp-eh-dqy"/>
+                                </connections>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="46" id="BKH-h5-bfn"/>
+                            <constraint firstItem="WyA-A2-Ozb" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="DO7-XU-G6S"/>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="46" id="JSE-eH-BsK"/>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="top" secondItem="WyA-A2-Ozb" secondAttribute="bottom" constant="-0.5" id="KE5-km-2c7"/>
+                            <constraint firstItem="zN0-cp-LSw" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="L7Y-qr-0PN"/>
+                            <constraint firstItem="DWb-rh-lCB" firstAttribute="top" secondItem="9HY-LN-raD" secondAttribute="bottom" constant="2" id="LZB-P6-9WB"/>
+                            <constraint firstItem="TdV-q7-ql7" firstAttribute="top" secondItem="zN0-cp-LSw" secondAttribute="bottom" constant="-6.5" id="bGI-hx-Igr"/>
+                            <constraint firstAttribute="bottom" secondItem="DWb-rh-lCB" secondAttribute="bottom" constant="20" symbolic="YES" id="byu-Fd-bGZ"/>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="cF5-ji-ACD"/>
+                            <constraint firstItem="DWb-rh-lCB" firstAttribute="trailing" secondItem="9HY-LN-raD" secondAttribute="trailing" id="cef-un-ssB"/>
+                            <constraint firstItem="TdV-q7-ql7" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="jsX-Fs-y6b"/>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="top" secondItem="TdV-q7-ql7" secondAttribute="bottom" constant="65" id="lXk-ui-7ka"/>
+                            <constraint firstItem="DWb-rh-lCB" firstAttribute="leading" secondItem="9HY-LN-raD" secondAttribute="leading" id="pb9-K2-230"/>
+                            <constraint firstItem="9HY-LN-raD" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="wjM-Mf-wa8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allVerbs" destination="9HY-LN-raD" id="ZHF-kr-xYJ"/>
+                        <outlet property="irregularVerbs" destination="WyA-A2-Ozb" id="qCC-jm-DL3"/>
+                        <outlet property="mostVerbs" destination="zN0-cp-LSw" id="I7d-gc-kcz"/>
+                        <segue destination="HrO-bL-3xN" kind="show" identifier="showTempVerbe" id="wRu-J4-dce"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKI-rn-ulj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SA0-sz-FQf">
+                    <connections>
+                        <action selector="showTempDuVerbe:" destination="o6E-Eh-jIM" id="62s-oV-QC9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fFc-Al-8bc">
+                    <connections>
+                        <action selector="irregular:" destination="o6E-Eh-jIM" id="bgB-Xz-M7I"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="THD-79-nut">
+                    <connections>
+                        <action selector="allverbs:" destination="o6E-Eh-jIM" id="XXZ-cu-rcq"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-390" y="674"/>
+        </scene>
         <!--List Controller-->
         <scene sceneID="9B7-FK-5hi">
             <objects>
@@ -974,18 +1106,18 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D5A-2I-G2L" id="LTc-Xk-gcz">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSc-ID-vTW">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zba-EW-ehN">
-                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1009,7 +1141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zml-jW-UTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703" y="658"/>
+            <point key="canvasLocation" x="-2756" y="352"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

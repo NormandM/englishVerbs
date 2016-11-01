@@ -18,6 +18,7 @@
 		8E236E8D1DC3CBB100A25209 /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E236E8C1DC3CBB100A25209 /* QuizResultViewController.swift */; };
 		8E236E901DC5082D00A25209 /* Incoming Text 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E236E8F1DC5082D00A25209 /* Incoming Text 01.wav */; };
 		8E236E921DC5084600A25209 /* Error Warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E236E911DC5084600A25209 /* Error Warning.wav */; };
+		8E3B4EB01DC7DFB100129963 /* OptionModeVerbeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B4EAF1DC7DFB100129963 /* OptionModeVerbeViewController.swift */; };
 		8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */; };
 		8E46BC641DA44C51005AD256 /* 100MostUseEnglishVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */; };
 		8E46BC661DA44C64005AD256 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC651DA44C64005AD256 /* AllVerbs.plist */; };
@@ -69,6 +70,7 @@
 		8E236E8C1DC3CBB100A25209 /* QuizResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
 		8E236E8F1DC5082D00A25209 /* Incoming Text 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Incoming Text 01.wav"; sourceTree = "<group>"; };
 		8E236E911DC5084600A25209 /* Error Warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Error Warning.wav"; sourceTree = "<group>"; };
+		8E3B4EAF1DC7DFB100129963 /* OptionModeVerbeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionModeVerbeViewController.swift; sourceTree = "<group>"; };
 		8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionListTableViewController.swift; sourceTree = "<group>"; };
 		8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 100MostUseEnglishVerbs.plist; sourceTree = "<group>"; };
 		8E46BC651DA44C64005AD256 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */,
 				8E0E07D41D8DC3BF0065BC87 /* Info.plist */,
 				8E94E2A91DB6BB6700AFB589 /* TodoList.xcdatamodeld */,
+				8E3B4EAF1DC7DFB100129963 /* OptionModeVerbeViewController.swift */,
 			);
 			path = EnglishVerbsQuiz;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */,
 				8E94E2AB1DB6BB6700AFB589 /* TodoList.xcdatamodeld in Sources */,
 				8E94E2AE1DB6BE5E00AFB589 /* Item+CoreDataProperties.swift in Sources */,
+				8E3B4EB01DC7DFB100129963 /* OptionModeVerbeViewController.swift in Sources */,
 				8E94E2B11DBA89F600AFB589 /* chooseVerbFunction.swift in Sources */,
 				8E94E2AF1DB6BE5E00AFB589 /* Item.swift in Sources */,
 				8EE194221D9C570800BCC811 /* QuizViewController.swift in Sources */,

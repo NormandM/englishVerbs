@@ -33,8 +33,8 @@ class ViewController: UIViewController {
             let controller = segue.destination as! VerbListTableViewController
             controller.verbArray = verbsArray
         }else if segue.identifier == "showQuizVerbSelection" {
-            let controller = segue.destination as! OptionListTableViewController
-            controller.verbArray = verbsArray
+            let controller = segue.destination as! OptionModeVerbeViewController
+            controller.verbsArray = verbsArray
             
         }else if segue.identifier == "showListController"{
             let backItem = UIBarButtonItem()

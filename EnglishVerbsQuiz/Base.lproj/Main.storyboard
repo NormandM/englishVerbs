@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,45 +23,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72j-zu-rta">
-                                <rect key="frame" x="16" y="125" width="288" height="30"/>
-                                <state key="normal" title="Verb list"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons première page eng 2" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Ov-MY6">
+                                <rect key="frame" x="85" y="398" width="140" height="140"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qr3-Ov-MY6" secondAttribute="height" multiplier="1:1" id="QsP-MW-uSM"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="bwL-Fk-dS6" kind="show" identifier="showVerbList" id="tRX-5h-iTd"/>
+                                    <outletCollection property="gestureRecognizers" destination="rTl-fN-4FA" appends="YES" id="sH8-pK-1qx"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-Zk-F5B">
-                                <rect key="frame" x="32" y="489" width="272" height="30"/>
-                                <state key="normal" title="improvementList"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons première page eng 3" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-q4-KRJ">
+                                <rect key="frame" x="77.5" y="76.5" width="155" height="155"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="height" multiplier="1:1" id="6Mx-t3-taO"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="MZ6-ug-IM8" kind="show" identifier="showListController" id="xNB-Ob-EB0"/>
+                                    <outletCollection property="gestureRecognizers" destination="ZyO-WQ-ZhQ" appends="YES" id="so3-Zx-Z6j"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqn-f0-gp2">
-                                <rect key="frame" x="144" y="269" width="32" height="30"/>
-                                <state key="normal" title="Quiz"/>
-                                <connections>
-                                    <segue destination="o6E-Eh-jIM" kind="show" identifier="showQuizVerbSelection" id="jkk-IV-uk8"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons première page eng 1" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-SI-TME">
+                                <rect key="frame" x="77.5" y="236.5" width="155" height="155"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DSl-SI-TME" secondAttribute="height" multiplier="1:1" id="jPy-Ez-8iU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="72j-zu-rta" secondAttribute="bottom" constant="20" id="268-0A-8b7"/>
-                            <constraint firstItem="72j-zu-rta" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8Ov-eo-hf4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="j8x-Zk-F5B" secondAttribute="trailing" constant="8" id="BF0-jp-Uee"/>
-                            <constraint firstItem="kqn-f0-gp2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GRS-FI-F7W"/>
-                            <constraint firstItem="kqn-f0-gp2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NAK-4W-tUX"/>
-                            <constraint firstItem="72j-zu-rta" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TEp-1k-WKp"/>
-                            <constraint firstItem="72j-zu-rta" firstAttribute="top" secondItem="j8x-Zk-F5B" secondAttribute="bottom" constant="113" id="WKw-Kc-VZF"/>
-                            <constraint firstItem="j8x-Zk-F5B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="dN7-I6-HBd"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="DPq-ky-QWD"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" constant="-15" id="Slh-GI-9vr"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="top" secondItem="Aqs-q4-KRJ" secondAttribute="bottom" constant="5" id="XCT-ka-PiU"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="top" secondItem="DSl-SI-TME" secondAttribute="bottom" constant="6.5" id="a0t-ZO-MQw"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="bGW-b0-ATI"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="exb-bl-MXK"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" constant="-15" id="fjN-Mb-asj"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="mU0-hc-fIi"/>
+                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="sdZ-VT-ief"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="184" id="wRB-Jh-DIb"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" id="xhZ-dj-R5B"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ANr-cx-wmb" appends="YES" id="9za-TK-b9n"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZwH-2J-isK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZyO-WQ-ZhQ">
+                    <connections>
+                        <segue destination="bwL-Fk-dS6" kind="show" identifier="showVerbList" id="H5m-SG-Rbd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ANr-cx-wmb">
+                    <connections>
+                        <segue destination="o6E-Eh-jIM" kind="show" identifier="showQuizVerbSelection" id="5XL-6l-Tt1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rTl-fN-4FA">
+                    <connections>
+                        <segue destination="MZ6-ug-IM8" kind="show" identifier="showListController" id="tfM-UT-H1S"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="724" y="-335"/>
+            <point key="canvasLocation" x="723.75" y="-335.91549295774649"/>
         </scene>
         <!--Choose Quiz Content-->
         <scene sceneID="Q9b-SM-F57">
@@ -77,11 +106,11 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc6-S2-60f" id="b6Q-1i-2zi">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YMQ-R3-0Mb">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -473,7 +502,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="ngr-Kd-rRg">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -485,11 +514,11 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wvU-lI-3Q4" id="oji-vJ-ZNQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehe-1n-Hyx">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -526,11 +555,11 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGT-xf-YfJ" id="giu-gO-kYv">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lY5-d5-aLU">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1082,7 +1111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz: list of bad answers" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dhM-ns-o8f">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.6705882353" green="0.79607843140000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -1090,7 +1119,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Mwx-zT-lmp">
-                            <rect key="frame" x="0.0" y="180" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="116" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem title="Delete all the list" id="qdK-FQ-MVu">
@@ -1106,18 +1135,18 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D5A-2I-G2L" id="LTc-Xk-gcz">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSc-ID-vTW">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zba-EW-ehN">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1144,6 +1173,11 @@
             <point key="canvasLocation" x="-2756" y="352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons première page eng 1" width="284" height="284"/>
+        <image name="icons première page eng 2" width="284" height="284"/>
+        <image name="icons première page eng 3" width="284" height="284"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AuB-3m-ZZj"/>
     </inferredMetricsTieBreakers>

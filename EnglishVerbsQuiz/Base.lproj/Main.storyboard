@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,46 +23,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" image="icons première page eng 2" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Ov-MY6">
-                                <rect key="frame" x="85" y="398" width="140" height="140"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qr3-Ov-MY6" secondAttribute="height" multiplier="1:1" id="nwO-dG-kmn"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="rTl-fN-4FA" appends="YES" id="sH8-pK-1qx"/>
-                                </connections>
-                            </imageView>
                             <imageView contentMode="scaleToFill" image="icons première page eng 3" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-q4-KRJ">
-                                <rect key="frame" x="82.5" y="76.5" width="155" height="155"/>
+                                <rect key="frame" x="85" y="83" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="height" multiplier="1:1" id="6P9-PV-VBG"/>
+                                    <constraint firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="height" multiplier="1:1" id="2jx-AW-yGz"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ZyO-WQ-ZhQ" appends="YES" id="so3-Zx-Z6j"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" image="icons première page eng 1" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-SI-TME">
-                                <rect key="frame" x="77.5" y="236.5" width="155" height="155"/>
+                                <rect key="frame" x="85" y="241" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DSl-SI-TME" secondAttribute="height" multiplier="1:1" id="ChI-aP-AyW"/>
+                                    <constraint firstAttribute="width" secondItem="DSl-SI-TME" secondAttribute="height" multiplier="1:1" id="Uls-sD-jK6"/>
                                 </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" image="icons première page eng 2" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Ov-MY6">
+                                <rect key="frame" x="85" y="398" width="150" height="150"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qr3-Ov-MY6" secondAttribute="height" multiplier="1:1" id="f33-be-JoF"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rTl-fN-4FA" appends="YES" id="sH8-pK-1qx"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="0B0-Y2-m9N"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="7Zo-Tz-3aj"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" constant="27" id="QMp-lU-tE2"/>
-                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QPp-ry-YGQ"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="top" secondItem="DSl-SI-TME" secondAttribute="bottom" constant="6.5" id="VhY-n4-4re"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="top" secondItem="Aqs-q4-KRJ" secondAttribute="bottom" constant="5" id="dRH-vD-A0j"/>
-                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" constant="27" id="jmO-nY-BRO"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="wST-ze-Ewd"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" constant="12" id="xgp-Yb-iwH"/>
+                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3wL-U2-KHa"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="32" id="4fg-Kp-rc7"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="top" secondItem="DSl-SI-TME" secondAttribute="bottom" constant="7" id="4qs-Ej-KIo"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7cp-Fg-cDg"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CxU-s2-2j0"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" id="HCg-Fz-6hW"/>
+                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="Ism-EY-l12"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="UFQ-0m-9IF"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="top" secondItem="Aqs-q4-KRJ" secondAttribute="bottom" constant="8" id="dRX-Ke-lgB"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" id="hji-z3-ODe"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="hnd-xb-Ne7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qr3-Ov-MY6" secondAttribute="bottom" constant="20" id="leU-rk-fw7"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ANr-cx-wmb" appends="YES" id="9za-TK-b9n"/>

@@ -8,13 +8,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Listn od-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Listn od" id="BYZ-38-t0r" customClass="ViewController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,54 +24,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons première page eng 2" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Ov-MY6">
+                            <imageView contentMode="scaleToFill" image="icons première page eng 2" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Ov-MY6">
                                 <rect key="frame" x="85" y="398" width="140" height="140"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="qr3-Ov-MY6" secondAttribute="height" multiplier="1:1" id="QsP-MW-uSM"/>
+                                    <constraint firstAttribute="width" secondItem="qr3-Ov-MY6" secondAttribute="height" multiplier="1:1" id="nwO-dG-kmn"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="rTl-fN-4FA" appends="YES" id="sH8-pK-1qx"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons première page eng 3" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-q4-KRJ">
-                                <rect key="frame" x="77.5" y="76.5" width="155" height="155"/>
+                            <imageView contentMode="scaleToFill" image="icons première page eng 3" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-q4-KRJ">
+                                <rect key="frame" x="82.5" y="76.5" width="155" height="155"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="height" multiplier="1:1" id="6Mx-t3-taO"/>
+                                    <constraint firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="height" multiplier="1:1" id="6P9-PV-VBG"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ZyO-WQ-ZhQ" appends="YES" id="so3-Zx-Z6j"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons première page eng 1" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-SI-TME">
+                            <imageView contentMode="scaleToFill" image="icons première page eng 1" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-SI-TME">
                                 <rect key="frame" x="77.5" y="236.5" width="155" height="155"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DSl-SI-TME" secondAttribute="height" multiplier="1:1" id="jPy-Ez-8iU"/>
+                                    <constraint firstAttribute="width" secondItem="DSl-SI-TME" secondAttribute="height" multiplier="1:1" id="ChI-aP-AyW"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="DPq-ky-QWD"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" constant="-15" id="Slh-GI-9vr"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="top" secondItem="Aqs-q4-KRJ" secondAttribute="bottom" constant="5" id="XCT-ka-PiU"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="top" secondItem="DSl-SI-TME" secondAttribute="bottom" constant="6.5" id="a0t-ZO-MQw"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="bGW-b0-ATI"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="exb-bl-MXK"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" constant="-15" id="fjN-Mb-asj"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="mU0-hc-fIi"/>
-                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="sdZ-VT-ief"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="184" id="wRB-Jh-DIb"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" id="xhZ-dj-R5B"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="0B0-Y2-m9N"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5" id="7Zo-Tz-3aj"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" constant="27" id="QMp-lU-tE2"/>
+                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QPp-ry-YGQ"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="top" secondItem="DSl-SI-TME" secondAttribute="bottom" constant="6.5" id="VhY-n4-4re"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="top" secondItem="Aqs-q4-KRJ" secondAttribute="bottom" constant="5" id="dRH-vD-A0j"/>
+                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" constant="27" id="jmO-nY-BRO"/>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="wST-ze-Ewd"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" constant="12" id="xgp-Yb-iwH"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ANr-cx-wmb" appends="YES" id="9za-TK-b9n"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZwH-2J-isK"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ZyO-WQ-ZhQ">
@@ -102,15 +102,15 @@
                         <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="YMQ-R3-0Mb" style="IBUITableViewCellStyleDefault" id="Xc6-S2-60f">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="YMQ-R3-0Mb" style="IBUITableViewCellStyleDefault" id="Xc6-S2-60f">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc6-S2-60f" id="b6Q-1i-2zi">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YMQ-R3-0Mb">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,6 +118,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bmj-9i-I6x" kind="show" identifier="showQuiz" id="Mdc-Ul-j9c"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -126,17 +129,8 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Choose Quiz Content" id="iWl-g5-6KQ">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="ezq-P7-0HZ">
-                            <connections>
-                                <action selector="OK:" destination="HrO-bL-3xN" id="JFY-Cb-guS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Choose Quiz Content" id="iWl-g5-6KQ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="bmj-9i-I6x" kind="show" identifier="showQuiz" id="irq-VG-u1C"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFt-jA-d3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,8 +296,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZL-nl-huq">
-                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="532" width="320" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Another One!"/>
                                 <connections>
                                     <action selector="another:" destination="bmj-9i-I6x" eventType="touchUpInside" id="ch4-U5-KXt"/>
@@ -982,35 +977,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This ia a good place to start. These are the most common verbs of the english language. It is important to know them all" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdV-q7-ql7">
-                                <rect key="frame" x="16" y="115" width="288" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdV-q7-ql7">
+                                <rect key="frame" x="17.5" y="117" width="289" height="91"/>
                                 <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="59v-wM-VDu"/>
-                                    <constraint firstAttribute="height" constant="100" id="BdH-mV-Bzu"/>
+                                    <constraint firstAttribute="width" constant="289" id="B3D-Dr-EbY"/>
+                                    <constraint firstAttribute="height" constant="91" id="BgM-Np-DcX"/>
+                                    <constraint firstAttribute="width" secondItem="TdV-q7-ql7" secondAttribute="height" multiplier="289:91" id="PIG-TW-EWJ"/>
                                 </constraints>
+                                <string key="text">This is a good place to start. 
+These are the most common verbs in the english language. It is important to know them all</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVO-7Q-EnO">
-                                <rect key="frame" x="16" y="280" width="288" height="100"/>
+                                <rect key="frame" x="16" y="290" width="289" height="113"/>
                                 <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="KKu-BM-KlH"/>
-                                    <constraint firstAttribute="height" constant="100" id="x96-ub-att"/>
+                                    <constraint firstAttribute="width" secondItem="JVO-7Q-EnO" secondAttribute="height" multiplier="289:113" id="Cl5-dY-ono"/>
+                                    <constraint firstAttribute="height" constant="113" id="gfk-lb-W8Q"/>
+                                    <constraint firstAttribute="width" constant="289" id="lfk-uY-Ryg"/>
                                 </constraints>
-                                <string key="text">The most important difficulty of English verbs are irrugalar verbs. Practice in particular the "Preterite and the "Present Perfect"</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <string key="text">In English, verbs can be repetitive. The main difficulty is with irregular verbs. In particular study the “Preterite and ”Present Perfect” to learn the Past Participle 
+</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More than 400 irregular verbs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyA-A2-Ozb">
-                                <rect key="frame" x="16" y="223" width="288" height="57.5"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More than 400 irregular verbs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyA-A2-Ozb">
+                                <rect key="frame" x="15.5" y="233" width="289" height="57.5"/>
                                 <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="G6q-3G-U5C"/>
+                                    <constraint firstAttribute="width" constant="289" id="JIh-8u-gLo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1019,36 +1019,25 @@
                                     <outletCollection property="gestureRecognizers" destination="fFc-Al-8bc" appends="YES" id="Gcg-JR-jiM"/>
                                 </connections>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the verbs: More than 1300 verbs " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HY-LN-raD">
-                                <rect key="frame" x="16" y="388.5" width="288" height="57.5"/>
-                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="Up0-sJ-MNI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="THD-79-nut" appends="YES" id="Vs3-C0-C80"/>
-                                </connections>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this section the whole data base is open. So you can be quized on any of the more 13000 verbs." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-rh-lCB">
-                                <rect key="frame" x="16" y="448" width="288" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This section includes the whole database. So you can be quizzed on more than 1300 verbs." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-rh-lCB">
+                                <rect key="frame" x="14.5" y="486.5" width="289" height="69"/>
                                 <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="tYy-kt-Pga"/>
+                                    <constraint firstAttribute="width" constant="289" id="p79-yz-TxX"/>
+                                    <constraint firstAttribute="width" secondItem="DWb-rh-lCB" secondAttribute="height" multiplier="289:69" id="pkr-fb-yLQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 of the most common verbs in English" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN0-cp-LSw">
-                                <rect key="frame" x="16" y="64" width="288" height="57.5"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 of the most common verbs in English" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN0-cp-LSw">
+                                <rect key="frame" x="17" y="59" width="289" height="58"/>
                                 <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="jG3-sL-J3g"/>
+                                    <constraint firstAttribute="height" constant="58" id="Brb-lT-bE8"/>
+                                    <constraint firstAttribute="width" secondItem="zN0-cp-LSw" secondAttribute="height" multiplier="289:58" id="Piu-SS-Vtn"/>
+                                    <constraint firstAttribute="width" constant="289" id="UEB-bT-Mhf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1057,27 +1046,43 @@
                                     <outletCollection property="gestureRecognizers" destination="SA0-sz-FQf" appends="YES" id="ehp-eh-dqy"/>
                                 </connections>
                             </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the verbs: More than 1300 verbs " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HY-LN-raD">
+                                <rect key="frame" x="15.5" y="430" width="289" height="57"/>
+                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="RNx-xQ-HZ2"/>
+                                    <constraint firstAttribute="width" secondItem="9HY-LN-raD" secondAttribute="height" multiplier="289:57" id="uaS-hW-0pq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="THD-79-nut" appends="YES" id="Vs3-C0-C80"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="46" id="BKH-h5-bfn"/>
-                            <constraint firstItem="WyA-A2-Ozb" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="DO7-XU-G6S"/>
-                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="46" id="JSE-eH-BsK"/>
-                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="top" secondItem="WyA-A2-Ozb" secondAttribute="bottom" constant="-0.5" id="KE5-km-2c7"/>
-                            <constraint firstItem="zN0-cp-LSw" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="L7Y-qr-0PN"/>
-                            <constraint firstItem="DWb-rh-lCB" firstAttribute="top" secondItem="9HY-LN-raD" secondAttribute="bottom" constant="2" id="LZB-P6-9WB"/>
-                            <constraint firstItem="TdV-q7-ql7" firstAttribute="top" secondItem="zN0-cp-LSw" secondAttribute="bottom" constant="-6.5" id="bGI-hx-Igr"/>
-                            <constraint firstAttribute="bottom" secondItem="DWb-rh-lCB" secondAttribute="bottom" constant="20" symbolic="YES" id="byu-Fd-bGZ"/>
-                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="cF5-ji-ACD"/>
-                            <constraint firstItem="DWb-rh-lCB" firstAttribute="trailing" secondItem="9HY-LN-raD" secondAttribute="trailing" id="cef-un-ssB"/>
-                            <constraint firstItem="TdV-q7-ql7" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="jsX-Fs-y6b"/>
-                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="top" secondItem="TdV-q7-ql7" secondAttribute="bottom" constant="65" id="lXk-ui-7ka"/>
-                            <constraint firstItem="DWb-rh-lCB" firstAttribute="leading" secondItem="9HY-LN-raD" secondAttribute="leading" id="pb9-K2-230"/>
-                            <constraint firstItem="9HY-LN-raD" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="wjM-Mf-wa8"/>
+                            <constraint firstItem="TdV-q7-ql7" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" constant="1.75" id="6gd-5R-t8A"/>
+                            <constraint firstItem="WyA-A2-Ozb" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="-22.25" id="7uC-0M-SV3"/>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="84f-2C-vZb"/>
+                            <constraint firstItem="WyA-A2-Ozb" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="8l8-sW-MrX"/>
+                            <constraint firstItem="JVO-7Q-EnO" firstAttribute="top" secondItem="WyA-A2-Ozb" secondAttribute="bottom" constant="-0.5" id="Ciu-lj-U1B"/>
+                            <constraint firstItem="zN0-cp-LSw" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" constant="1.25" id="GBN-d5-lbp"/>
+                            <constraint firstItem="DWb-rh-lCB" firstAttribute="top" secondItem="9HY-LN-raD" secondAttribute="bottom" constant="-0.5" id="Tj2-B3-fGG"/>
+                            <constraint firstItem="DWb-rh-lCB" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" constant="-1" id="VaU-nw-2Dy"/>
+                            <constraint firstItem="TdV-q7-ql7" firstAttribute="top" secondItem="zN0-cp-LSw" secondAttribute="bottom" id="eDc-AY-iSS"/>
+                            <constraint firstItem="9HY-LN-raD" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="fwy-Eh-dXc"/>
+                            <constraint firstItem="WyA-A2-Ozb" firstAttribute="top" secondItem="TdV-q7-ql7" secondAttribute="bottom" constant="25" id="l2C-ut-aPJ"/>
+                            <constraint firstItem="9HY-LN-raD" firstAttribute="top" secondItem="JVO-7Q-EnO" secondAttribute="bottom" constant="27" id="lNa-Bj-zph"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="allVerbs" destination="9HY-LN-raD" id="ZHF-kr-xYJ"/>
+                        <outlet property="defAllVerbs" destination="DWb-rh-lCB" id="N5f-Bm-jCE"/>
+                        <outlet property="defIrregular" destination="JVO-7Q-EnO" id="p8i-ri-fkv"/>
+                        <outlet property="defMostVerbe" destination="TdV-q7-ql7" id="eKw-iH-Qk6"/>
                         <outlet property="irregularVerbs" destination="WyA-A2-Ozb" id="qCC-jm-DL3"/>
                         <outlet property="mostVerbs" destination="zN0-cp-LSw" id="I7d-gc-kcz"/>
                         <segue destination="HrO-bL-3xN" kind="show" identifier="showTempVerbe" id="wRu-J4-dce"/>
@@ -1164,6 +1169,9 @@
                             <outlet property="delegate" destination="MZ6-ug-IM8" id="5OZ-ey-blm"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="TYU-i9-XhB"/>
+                    </toolbarItems>
                     <connections>
                         <outlet property="headerText" destination="dhM-ns-o8f" id="akE-lQ-6lZ"/>
                     </connections>

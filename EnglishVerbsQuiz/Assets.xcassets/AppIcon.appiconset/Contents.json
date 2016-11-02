@@ -3,7 +3,7 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPad spotlight 1x Eng-1.png",
+      "filename" : "iPad spotlight 1x Eng-2.png",
       "scale" : "2x"
     },
     {
@@ -15,7 +15,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon29@2x Eng.png",
+      "filename" : "icon29@2x Eng-1.png",
       "scale" : "2x"
     },
     {
@@ -27,13 +27,13 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPad spotlight 2x Eng-3.png",
+      "filename" : "iPad notification 1x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPad notification 2x -1.png",
+      "filename" : "iPad notification 2x .png",
       "scale" : "3x"
     },
     {
@@ -57,7 +57,7 @@
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad spotlight 1x Eng.png",
+      "filename" : "iPad spotlight 1x Eng-3.png",
       "scale" : "2x"
     },
     {
@@ -69,19 +69,19 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icon29@2x Eng-1.png",
+      "filename" : "iPad settings 2x eng.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad spotlight 1x Eng-2.png",
+      "filename" : "iPad spotlight 1x Eng-1.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad spotlight 2x Eng-2.png",
+      "filename" : "iPad spotlight 2x Eng-1.png",
       "scale" : "2x"
     },
     {

@@ -146,6 +146,7 @@
 				8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */,
 				8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */,
 				8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */,
+				8E3B4EAF1DC7DFB100129963 /* OptionModeVerbeViewController.swift */,
 				8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */,
 				8EE194211D9C570800BCC811 /* QuizViewController.swift */,
 				8E94E2A51DB2BF4A00AFB589 /* RightAnswerViewController.swift */,
@@ -158,7 +159,6 @@
 				8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */,
 				8E0E07D41D8DC3BF0065BC87 /* Info.plist */,
 				8E94E2A91DB6BB6700AFB589 /* TodoList.xcdatamodeld */,
-				8E3B4EAF1DC7DFB100129963 /* OptionModeVerbeViewController.swift */,
 			);
 			path = EnglishVerbsQuiz;
 			sourceTree = "<group>";

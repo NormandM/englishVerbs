@@ -54,18 +54,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="0PE-99-XEo"/>
                             <constraint firstItem="Aqs-q4-KRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3wL-U2-KHa"/>
                             <constraint firstItem="DSl-SI-TME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="32" id="4fg-Kp-rc7"/>
                             <constraint firstItem="qr3-Ov-MY6" firstAttribute="top" secondItem="DSl-SI-TME" secondAttribute="bottom" constant="7" id="4qs-Ej-KIo"/>
                             <constraint firstItem="qr3-Ov-MY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7cp-Fg-cDg"/>
                             <constraint firstItem="DSl-SI-TME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CxU-s2-2j0"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" id="HCg-Fz-6hW"/>
-                            <constraint firstItem="Aqs-q4-KRJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="Ism-EY-l12"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="UFQ-0m-9IF"/>
                             <constraint firstItem="DSl-SI-TME" firstAttribute="top" secondItem="Aqs-q4-KRJ" secondAttribute="bottom" constant="8" id="dRX-Ke-lgB"/>
-                            <constraint firstItem="DSl-SI-TME" firstAttribute="height" secondItem="Aqs-q4-KRJ" secondAttribute="height" id="hji-z3-ODe"/>
-                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="hnd-xb-Ne7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qr3-Ov-MY6" secondAttribute="bottom" constant="20" id="leU-rk-fw7"/>
+                            <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="yuS-I6-hpk"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ANr-cx-wmb" appends="YES" id="9za-TK-b9n"/>

@@ -9,12 +9,13 @@
 import UIKit
 import QuartzCore
 class OptionModeVerbeViewController: UIViewController {
-    @IBOutlet weak var mostVerbs: UILabel!
-    @IBOutlet weak var irregularVerbs: UILabel!
-    @IBOutlet weak var allVerbs: UILabel!
-    @IBOutlet weak var defMostVerbe: UILabel!
-    @IBOutlet weak var defIrregular: UILabel!
-    @IBOutlet weak var defAllVerbs: UILabel!
+ 
+    @IBOutlet weak var commonVerbs: UITextView!
+    @IBOutlet weak var irregularVerbs: UITextView!
+    @IBOutlet weak var allVerbs: UITextView!
+    @IBOutlet weak var def100Verbs: UITextView!
+    @IBOutlet weak var defIrregularVerbs: UITextView!
+    @IBOutlet weak var defAllVerbs: UITextView!
     
     var verbsArray: NSArray = []
     var groupeVerbe: String = ""
@@ -23,17 +24,19 @@ class OptionModeVerbeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose a group of verbs"
-        
-        defMostVerbe.layer.masksToBounds = true
-        defIrregular.layer.masksToBounds = true
-        defAllVerbs.layer.masksToBounds = true
-        mostVerbs.layer.masksToBounds = true
+        def100Verbs.layer.masksToBounds = true
+        def100Verbs.layer.cornerRadius = 10
+        def100Verbs.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 0)
+        defIrregularVerbs.layer.masksToBounds  = true
+        defIrregularVerbs.layer.cornerRadius = 10
+        defIrregularVerbs.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 0)
+        defAllVerbs.layer.masksToBounds  = true
+        defAllVerbs.layer.cornerRadius = 10
+        defAllVerbs.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 0)
+        commonVerbs.layer.masksToBounds = true
         irregularVerbs.layer.masksToBounds = true
         allVerbs.layer.masksToBounds = true
-        defMostVerbe.layer.cornerRadius = 10
-        defIrregular.layer.cornerRadius = 10
-        defAllVerbs.layer.cornerRadius = 10
-        mostVerbs.layer.cornerRadius = 10
+        commonVerbs.layer.cornerRadius = 10
         irregularVerbs.layer.cornerRadius = 10
         allVerbs.layer.cornerRadius = 10
     }
@@ -47,22 +50,20 @@ class OptionModeVerbeViewController: UIViewController {
     
     // MARK: - Navigation
 
-    
-    
-    @IBAction func showTempDuVerbe(_ sender: Any) {
+    @IBAction func showCommonVerbs(_ sender: Any) {
         groupeVerbe = "100 most Common Verbs"
-        performSegue(withIdentifier: "showTempVerbe", sender: nil)    }
-    
-    @IBAction func irregular(_ sender: Any) {
-        groupeVerbe = "Irregular Verbs"
         performSegue(withIdentifier: "showTempVerbe", sender: nil)
     }
-    
-     func allverbs(_ sender: Any) {
+    @IBAction func showIrregularVerbs(_ sender: Any) {
+        groupeVerbe = "Irregular Verbs"
+        performSegue(withIdentifier: "showTempVerbe", sender: nil)
+
+    }
+    @IBAction func showAllVerbs(_ sender: Any) {
         groupeVerbe = "All 1000 Verbs!"
         performSegue(withIdentifier: "showTempVerbe", sender: nil)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""

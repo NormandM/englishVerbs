@@ -16,6 +16,8 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
     var noVerb: [Int] = []
     var verbArray: NSArray = []
 
+    @IBOutlet weak var delete: UIBarButtonItem!
+    
     @IBOutlet weak var headerText: UILabel!
     
     let managedObjectContext = DataController.sharedInstance.managedObjectContext
@@ -37,6 +39,7 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.title = "Improvement List"
         self.tabBarController?.tabBar.isHidden = false
         let myString: NSString = "List of wrong Quiz answers. \n Click to see conjugation or Swipe to Delete"

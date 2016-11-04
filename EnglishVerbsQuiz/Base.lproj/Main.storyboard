@@ -297,11 +297,16 @@
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZL-nl-huq">
-                                <rect key="frame" x="0.0" y="532" width="320" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZL-nl-huq">
+                                <rect key="frame" x="90" y="529" width="140" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Another One!"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="J5c-eI-Rpv"/>
+                                    <constraint firstAttribute="height" constant="34" id="Vzg-VZ-18c"/>
+                                </constraints>
+                                <state key="normal" title="Another One!">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="another:" destination="bmj-9i-I6x" eventType="touchUpInside" id="ch4-U5-KXt"/>
                                 </connections>
@@ -324,6 +329,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Air-tj-RrN" firstAttribute="top" secondItem="rJj-nn-EdN" secondAttribute="bottom" constant="52" id="1tE-45-Ui0"/>
                             <constraint firstItem="ixx-wd-xvD" firstAttribute="top" secondItem="aOJ-fc-6TH" secondAttribute="bottom" constant="20" id="3YP-ZP-Shy"/>
                             <constraint firstItem="wME-J6-qr9" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="-2" id="5qz-Oz-S1A"/>
                             <constraint firstItem="ixx-wd-xvD" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="5" id="72i-gK-45y"/>
@@ -347,7 +353,7 @@
                             <constraint firstItem="mFp-Ky-Ep7" firstAttribute="leading" secondItem="ixx-wd-xvD" secondAttribute="trailing" constant="8" id="K20-M7-UHC"/>
                             <constraint firstItem="hIS-1f-AYp" firstAttribute="leading" secondItem="Yzp-EI-5AC" secondAttribute="leading" id="LWs-vT-58a"/>
                             <constraint firstItem="aOJ-fc-6TH" firstAttribute="top" secondItem="iNm-aK-1Iu" secondAttribute="bottom" constant="20" id="Ms1-bS-IzE"/>
-                            <constraint firstItem="3nM-0D-Zyf" firstAttribute="top" secondItem="eZL-nl-huq" secondAttribute="bottom" id="O7j-LW-Bq8"/>
+                            <constraint firstItem="3nM-0D-Zyf" firstAttribute="top" secondItem="eZL-nl-huq" secondAttribute="bottom" constant="5" id="O7j-LW-Bq8"/>
                             <constraint firstItem="gTW-a8-l6t" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="-24" id="SAd-VB-gF1"/>
                             <constraint firstItem="lr2-1f-8vp" firstAttribute="top" secondItem="Air-tj-RrN" secondAttribute="bottom" constant="5.5" id="T7E-4b-Ngu"/>
                             <constraint firstItem="mFp-Ky-Ep7" firstAttribute="top" secondItem="wME-J6-qr9" secondAttribute="bottom" constant="20" id="TAf-Ya-cy0"/>
@@ -360,6 +366,7 @@
                             <constraint firstItem="udK-5z-8mz" firstAttribute="leading" secondItem="iNm-aK-1Iu" secondAttribute="trailing" constant="8" id="aJo-CG-328"/>
                             <constraint firstItem="fCM-wF-HBk" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="5" id="aU4-0c-T4A"/>
                             <constraint firstItem="udK-5z-8mz" firstAttribute="top" secondItem="Yzp-EI-5AC" secondAttribute="bottom" constant="20" id="aUi-ie-Uwv"/>
+                            <constraint firstItem="eZL-nl-huq" firstAttribute="centerX" secondItem="OB5-oH-HYY" secondAttribute="centerX" id="abd-lz-Hno"/>
                             <constraint firstItem="hIS-1f-AYp" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="-2" id="aj9-4R-ilK"/>
                             <constraint firstItem="qr9-lJ-8wz" firstAttribute="top" secondItem="hIS-1f-AYp" secondAttribute="bottom" constant="20" id="bPo-8H-o3s"/>
                             <constraint firstItem="iNm-aK-1Iu" firstAttribute="top" secondItem="fCM-wF-HBk" secondAttribute="bottom" constant="20" id="c2Z-ex-xbx"/>
@@ -367,7 +374,6 @@
                             <constraint firstItem="qr9-lJ-8wz" firstAttribute="leading" secondItem="Yzp-EI-5AC" secondAttribute="leading" id="csY-7J-kDy"/>
                             <constraint firstItem="gTW-a8-l6t" firstAttribute="top" secondItem="qr9-lJ-8wz" secondAttribute="bottom" constant="15" id="dNl-cv-ZRT"/>
                             <constraint firstItem="aOJ-fc-6TH" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="5" id="dvu-5v-XBz"/>
-                            <constraint firstItem="eZL-nl-huq" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leading" id="ehx-Dh-Gno"/>
                             <constraint firstItem="iNm-aK-1Iu" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="5" id="etX-QL-Vhl"/>
                             <constraint firstItem="udK-5z-8mz" firstAttribute="leading" secondItem="Yzp-EI-5AC" secondAttribute="leading" id="fR4-cO-kLG"/>
                             <constraint firstItem="p6z-Xd-YNf" firstAttribute="top" secondItem="gTW-a8-l6t" secondAttribute="bottom" constant="17" id="fh2-iI-5uJ"/>
@@ -376,7 +382,6 @@
                             <constraint firstItem="VPK-ou-BOo" firstAttribute="leading" secondItem="OB5-oH-HYY" secondAttribute="leadingMargin" constant="5" id="n3H-zK-A0S"/>
                             <constraint firstItem="wME-J6-qr9" firstAttribute="trailing" secondItem="Yzp-EI-5AC" secondAttribute="trailing" id="nDT-j3-P2R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p6z-Xd-YNf" secondAttribute="trailing" constant="8" id="oww-8v-ebi"/>
-                            <constraint firstAttribute="trailing" secondItem="eZL-nl-huq" secondAttribute="trailing" id="uce-5c-xQ9"/>
                             <constraint firstItem="hIS-1f-AYp" firstAttribute="top" secondItem="mFp-Ky-Ep7" secondAttribute="bottom" constant="20" id="wMz-LG-4Y1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Yzp-EI-5AC" secondAttribute="trailing" constant="10" id="wcj-Jl-Fs9"/>
                             <constraint firstItem="Yzp-EI-5AC" firstAttribute="top" secondItem="NPX-qr-NDu" secondAttribute="bottom" constant="5" id="xCy-gb-vof"/>
@@ -398,6 +403,7 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="anotherOne" destination="eZL-nl-huq" id="14m-Px-4RC"/>
                         <outlet property="cinq" destination="NEL-ag-e9D" id="pWn-Xt-saB"/>
                         <outlet property="cinquieme" destination="hIS-1f-AYp" id="4Pl-aO-8hl"/>
                         <outlet property="deux" destination="iNm-aK-1Iu" id="Ngu-EB-fpQ"/>
@@ -666,6 +672,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="W41-JJ-NBC" secondAttribute="trailing" constant="20" id="pFW-D9-xyg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Wi-LJ-Skl" secondAttribute="trailing" constant="20" id="suq-kq-qIM"/>
                             <constraint firstItem="5S2-cU-Kfr" firstAttribute="centerY" secondItem="SqQ-4A-ali" secondAttribute="centerY" id="wEa-sh-MwN"/>
+                            <constraint firstItem="7wc-2F-aZK" firstAttribute="top" secondItem="Y73-TM-TSO" secondAttribute="bottom" constant="78" id="zZV-N2-nfN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1171,10 +1178,9 @@ These are the most common verbs in the english language. It is important to know
                             <outlet property="delegate" destination="MZ6-ug-IM8" id="5OZ-ey-blm"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="TYU-i9-XhB"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <connections>
+                        <outlet property="delete" destination="qdK-FQ-MVu" id="jL3-rV-ZNZ"/>
                         <outlet property="headerText" destination="dhM-ns-o8f" id="akE-lQ-6lZ"/>
                     </connections>
                 </tableViewController>

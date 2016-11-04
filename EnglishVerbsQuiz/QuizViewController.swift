@@ -31,6 +31,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     @IBOutlet weak var sixieme: UITextField!
     
     @IBOutlet weak var totalQuestion: UIProgressView!
+    @IBOutlet weak var anotherOne: UIButton!
     
     
     @IBOutlet weak var textFieldTopConstraint: NSLayoutConstraint!
@@ -76,6 +77,10 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         super.viewDidLoad()
         self.title = "Quiz"
         totalQuestion.progress = 0.0
+        anotherOne.layer.masksToBounds = true
+        anotherOne.layer.cornerRadius = 10
+        
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
  
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)

@@ -39,6 +39,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DSl-SI-TME" secondAttribute="height" multiplier="1:1" id="Uls-sD-jK6"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ANr-cx-wmb" appends="YES" id="ZJl-aI-ldD"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" image="icons première page eng 2" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Ov-MY6">
                                 <rect key="frame" x="85" y="398" width="150" height="150"/>
@@ -64,9 +67,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qr3-Ov-MY6" secondAttribute="bottom" constant="20" id="leU-rk-fw7"/>
                             <constraint firstItem="qr3-Ov-MY6" firstAttribute="width" secondItem="Aqs-q4-KRJ" secondAttribute="width" id="yuS-I6-hpk"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ANr-cx-wmb" appends="YES" id="9za-TK-b9n"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZwH-2J-isK"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -79,7 +79,7 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="ANr-cx-wmb">
                     <connections>
-                        <segue destination="o6E-Eh-jIM" kind="show" identifier="showQuizVerbSelection" id="5XL-6l-Tt1"/>
+                        <segue destination="o6E-Eh-jIM" kind="show" identifier="showQuizVerbSelection" id="3mW-WX-6Vt"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="rTl-fN-4FA">
@@ -982,33 +982,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8v-Cc-G7a">
-                                <rect key="frame" x="16" y="296" width="287" height="120"/>
-                                <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="287" id="m11-hB-qAY"/>
-                                    <constraint firstAttribute="width" secondItem="Y8v-Cc-G7a" secondAttribute="height" multiplier="287:120" id="zdA-gX-nv8"/>
-                                </constraints>
-                                <string key="text">In English, the main difficulty is with irregular verbs. In this section start by studying: the "Present"  the “Preterite" and ”Present Perfect” where these verbs are irregular. 
-</string>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This section includes the whole database. So you can be quizzed on more than 1300 verbs." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBz-w7-NMX">
-                                <rect key="frame" x="17" y="466" width="287" height="73"/>
-                                <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="287" id="R65-dG-fgf"/>
-                                    <constraint firstAttribute="width" secondItem="yBz-w7-NMX" secondAttribute="height" multiplier="287:73" id="yZB-RV-OiK"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="The most common verbs" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-tT-Lyd">
-                                <rect key="frame" x="16" y="95" width="287" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="The 100 most common verbs" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-tT-Lyd">
+                                <rect key="frame" x="16" y="77" width="287" height="40"/>
+                                <color key="backgroundColor" red="0.054901960784313725" green="0.67450980392156867" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="a1a-oq-eh6"/>
@@ -1018,24 +994,28 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="DQ5-yh-IMV" appends="YES" id="j6d-ma-tZi"/>
+                                    <outletCollection property="gestureRecognizers" destination="Kd7-UK-9Fj" appends="YES" id="qHt-kl-L2L"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXR-Lk-03b">
-                                <rect key="frame" x="16" y="135" width="287" height="111"/>
-                                <color key="backgroundColor" red="0.64705882349999999" green="0.7843137255" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXR-Lk-03b">
+                                <rect key="frame" x="16" y="117" width="287" height="64"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="0FD-8c-gC3"/>
-                                    <constraint firstAttribute="width" secondItem="YXR-Lk-03b" secondAttribute="height" multiplier="287:111" id="zJy-Jk-FxD"/>
+                                    <constraint firstAttribute="width" secondItem="YXR-Lk-03b" secondAttribute="height" multiplier="9:2" constant="-1" id="QxM-yz-0Ip"/>
                                 </constraints>
-                                <string key="text">This is a good place to start. Choosing this option you will be quizzed on 100 of the most common verbs in English. It is important to know them all.          </string>
+                                <string key="text" base64-UTF8="YES">
+VGhlIGJlc3QgcGxhY2UgdG8gc3RhcnQuDVRoZSAfZmlyc3Qgc3RlcCBpcyB0byBrbm93IHRoZW0gYWxs
+IQ
+</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="More than 400 irregular verbs" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lq-cy-pBh">
-                                <rect key="frame" x="16" y="256" width="287" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="221" width="287" height="40"/>
+                                <color key="backgroundColor" red="0.054901960784313725" green="0.67450980392156867" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Lq-cy-pBh" secondAttribute="height" multiplier="287:40" id="GDp-Rr-9jc"/>
@@ -1044,10 +1024,13 @@
                                 <color key="textColor" red="0.060655785720000001" green="0.15792367539999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0ls-g0-TWK" appends="YES" id="bt9-rM-cb2"/>
+                                </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="All the verbs:  More than 1300" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8s-CH-q2w">
-                                <rect key="frame" x="16" y="426" width="287" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.93015008219999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="All the verbs" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8s-CH-q2w">
+                                <rect key="frame" x="16" y="399" width="287" height="40"/>
+                                <color key="backgroundColor" red="0.054901960784313725" green="0.67450980392156867" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="Fwh-Sf-7Aj"/>
@@ -1057,8 +1040,30 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="0xr-43-ZeT" appends="YES" id="Syn-Qs-ZkX"/>
+                                    <outletCollection property="gestureRecognizers" destination="Gvc-5P-u4v" appends="YES" id="89q-bB-YDc"/>
                                 </connections>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="You can click here to access our whole database. (more than 1300 verbs!)" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBz-w7-NMX">
+                                <rect key="frame" x="17" y="438" width="286" height="83"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="R65-dG-fgf"/>
+                                    <constraint firstAttribute="width" secondItem="yBz-w7-NMX" secondAttribute="height" multiplier="287:73" constant="-40.315068493150704" id="yZB-RV-OiK"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="The main difficulty of the English language! The biggest challenges are the Preterite and The Present Perfect." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evU-g5-w5r">
+                                <rect key="frame" x="16" y="261" width="288" height="98"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="evU-g5-w5r" secondAttribute="height" multiplier="41:11" constant="-77.272727272727252" id="ceN-08-ePk"/>
+                                    <constraint firstAttribute="width" constant="288" id="iWv-op-I6M"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1066,45 +1071,42 @@
                         <constraints>
                             <constraint firstItem="Z8s-CH-q2w" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="7B3-em-nEk"/>
                             <constraint firstItem="yBz-w7-NMX" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="IOl-GE-Bc2"/>
-                            <constraint firstItem="yBz-w7-NMX" firstAttribute="top" secondItem="Z8s-CH-q2w" secondAttribute="bottom" id="Jiv-Hj-2gb"/>
-                            <constraint firstItem="9Lq-cy-pBh" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="-8" id="KyX-7g-wVH"/>
+                            <constraint firstItem="yBz-w7-NMX" firstAttribute="top" secondItem="Z8s-CH-q2w" secondAttribute="bottom" constant="-1" id="Jiv-Hj-2gb"/>
                             <constraint firstItem="YXR-Lk-03b" firstAttribute="top" secondItem="avQ-tT-Lyd" secondAttribute="bottom" id="Mb7-rl-ZsM"/>
-                            <constraint firstItem="Y8v-Cc-G7a" firstAttribute="top" secondItem="9Lq-cy-pBh" secondAttribute="bottom" id="MjU-4L-GwM"/>
-                            <constraint firstItem="Z8s-CH-q2w" firstAttribute="top" secondItem="Y8v-Cc-G7a" secondAttribute="bottom" constant="10" id="XtM-5X-Z9V"/>
+                            <constraint firstItem="evU-g5-w5r" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="Z8V-7R-bI4"/>
                             <constraint firstItem="YXR-Lk-03b" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="aS5-3Q-ZEg"/>
-                            <constraint firstItem="9Lq-cy-pBh" firstAttribute="top" secondItem="YXR-Lk-03b" secondAttribute="bottom" constant="10" id="gtx-bx-9sX"/>
-                            <constraint firstItem="Y8v-Cc-G7a" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="oZO-cE-Cr3"/>
+                            <constraint firstItem="9Lq-cy-pBh" firstAttribute="top" secondItem="YXR-Lk-03b" secondAttribute="bottom" constant="40" id="gtx-bx-9sX"/>
+                            <constraint firstItem="evU-g5-w5r" firstAttribute="top" secondItem="9Lq-cy-pBh" secondAttribute="bottom" id="n5H-ZX-ZNi"/>
                             <constraint firstItem="9Lq-cy-pBh" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" constant="-0.5" id="q0R-hD-6Q8"/>
                             <constraint firstItem="avQ-tT-Lyd" firstAttribute="centerX" secondItem="YzI-YR-us6" secondAttribute="centerX" id="qsD-4Y-OrY"/>
+                            <constraint firstItem="Z8s-CH-q2w" firstAttribute="top" secondItem="evU-g5-w5r" secondAttribute="bottom" constant="40" id="vjq-ry-BGK"/>
+                            <constraint firstItem="9Lq-cy-pBh" firstAttribute="centerY" secondItem="YzI-YR-us6" secondAttribute="centerY" constant="-43" id="xb3-Ek-0cp"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="f3b-sZ-usB" appends="YES" id="IGw-dv-ZXl"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="allVerbs" destination="Z8s-CH-q2w" id="Q0N-au-nOb"/>
                         <outlet property="commonVerbs" destination="avQ-tT-Lyd" id="Iae-w4-Xxw"/>
                         <outlet property="def100Verbs" destination="YXR-Lk-03b" id="UEQ-Ux-QZu"/>
                         <outlet property="defAllVerbs" destination="yBz-w7-NMX" id="d6F-7J-sWQ"/>
-                        <outlet property="defIrregularVerbs" destination="Y8v-Cc-G7a" id="LjO-Rb-gmr"/>
+                        <outlet property="defIrregularVerbs" destination="evU-g5-w5r" id="wV4-gy-rNJ"/>
                         <outlet property="irregularVerbs" destination="9Lq-cy-pBh" id="APG-2t-KZb"/>
-                        <segue destination="HrO-bL-3xN" kind="show" identifier="showTempVerbe" id="wRu-J4-dce"/>
+                        <segue destination="HrO-bL-3xN" kind="show" identifier="showTempVerbe" id="5jk-sh-kzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKI-rn-ulj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="DQ5-yh-IMV">
+                <tapGestureRecognizer id="Kd7-UK-9Fj">
                     <connections>
-                        <action selector="showCommonVerbs:" destination="o6E-Eh-jIM" id="nP1-GA-8Ci"/>
+                        <action selector="showCommon:" destination="o6E-Eh-jIM" id="oPu-F0-VOp"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="f3b-sZ-usB">
+                <tapGestureRecognizer id="0ls-g0-TWK">
                     <connections>
-                        <action selector="showIrregularVerbs:" destination="o6E-Eh-jIM" id="pwk-6r-eCM"/>
+                        <action selector="showIrregularVerbs:" destination="o6E-Eh-jIM" id="54v-Hh-zMZ"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="0xr-43-ZeT">
+                <tapGestureRecognizer id="Gvc-5P-u4v">
                     <connections>
-                        <action selector="showAllVerbs:" destination="o6E-Eh-jIM" id="pDc-wW-CqY"/>
+                        <action selector="showAllVerbs:" destination="o6E-Eh-jIM" id="lfx-sa-QzB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

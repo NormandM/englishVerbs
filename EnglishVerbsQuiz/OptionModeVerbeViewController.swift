@@ -50,20 +50,27 @@ class OptionModeVerbeViewController: UIViewController {
     
     // MARK: - Navigation
 
-    @IBAction func showCommonVerbs(_ sender: Any) {
-        groupeVerbe = "100 most Common Verbs"
-        performSegue(withIdentifier: "showTempVerbe", sender: nil)
+    @IBAction func showCommon(_ sender: UITapGestureRecognizer) {
+
+            groupeVerbe = "100 most Common Verbs"
+            print("100 most Common Verbs")
+            performSegue(withIdentifier: "showTempVerbe", sender: sender)
     }
-    @IBAction func showIrregularVerbs(_ sender: Any) {
+    
+    @IBAction func showIrregularVerbs(_ sender: UITapGestureRecognizer) {
         groupeVerbe = "Irregular Verbs"
-        performSegue(withIdentifier: "showTempVerbe", sender: nil)
+        print("Irregular Verbs")
+        performSegue(withIdentifier: "showTempVerbe", sender: sender)
 
     }
-    @IBAction func showAllVerbs(_ sender: Any) {
+    
+    @IBAction func showAllVerbs(_ sender: UITapGestureRecognizer) {
         groupeVerbe = "All 1000 Verbs!"
-        performSegue(withIdentifier: "showTempVerbe", sender: nil)
+        print("All 1000 Verbs!")
+        performSegue(withIdentifier: "showTempVerbe", sender: sender)
     }
-
+    
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""

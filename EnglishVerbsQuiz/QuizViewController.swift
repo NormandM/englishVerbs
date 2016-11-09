@@ -151,7 +151,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
         }else{
             premier.text = ""
-            premier.backgroundColor = UIColor.green
+            premier.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
             premier.isUserInteractionEnabled = true
             deuxieme.text = ""
             deuxieme.backgroundColor = UIColor.lightGray
@@ -200,7 +200,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                     deuxieme.text = second
                     deuxieme.backgroundColor = UIColor.white
                 }else if textIndex == 0{
-                    deuxieme.backgroundColor = UIColor.green
+                    deuxieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
                     deuxieme.isUserInteractionEnabled = true
                 }
                 if personne == third || second == third || first == third{
@@ -208,7 +208,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                     troisieme.backgroundColor = UIColor.white
                 }else if textIndex < 2{
                     if textIndex != 0 || personne == fourth {
-                        troisieme.backgroundColor = UIColor.green
+                        troisieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
                         troisieme.isUserInteractionEnabled = true
                     }
                 }
@@ -235,17 +235,20 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             if chosenTextField.text == personne {
                 if personne == second {
                     deuxieme.backgroundColor = UIColor.white
+                    premier.isUserInteractionEnabled = false
                 }
                 if personne == fourth {
                     quatrieme.text = fourth
                     quatrieme.backgroundColor = UIColor.white
+                    premier.isUserInteractionEnabled = false
                 }else{
-                    quatrieme.backgroundColor = UIColor.green
+                    quatrieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
                     quatrieme.isUserInteractionEnabled = true
                 }
                 if personne == fifth {
                     cinquieme.text = fifth
                     cinquieme.backgroundColor = UIColor.white
+                    premier.isUserInteractionEnabled = false
                 }
                 if deuxieme.text != "" && quatrieme.text != "" {
                     message = "true"
@@ -258,8 +261,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         
         return message
     }
-//
-    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
+    func checkAnswer(){
         if premier.isEditing{
             textFieldAnswer(premier, personne: first)
         }
@@ -285,15 +287,22 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
             AudioServicesPlaySystemSound(soundID)
-
+            
             progressClaculation()
             goodResponse = goodResponse + 1
+            premier.isUserInteractionEnabled = false
+            deuxieme.isUserInteractionEnabled = false
+            troisieme.isUserInteractionEnabled = false
+            quatrieme.isUserInteractionEnabled = false
+            cinquieme.isUserInteractionEnabled = false
+            sixieme.isUserInteractionEnabled = false
+
         }else if message == "false" {
             let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
             AudioServicesPlaySystemSound(soundID)
-
+            
             progressClaculation()
             let verb = verbeInfinitif.text
             let tense = arraySelection[1]
@@ -312,9 +321,16 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         quatrieme.resignFirstResponder()
         cinquieme.resignFirstResponder()
         sixieme.resignFirstResponder()
+
         if progressInt == 10.0 {
             performSegue(withIdentifier: "showQuizResult", sender: nil)        }
         
+
+    }
+    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
+        if testReturnOrDone() {
+            checkAnswer()
+        }
         return true
         
     }
@@ -398,7 +414,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             six.text = ""
             premier.borderStyle = .none
             premier.backgroundColor = UIColor.clear
-            deuxieme.backgroundColor = UIColor.green
+            deuxieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
             deuxieme.isUserInteractionEnabled = true
             troisieme.borderStyle = .none
             troisieme.backgroundColor = UIColor.clear
@@ -446,4 +462,19 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         progress = progressInt / 10
         totalQuestion.progress = progress
     }
+    func testReturnOrDone() -> Bool {
+        if premier.backgroundColor != UIColor.white || deuxieme.backgroundColor != UIColor.white || troisieme.backgroundColor != UIColor.white || quatrieme.backgroundColor != UIColor.white || cinquieme.backgroundColor != UIColor.white || sixieme.backgroundColor != UIColor.white {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    @IBAction func done(_ sender: UIButton) {
+        if testReturnOrDone() {
+            checkAnswer()
+        }
+        
+    }
+    
 }

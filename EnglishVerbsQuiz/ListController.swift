@@ -46,7 +46,7 @@ class ListController: UITableViewController, NSFetchedResultsControllerDelegate 
         var myMutableString = NSMutableAttributedString()
         myMutableString = NSMutableAttributedString(string: myString as
             String, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 18.0)!])
-        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSFontAttributeName: UIFont(name: "Georgia", size: 18)!])
+        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 18)!])
         myMutableString.addAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 12)!], range: NSRange(location: 29, length: 44 ))
         headerText.attributedText = myMutableString
         

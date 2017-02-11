@@ -53,20 +53,17 @@ class OptionModeVerbeViewController: UIViewController {
     @IBAction func showCommon(_ sender: UITapGestureRecognizer) {
 
             groupeVerbe = "100 most Common Verbs"
-            print("100 most Common Verbs")
             performSegue(withIdentifier: "showTempVerbe", sender: sender)
     }
     
     @IBAction func showIrregularVerbs(_ sender: UITapGestureRecognizer) {
         groupeVerbe = "Irregular Verbs"
-        print("Irregular Verbs")
         performSegue(withIdentifier: "showTempVerbe", sender: sender)
 
     }
     
     @IBAction func showAllVerbs(_ sender: UITapGestureRecognizer) {
         groupeVerbe = "All 1000 Verbs!"
-        print("All 1000 Verbs!")
         performSegue(withIdentifier: "showTempVerbe", sender: sender)
     }
     

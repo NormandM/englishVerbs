@@ -323,7 +323,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         sixieme.resignFirstResponder()
 
         if progressInt == 10.0 {
-            performSegue(withIdentifier: "showQuizResult", sender: nil)        }
+            performSegue(withIdentifier: "showQuizResult", sender: nil)
+        }
         
 
     }

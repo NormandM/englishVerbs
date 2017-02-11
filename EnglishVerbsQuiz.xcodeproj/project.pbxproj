@@ -22,10 +22,10 @@
 		8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */; };
 		8E46BC641DA44C51005AD256 /* 100MostUseEnglishVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */; };
 		8E46BC661DA44C64005AD256 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC651DA44C64005AD256 /* AllVerbs.plist */; };
+		8E7FC9831DFB54F9005C397B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC9821DFB54F9005C397B /* Item+CoreDataProperties.swift */; };
 		8E94E2A61DB2BF4A00AFB589 /* RightAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2A51DB2BF4A00AFB589 /* RightAnswerViewController.swift */; };
 		8E94E2A81DB6A06A00AFB589 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2A71DB6A06A00AFB589 /* ListController.swift */; };
 		8E94E2AB1DB6BB6700AFB589 /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2A91DB6BB6700AFB589 /* TodoList.xcdatamodeld */; };
-		8E94E2AE1DB6BE5E00AFB589 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2AC1DB6BE5E00AFB589 /* Item+CoreDataProperties.swift */; };
 		8E94E2AF1DB6BE5E00AFB589 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2AD1DB6BE5E00AFB589 /* Item.swift */; };
 		8E94E2B11DBA89F600AFB589 /* chooseVerbFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2B01DBA89F600AFB589 /* chooseVerbFunction.swift */; };
 		8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */; };
@@ -74,10 +74,10 @@
 		8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionListTableViewController.swift; sourceTree = "<group>"; };
 		8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 100MostUseEnglishVerbs.plist; sourceTree = "<group>"; };
 		8E46BC651DA44C64005AD256 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
+		8E7FC9821DFB54F9005C397B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E94E2A51DB2BF4A00AFB589 /* RightAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightAnswerViewController.swift; sourceTree = "<group>"; };
 		8E94E2A71DB6A06A00AFB589 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		8E94E2AA1DB6BB6700AFB589 /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
-		8E94E2AC1DB6BE5E00AFB589 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E94E2AD1DB6BE5E00AFB589 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
 		8E94E2B01DBA89F600AFB589 /* chooseVerbFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseVerbFunction.swift; sourceTree = "<group>"; };
 		8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeVerbTenseTableViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 			children = (
 				8E236E8E1DC5078C00A25209 /* sound */,
 				8E0E07CC1D8DC3BF0065BC87 /* Main.storyboard */,
-				8E94E2AC1DB6BE5E00AFB589 /* Item+CoreDataProperties.swift */,
 				8E94E2AD1DB6BE5E00AFB589 /* Item.swift */,
+				8E7FC9821DFB54F9005C397B /* Item+CoreDataProperties.swift */,
 				8E0E07C81D8DC3BF0065BC87 /* AppDelegate.swift */,
 				8E0E07F81D8DC4540065BC87 /* DataStructure.swift */,
 				8E94E2B01DBA89F600AFB589 /* chooseVerbFunction.swift */,
@@ -334,11 +334,11 @@
 			files = (
 				8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */,
 				8E94E2A81DB6A06A00AFB589 /* ListController.swift in Sources */,
+				8E7FC9831DFB54F9005C397B /* Item+CoreDataProperties.swift in Sources */,
 				8E94E2A61DB2BF4A00AFB589 /* RightAnswerViewController.swift in Sources */,
 				8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */,
 				8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */,
 				8E94E2AB1DB6BB6700AFB589 /* TodoList.xcdatamodeld in Sources */,
-				8E94E2AE1DB6BE5E00AFB589 /* Item+CoreDataProperties.swift in Sources */,
 				8E3B4EB01DC7DFB100129963 /* OptionModeVerbeViewController.swift in Sources */,
 				8E94E2B11DBA89F600AFB589 /* chooseVerbFunction.swift in Sources */,
 				8E94E2AF1DB6BE5E00AFB589 /* Item.swift in Sources */,

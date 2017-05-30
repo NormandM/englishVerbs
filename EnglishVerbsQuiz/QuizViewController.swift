@@ -39,6 +39,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     var soundURL: NSURL?
     var soundID:SystemSoundID = 0
+    var fenetre = UserDefaults.standard.bool(forKey: "fenetre")
+    var testCompltete = UserDefaults.standard.bool(forKey: "testCompltete")
 
     
     enum TempsDeVerbe: String {
@@ -79,8 +81,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         totalQuestion.progress = 0.0
         anotherOne.layer.masksToBounds = true
         anotherOne.layer.cornerRadius = 10
-        
-
+        testCompltete = false
+        UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
  
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -88,6 +90,17 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         optionSlected()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let reponse = UserDefaults.standard
+        testCompltete = reponse.bool(forKey: "testCompltete")
+        print(testCompltete)
+        if testCompltete == true && fenetre == false {
+            showAlert4()
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -477,5 +490,31 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
         
     }
+    func showAlert4 () {
+        
+        let alert = UIAlertController(title: "English Verbs Quiz", message: "Please leave your comments. It is the only way I can improve this App.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK ", style: UIAlertActionStyle.default, handler:{(alert: UIAlertAction!) in self.rateApp(appId: "id1170835814") { success in
+            print("RateApp \(success)")
+            }}))
+        alert.addAction(UIAlertAction(title: "Not now", style: UIAlertActionStyle.default, handler: nil))
+        //self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Do not show me this window again", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.fenetre = true; UserDefaults.standard.set(self.fenetre, forKey: "fenetre") }))
+        self.present(alert, animated: true, completion: nil)
+        testCompltete = false
+        UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
+
+    }
+    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
+        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
+            completion(false)
+            return
+        }
+        guard #available(iOS 10, *) else {
+            completion(UIApplication.shared.openURL(url))
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: completion)
+    }
+
     
 }

@@ -13,11 +13,13 @@ class QuizResultViewController: UIViewController {
     
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var comment: UILabel!
-    
+    var testCompltete = UserDefaults.standard.bool(forKey: "testCompltete")        
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        testCompltete = true
+        UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
         result.text = "\(goodResponse)/10"
         // Do any additional setup after loading the view.
         if goodResponse == 10{

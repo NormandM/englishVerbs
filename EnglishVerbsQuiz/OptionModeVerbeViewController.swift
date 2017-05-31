@@ -70,15 +70,17 @@ class OptionModeVerbeViewController: UIViewController {
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
+
         backItem.title = ""
+
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+
         if segue.identifier == "showTempVerbe"{
             let controller = segue.destination as! OptionListTableViewController
             controller.verbArray = verbsArray
             controller.groupeVerbe = groupeVerbe
         }
     }
- 
     
 
 }

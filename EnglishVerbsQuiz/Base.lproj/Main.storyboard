@@ -90,26 +90,26 @@
             </objects>
             <point key="canvasLocation" x="723.75" y="-335.91549295774649"/>
         </scene>
-        <!--Choose Quiz Content-->
+        <!--Title-->
         <scene sceneID="Q9b-SM-F57">
             <objects>
                 <tableViewController id="HrO-bL-3xN" customClass="OptionListTableViewController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jER-b5-fl5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="jER-b5-fl5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="YMQ-R3-0Mb" style="IBUITableViewCellStyleDefault" id="Xc6-S2-60f">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="YMQ-R3-0Mb" rowHeight="50" style="IBUITableViewCellStyleDefault" id="Xc6-S2-60f">
+                                <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc6-S2-60f" id="b6Q-1i-2zi">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YMQ-R3-0Mb">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YMQ-R3-0Mb">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,9 +117,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="bmj-9i-I6x" kind="show" identifier="showQuiz" id="Mdc-Ul-j9c"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -128,12 +125,21 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Choose Quiz Content" id="iWl-g5-6KQ"/>
+                    <navigationItem key="navigationItem" title="Title" id="hq7-22-wW2">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="6FW-2k-vLp">
+                            <connections>
+                                <action selector="okSegue:" destination="HrO-bL-3xN" id="ZeP-OV-SyN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="bmj-9i-I6x" kind="show" identifier="showQuiz" id="2z6-dx-YG1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFt-jA-d3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="725"/>
+            <point key="canvasLocation" x="1445.625" y="724.64788732394368"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="9Fy-PG-kfD">
@@ -1119,7 +1125,7 @@ IQ
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="701" y="707"/>
+            <point key="canvasLocation" x="683" y="725"/>
         </scene>
         <!--List Controller-->
         <scene sceneID="9B7-FK-5hi">

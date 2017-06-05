@@ -84,13 +84,13 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="rTl-fN-4FA">
                     <connections>
-                        <segue destination="MZ6-ug-IM8" kind="show" identifier="showListController" id="tfM-UT-H1S"/>
+                        <segue destination="JtZ-tN-XQd" kind="show" identifier="showStatisticsController" id="rhe-73-czN"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="723.75" y="-335.91549295774649"/>
         </scene>
-        <!--Choose Quiz Content-->
+        <!--Title-->
         <scene sceneID="Q9b-SM-F57">
             <objects>
                 <tableViewController id="HrO-bL-3xN" customClass="OptionListTableViewController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,15 +101,15 @@
                         <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="YMQ-R3-0Mb" style="IBUITableViewCellStyleDefault" id="Xc6-S2-60f">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="YMQ-R3-0Mb" style="IBUITableViewCellStyleDefault" id="Xc6-S2-60f">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc6-S2-60f" id="b6Q-1i-2zi">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YMQ-R3-0Mb">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,9 +117,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="bmj-9i-I6x" kind="show" identifier="showQuiz" id="Mdc-Ul-j9c"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -128,12 +125,21 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Choose Quiz Content" id="iWl-g5-6KQ"/>
+                    <navigationItem key="navigationItem" title="Title" id="fUm-jp-USK">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="ILF-Vi-8MQ">
+                            <connections>
+                                <action selector="toCallSegue:" destination="HrO-bL-3xN" id="gkM-4h-KD6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="bmj-9i-I6x" kind="show" identifier="showQuiz" id="FaX-Nx-hLG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFt-jA-d3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="725"/>
+            <point key="canvasLocation" x="1618" y="502"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="9Fy-PG-kfD">
@@ -434,7 +440,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyI-dz-BdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="725"/>
+            <point key="canvasLocation" x="2475" y="502"/>
+        </scene>
+        <!--Statistic Controller-->
+        <scene sceneID="Li4-dW-vN7">
+            <objects>
+                <tableViewController id="JtZ-tN-XQd" customClass="StatisticController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Pn-SH-wyY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="FBI-Su-gVv">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FBI-Su-gVv" id="me1-e8-ZmY">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JtZ-tN-XQd" id="Bpd-vo-Oqf"/>
+                            <outlet property="delegate" destination="JtZ-tN-XQd" id="tSl-dZ-eRN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6h-HW-b5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1408" y="502"/>
         </scene>
         <!--Quiz Result View Controller-->
         <scene sceneID="xub-ee-O5g">
@@ -977,7 +1011,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmg-GF-FDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="QRA-KL-AyD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3583" y="725"/>
+            <point key="canvasLocation" x="3405" y="502"/>
         </scene>
         <!--Option Mode Verbe View Controller-->
         <scene sceneID="Qrn-qd-SYR">
@@ -1119,79 +1153,7 @@ IQ
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="701" y="707"/>
-        </scene>
-        <!--List Controller-->
-        <scene sceneID="9B7-FK-5hi">
-            <objects>
-                <tableViewController id="MZ6-ug-IM8" customClass="ListController" customModule="EnglishVerbsQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nzC-VG-PDw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz: list of bad answers" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dhM-ns-o8f">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.6705882353" green="0.79607843140000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Mwx-zT-lmp">
-                            <rect key="frame" x="0.0" y="116" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem title="Delete all the list" id="qdK-FQ-MVu">
-                                    <connections>
-                                        <action selector="deleteAll:" destination="MZ6-ug-IM8" id="mJq-Wx-h7q"/>
-                                    </connections>
-                                </barButtonItem>
-                            </items>
-                            <color key="barTintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                        </toolbar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="OSc-ID-vTW" detailTextLabel="Zba-EW-ehN" style="IBUITableViewCellStyleSubtitle" id="D5A-2I-G2L">
-                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D5A-2I-G2L" id="LTc-Xk-gcz">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSc-ID-vTW">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zba-EW-ehN">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="2Xl-iX-TyR" kind="show" identifier="showCorrectVerb" id="AuB-3m-ZZj"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MZ6-ug-IM8" id="9J2-UP-vtr"/>
-                            <outlet property="delegate" destination="MZ6-ug-IM8" id="5OZ-ey-blm"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <connections>
-                        <outlet property="delete" destination="qdK-FQ-MVu" id="jL3-rV-ZNZ"/>
-                        <outlet property="headerText" destination="dhM-ns-o8f" id="akE-lQ-6lZ"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zml-jW-UTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-578" y="491"/>
+            <point key="canvasLocation" x="763" y="502"/>
         </scene>
     </scenes>
     <resources>
@@ -1199,7 +1161,4 @@ IQ
         <image name="icons première page eng 2" width="284" height="284"/>
         <image name="icons première page eng 3" width="284" height="284"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AuB-3m-ZZj"/>
-    </inferredMetricsTieBreakers>
 </document>

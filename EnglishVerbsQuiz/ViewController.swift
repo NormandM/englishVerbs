@@ -36,13 +36,13 @@ class ViewController: UIViewController {
             let controller = segue.destination as! OptionModeVerbeViewController
             controller.verbsArray = verbsArray
             
-        }else if segue.identifier == "showListController"{
+        }else if segue.identifier == "showStatisticsController"{
             let backItem = UIBarButtonItem()
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
 
-            let controller = segue.destination as! ListController
-            controller.verbArray = verbsArray
+//            let controller = segue.destination as! StatisticController
+//            controller.verbArray = verbsArray
             
         }
     }

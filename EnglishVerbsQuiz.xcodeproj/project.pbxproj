@@ -22,12 +22,12 @@
 		8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */; };
 		8E46BC641DA44C51005AD256 /* 100MostUseEnglishVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */; };
 		8E46BC661DA44C64005AD256 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC651DA44C64005AD256 /* AllVerbs.plist */; };
-		8E7FC9831DFB54F9005C397B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC9821DFB54F9005C397B /* Item+CoreDataProperties.swift */; };
 		8E94E2A61DB2BF4A00AFB589 /* RightAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2A51DB2BF4A00AFB589 /* RightAnswerViewController.swift */; };
-		8E94E2A81DB6A06A00AFB589 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2A71DB6A06A00AFB589 /* ListController.swift */; };
-		8E94E2AB1DB6BB6700AFB589 /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2A91DB6BB6700AFB589 /* TodoList.xcdatamodeld */; };
-		8E94E2AF1DB6BE5E00AFB589 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2AD1DB6BE5E00AFB589 /* Item.swift */; };
 		8E94E2B11DBA89F600AFB589 /* chooseVerbFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94E2B01DBA89F600AFB589 /* chooseVerbFunction.swift */; };
+		8E9C6B061EDF629000E2AC58 /* VerbStat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C6B041EDF629000E2AC58 /* VerbStat.xcdatamodeld */; };
+		8E9C6B091EDF638500E2AC58 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C6B071EDF638500E2AC58 /* Item+CoreDataClass.swift */; };
+		8E9C6B0A1EDF638500E2AC58 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C6B081EDF638500E2AC58 /* Item+CoreDataProperties.swift */; };
+		8E9C6B0C1EE1EF1300E2AC58 /* StatisticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C6B0B1EE1EF1300E2AC58 /* StatisticController.swift */; };
 		8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */; };
 		8ED3AC311D8F017C008A6FEC /* VerbListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */; };
 		8ED3AC351D9188D2008A6FEC /* VerbeFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */; };
@@ -74,12 +74,12 @@
 		8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionListTableViewController.swift; sourceTree = "<group>"; };
 		8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 100MostUseEnglishVerbs.plist; sourceTree = "<group>"; };
 		8E46BC651DA44C64005AD256 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
-		8E7FC9821DFB54F9005C397B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E94E2A51DB2BF4A00AFB589 /* RightAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightAnswerViewController.swift; sourceTree = "<group>"; };
-		8E94E2A71DB6A06A00AFB589 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
-		8E94E2AA1DB6BB6700AFB589 /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
-		8E94E2AD1DB6BE5E00AFB589 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
 		8E94E2B01DBA89F600AFB589 /* chooseVerbFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseVerbFunction.swift; sourceTree = "<group>"; };
+		8E9C6B051EDF629000E2AC58 /* VerbStat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VerbStat.xcdatamodel; sourceTree = "<group>"; };
+		8E9C6B071EDF638500E2AC58 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "../Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8E9C6B081EDF638500E2AC58 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E9C6B0B1EE1EF1300E2AC58 /* StatisticController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticController.swift; sourceTree = "<group>"; };
 		8ED3AC2E1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeVerbTenseTableViewController.swift; sourceTree = "<group>"; };
 		8ED3AC301D8F017C008A6FEC /* VerbListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbListTableViewController.swift; sourceTree = "<group>"; };
 		8ED3AC341D9188D2008A6FEC /* VerbeFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbeFinalViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +137,6 @@
 			children = (
 				8E236E8E1DC5078C00A25209 /* sound */,
 				8E0E07CC1D8DC3BF0065BC87 /* Main.storyboard */,
-				8E94E2AD1DB6BE5E00AFB589 /* Item.swift */,
-				8E7FC9821DFB54F9005C397B /* Item+CoreDataProperties.swift */,
 				8E0E07C81D8DC3BF0065BC87 /* AppDelegate.swift */,
 				8E0E07F81D8DC4540065BC87 /* DataStructure.swift */,
 				8E94E2B01DBA89F600AFB589 /* chooseVerbFunction.swift */,
@@ -150,15 +148,15 @@
 				8E3DC2B71D99BFE10025ABEC /* OptionListTableViewController.swift */,
 				8EE194211D9C570800BCC811 /* QuizViewController.swift */,
 				8E94E2A51DB2BF4A00AFB589 /* RightAnswerViewController.swift */,
-				8E94E2A71DB6A06A00AFB589 /* ListController.swift */,
 				8E236E8C1DC3CBB100A25209 /* QuizResultViewController.swift */,
+				8E9C6B0B1EE1EF1300E2AC58 /* StatisticController.swift */,
 				8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */,
 				8EFDD5211DA2F3ED00D4D4B9 /* IrregularVerbs.plist */,
 				8E46BC651DA44C64005AD256 /* AllVerbs.plist */,
 				8E0E07CF1D8DC3BF0065BC87 /* Assets.xcassets */,
 				8E0E07D11D8DC3BF0065BC87 /* LaunchScreen.storyboard */,
 				8E0E07D41D8DC3BF0065BC87 /* Info.plist */,
-				8E94E2A91DB6BB6700AFB589 /* TodoList.xcdatamodeld */,
+				8E9C6B041EDF629000E2AC58 /* VerbStat.xcdatamodeld */,
 			);
 			path = EnglishVerbsQuiz;
 			sourceTree = "<group>";
@@ -184,6 +182,8 @@
 		8E236E8E1DC5078C00A25209 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				8E9C6B071EDF638500E2AC58 /* Item+CoreDataClass.swift */,
+				8E9C6B081EDF638500E2AC58 /* Item+CoreDataProperties.swift */,
 				8E236E911DC5084600A25209 /* Error Warning.wav */,
 				8E236E8F1DC5082D00A25209 /* Incoming Text 01.wav */,
 			);
@@ -332,16 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9C6B091EDF638500E2AC58 /* Item+CoreDataClass.swift in Sources */,
 				8E3DC2B81D99BFE10025ABEC /* OptionListTableViewController.swift in Sources */,
-				8E94E2A81DB6A06A00AFB589 /* ListController.swift in Sources */,
-				8E7FC9831DFB54F9005C397B /* Item+CoreDataProperties.swift in Sources */,
+				8E9C6B0A1EDF638500E2AC58 /* Item+CoreDataProperties.swift in Sources */,
 				8E94E2A61DB2BF4A00AFB589 /* RightAnswerViewController.swift in Sources */,
 				8ED3AC2F1D8F004A008A6FEC /* ListeVerbTenseTableViewController.swift in Sources */,
+				8E9C6B0C1EE1EF1300E2AC58 /* StatisticController.swift in Sources */,
 				8E0E07F91D8DC4540065BC87 /* DataStructure.swift in Sources */,
-				8E94E2AB1DB6BB6700AFB589 /* TodoList.xcdatamodeld in Sources */,
 				8E3B4EB01DC7DFB100129963 /* OptionModeVerbeViewController.swift in Sources */,
+				8E9C6B061EDF629000E2AC58 /* VerbStat.xcdatamodeld in Sources */,
 				8E94E2B11DBA89F600AFB589 /* chooseVerbFunction.swift in Sources */,
-				8E94E2AF1DB6BE5E00AFB589 /* Item.swift in Sources */,
 				8EE194221D9C570800BCC811 /* QuizViewController.swift in Sources */,
 				8E0E07CB1D8DC3BF0065BC87 /* ViewController.swift in Sources */,
 				8E236E8D1DC3CBB100A25209 /* QuizResultViewController.swift in Sources */,
@@ -614,13 +614,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8E94E2A91DB6BB6700AFB589 /* TodoList.xcdatamodeld */ = {
+		8E9C6B041EDF629000E2AC58 /* VerbStat.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8E94E2AA1DB6BB6700AFB589 /* TodoList.xcdatamodel */,
+				8E9C6B051EDF629000E2AC58 /* VerbStat.xcdatamodel */,
 			);
-			currentVersion = 8E94E2AA1DB6BB6700AFB589 /* TodoList.xcdatamodel */;
-			path = TodoList.xcdatamodeld;
+			currentVersion = 8E9C6B051EDF629000E2AC58 /* VerbStat.xcdatamodel */;
+			path = VerbStat.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

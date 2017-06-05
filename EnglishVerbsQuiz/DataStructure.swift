@@ -172,12 +172,12 @@ open class DataController: NSObject {
     }()
     
     fileprivate lazy var managerObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: "TodoList", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "VerbStat", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     fileprivate lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managerObjectModel)
-        let url = self.applicationDocumentDirectory.appendingPathComponent("TodoList.sqlite")
+        let url = self.applicationDocumentDirectory.appendingPathComponent("VerbStat.sqlite")
         
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)

@@ -41,7 +41,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     var soundID:SystemSoundID = 0
     var fenetre = UserDefaults.standard.bool(forKey: "fenetre")
     var testCompltete = UserDefaults.standard.bool(forKey: "testCompltete")
-
+    var tenseSelected: String = ""
     
     enum TempsDeVerbe: String {
         case Present
@@ -66,7 +66,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     var fifth: String = ""
     var sixth: String = ""
     var arrayVerb: [[String]] = []
-    var arraySelection: [String] = []
+    var arraySelection: [[String]] = []
     var verbArray: NSArray = []
     var indexChoice: Int = 0
     var textIndex: Int = 0
@@ -95,7 +95,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         
         let reponse = UserDefaults.standard
         testCompltete = reponse.bool(forKey: "testCompltete")
-        print(testCompltete)
         if testCompltete == true && fenetre == false {
             showAlert4()
         }
@@ -125,7 +124,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             controller.fourth = fourth
             controller.fifth = fifth
             controller.sixth = sixth
-            controller.tempsFinal = arraySelection[1]
+            controller.tempsFinal = tenseSelected
             controller.infinitifFinal = verbeInfinitif.text!
         }
         if segue.identifier == "showQuizResult" {
@@ -133,6 +132,19 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             controller.goodResponse = goodResponse
         }
     }
+    @IBAction func unwindToLast(segue: UIStoryboardSegue) {
+        
+        optionSlected()
+        reinitializeTextFields()
+        if progressInt == 10.0{
+            progressInt = 0.0
+            progress = 0.0
+            goodResponse = 0
+            totalQuestion.progress = 0.0
+            
+        }
+    }
+
 
 // MARK: All buttons
     @IBAction func hintButton(_ sender: AnyObject) {
@@ -152,7 +164,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         textIndex = 0
         goodResponseMessage.text = ""
         message = ""
-        if arraySelection[1] == "Imperative"{
+        if tempsVerbe.text == "Imperative"{
             deuxieme.text = ""
             quatrieme.text = ""
             quatrieme.backgroundColor = UIColor.lightGray
@@ -206,7 +218,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
 //MARK: Function verifies in the User response is Good or Bad
     @discardableResult func textFieldAnswer(_ chosenTextField: UITextField, personne: String) -> String {
-        if arraySelection[1] != "Imperative" {
+        if tempsVerbe.text != "Imperative" {
             if chosenTextField.text == personne {
                 premier.backgroundColor = UIColor.white
                 if personne == second {
@@ -293,7 +305,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if sixieme.isEditing{
             textFieldAnswer(sixieme, personne: sixth)
         }
-        
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: dataController.managedObjectContext) as! Item
         if message == "true"{
             goodResponseMessage.text = "Great!"
             let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
@@ -303,12 +315,17 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
             progressClaculation()
             goodResponse = goodResponse + 1
+            item.noBad = 0
+            item.tence = tenseSelected
+            item.verb = verbeInfinitif.text
+            item.numberGoodAnswers = item.numberGoodAnswers + 1
             premier.isUserInteractionEnabled = false
             deuxieme.isUserInteractionEnabled = false
             troisieme.isUserInteractionEnabled = false
             quatrieme.isUserInteractionEnabled = false
             cinquieme.isUserInteractionEnabled = false
             sixieme.isUserInteractionEnabled = false
+            dataController.saveContext()
 
         }else if message == "false" {
             let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
@@ -318,16 +335,17 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
             progressClaculation()
             let verb = verbeInfinitif.text
-            let tense = arraySelection[1]
-            let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: dataController.managedObjectContext) as! Item
+            let tense = tenseSelected
+            item.numberBadAnswers = item.numberBadAnswers + 1
             item.verb = verb
             item.tence = tense
             item.noBad = 1
-            dataController.saveContext()
+            
             if progressInt != 10.0 {
                 performSegue(withIdentifier: "showRightAnswer", sender: nil)
             }
         }
+        dataController.saveContext()
         premier.resignFirstResponder()
         deuxieme.resignFirstResponder()
         troisieme.resignFirstResponder()
@@ -338,8 +356,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if progressInt == 10.0 {
             performSegue(withIdentifier: "showQuizResult", sender: nil)
         }
-        
-
+ 
     }
     func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
         if testReturnOrDone() {
@@ -374,7 +391,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
 // Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
         arrayVerb = verbArray as! [[String]]
-        if arraySelection.contains("100 most Common Verbs"){
+        if arraySelection[0].contains("100 most Common Verbs"){
             if let plistPath = Bundle.main.path(forResource: "100MostUseEnglishVerbs", ofType: "plist"),
                 let verb100Verbs = NSArray(contentsOfFile: plistPath){
                 let numberOfVerbs = verb100Verbs.count
@@ -390,7 +407,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 }
             }
             
-        }else if arraySelection.contains("Irregular Verbs"){
+        }else if arraySelection[0].contains("Irregular Verbs"){
             if let plistPath = Bundle.main.path(forResource: "IrregularVerbs", ofType: "plist"),
                 let irregularVerb = NSArray(contentsOfFile: plistPath){
                 let numberIrregular = irregularVerb.count
@@ -405,27 +422,33 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                     n = n + 1
                 }
             }
-        }else if arraySelection.contains("All 1000 Verbs!"){
+        }else if arraySelection[0].contains("All 1000 Verbs!"){
             let numberAllVerb = arrayVerb.count
             indexChoice = Int(arc4random_uniform(UInt32(numberAllVerb)))
         }
-        first = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[0]
-        second = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[1]
-        third = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[2]
-        fourth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[3]
-        fifth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[4]
-        sixth = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[5]
-        hint = toChooseVerb().chooseVerb(temps: arraySelection[1], indexChoice: indexChoice, verbArray: verbArray)[6]
+        let countNumberOfTenses = arraySelection[1].count
+        let indexSelected = Int(arc4random_uniform(UInt32(countNumberOfTenses)))
+        tenseSelected = arraySelection[1][indexSelected]
+        first = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[0]
+        second = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[1]
+        third = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[2]
+        fourth = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[3]
+        fifth = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[4]
+        sixth = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[5]
+        hint = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[6]
         let verbTran = verbArray as! [[String]]
         verbeInfinitif.text = "to \(verbTran[indexChoice][0])"
-        tempsVerbe.text = arraySelection[1]
-        if arraySelection[1] == "Imperative"{
+        tempsVerbe.text = tenseSelected
+        if tenseSelected == "Imperative"{
             un.text = ""
             deux.text = "(you)"
             trois.text = ""
             quatre.text = "(we)"
             cinq.text = "(you)"
             six.text = ""
+            premier.text = ""
+            troisieme.text = ""
+            sixieme.text = ""
             premier.borderStyle = .none
             premier.backgroundColor = UIColor.clear
             deuxieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
@@ -435,16 +458,23 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             sixieme.borderStyle = .none
             sixieme.backgroundColor = UIColor.clear
             
+        }else{
+            un.text = "I"
+            deux.text = "you"
+            trois.text = "he/she/it"
+            quatre.text = "we"
+            cinq.text = "you"
+            six.text = "they"
         }
         if verbeInfinitif.text == "to be"{
-            if arraySelection[1] == "Present"{
+            if tenseSelected == "Present"{
                 first = "am"
                 second = "are"
                 third = "is"
                 fourth = "are"
                 fifth = "are"
                 sixth = "are"
-            }else if arraySelection[1] == "Preterite"{
+            }else if tenseSelected == "Preterite"{
                 first = "was"
                 second = "were"
                 third = "was"
@@ -452,7 +482,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 fifth = "were"
                 sixth = "were"
 
-            }else if arraySelection[1] == "Imperative"{
+            }else if tenseSelected == "Imperative"{
                 second = "be"
                 fourth = "let's be"
                 fifth = "be"
@@ -460,17 +490,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
         }
     }
-    @IBAction func unwindToLast(segue: UIStoryboardSegue) {
-        optionSlected()
-        reinitializeTextFields()
-        if progressInt == 10.0{
-            progressInt = 0.0
-            progress = 0.0
-            goodResponse = 0
-            totalQuestion.progress = 0.0
-            
-        }
-    }
+
     func progressClaculation() {
         progressInt = progressInt + 1
         progress = progressInt / 10

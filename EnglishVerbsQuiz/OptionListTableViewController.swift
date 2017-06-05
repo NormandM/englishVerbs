@@ -49,13 +49,52 @@ class OptionListTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tenseArray.count
     }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        
+//        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).row]
+//        return cell
+//    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        //let helper = Helper()
+        cell.textLabel!.text = self.tenseArray[indexPath.row]
+        cell.selectionStyle = .none
+        configure(cell, forRowAtIndexPath: indexPath)
         return cell
     }
+    func configure(_ cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
+        if selectedTimeVerbes.contains(indexPath) {
+            // selected
+            cell.accessoryType = .checkmark
+        }
+        else {
+            // not selected
+            cell.accessoryType = .none
+        }
+        
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if selectedTimeVerbes.contains(indexPath) {
+            // deselect
+            selectedTimeVerbes.remove(indexPath)
+            let cell2 = tableView.cellForRow(at: indexPath)!
+            if let text = cell2.textLabel?.text, let n = arraySelection.index(of: text){
+                arraySelection.remove(at: n)
+            }
+            
+        }
+        else {
+            // select
+            selectedTimeVerbes.add(indexPath)
+            arraySelection.append(self.tenseArray[indexPath.row])
+        }
+        let cell = tableView.cellForRow(at: indexPath)!
+        configure(cell, forRowAtIndexPath: indexPath)
     
+    }
+
  
     // MARK: - Navigation
 
@@ -67,13 +106,14 @@ class OptionListTableViewController: UITableViewController{
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
 
             
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let temps = tenseArray[(indexPath as NSIndexPath).row]
-                arraySelection = [groupeVerbe, temps]
-                controller.arraySelection = arraySelection
+                let arraySelectionTotale = [[groupeVerbe], arraySelection]
+                controller.arraySelection = arraySelectionTotale
                 controller.verbArray = verbArray
-            }
+            
         }
+    }
+    @IBAction func toCallSegue(_ sender: UIBarButtonItem) {
+                    performSegue(withIdentifier: "showQuiz", sender: UIBarButtonItem.self)
     }
 
 }

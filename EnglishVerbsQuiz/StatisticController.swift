@@ -30,30 +30,6 @@ class StatisticController: UITableViewController, NSFetchedResultsControllerDele
         return controller
     }()
     var items: [Item] = []
-//    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-//        header.contentView.backgroundColor = UIColor(red: 151/255, green: 156/255, blue: 159/255, alpha: 1.0) //make the background color light blue
-//        header.textLabel!.textColor = UIColor.white //make the text white
-//        header.alpha = 1.0 //make the header transparent
-//        
-//    }
-
-//        func delete() {
-//            do {
-//                let items = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
-//                
-//                for item in items {
-//                    managedObjectContext.delete(item)
-//                }
-//                
-//                // Save Changes
-//                try managedObjectContext.save()
-//                
-//            } catch {
-//                // Error Handling
-//                // ...
-//            }
-//        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,16 +44,14 @@ class StatisticController: UITableViewController, NSFetchedResultsControllerDele
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tenseArray.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let statPercent  = addResponses(tense: tenseArray[indexPath.row])
@@ -103,7 +77,6 @@ class StatisticController: UITableViewController, NSFetchedResultsControllerDele
                 badAnswers = Double(verb.numberBadAnswers) + badAnswers
                 goodAnswers = Double(verb.numberGoodAnswers) + goodAnswers
             }
-            
         }
         if (goodAnswers + badAnswers) != 0 {
             let stat = String (format: "%.0f" , (goodAnswers / (goodAnswers + badAnswers)) * 100)
@@ -113,6 +86,22 @@ class StatisticController: UITableViewController, NSFetchedResultsControllerDele
         }
     }
 
+    @IBAction func deleteStatisitics(_ sender: Any) {
+        do {
+            let items = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
+            
+            for item in items {
+                managedObjectContext.delete(item)
+            }
+            try managedObjectContext.save()
+            
+        } catch {
+            // Error Handling
+            // ...
+        }
+        tableView.reloadData()
+        // Save Changes
+    }
 
 
 }

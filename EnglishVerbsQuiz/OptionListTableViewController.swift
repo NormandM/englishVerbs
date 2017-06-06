@@ -14,8 +14,6 @@ class OptionListTableViewController: UITableViewController{
     var arraySectionCount: Int = 0
     var arrayCount: Int = 0
     var groupeVerbe: String = ""
-    
-    
     let tenseArray: [String] =  ["Present", "Preterite", "Present Perfect", "Past Perfect", "Present Continuous", "Past Continuous", "Past Perfect Continuous", "Futur Continuous", "Present Perfect Continuous", "Futur Perfect Continuous", "Futur", "Futur Perfect", "Imperative"]
     // Changing backgroung colors of the header of sections
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -24,7 +22,6 @@ class OptionListTableViewController: UITableViewController{
         header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0 //make the header transparent
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +34,6 @@ class OptionListTableViewController: UITableViewController{
         // Dispose of any resources that can be recreated.
     }
     
-
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,15 +44,9 @@ class OptionListTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tenseArray.count
     }
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        
-//        cell.textLabel!.text = self.tenseArray[(indexPath as NSIndexPath).row]
-//        return cell
-//    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        //let helper = Helper()
         cell.textLabel!.text = self.tenseArray[indexPath.row]
         cell.selectionStyle = .none
         configure(cell, forRowAtIndexPath: indexPath)
@@ -92,10 +81,8 @@ class OptionListTableViewController: UITableViewController{
         }
         let cell = tableView.cellForRow(at: indexPath)!
         configure(cell, forRowAtIndexPath: indexPath)
-    
     }
 
- 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,16 +91,33 @@ class OptionListTableViewController: UITableViewController{
             let backItem = UIBarButtonItem()
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-
-            
-                let arraySelectionTotale = [[groupeVerbe], arraySelection]
-                controller.arraySelection = arraySelectionTotale
-                controller.verbArray = verbArray
-            
+            let arraySelectionTotale = [[groupeVerbe], arraySelection]
+            controller.arraySelection = arraySelectionTotale
+            controller.verbArray = verbArray
         }
     }
+    func showAlert () {
+        let alertController = UIAlertController(title: "You have to choose at least one verb tense.", message: nil, preferredStyle: .alert)
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = tableView.rectForHeader(inSection: 1)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    func dismissAlert(_ sender: UIAlertAction) {
+        
+    }
+
+
     @IBAction func toCallSegue(_ sender: UIBarButtonItem) {
-                    performSegue(withIdentifier: "showQuiz", sender: UIBarButtonItem.self)
+        var i = 0
+        i = arraySelection.count
+        if i == 0{
+            showAlert()
+        }else{
+            performSegue(withIdentifier: "showQuiz", sender: UIBarButtonItem.self)
+        }
+        
     }
 
 }

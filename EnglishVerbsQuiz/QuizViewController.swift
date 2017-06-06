@@ -83,14 +83,11 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         anotherOne.layer.cornerRadius = 10
         testCompltete = false
         UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
+ //       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
  
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+ //       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         optionSlected()
-        
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         
         let reponse = UserDefaults.standard
@@ -219,6 +216,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
 //MARK: Function verifies in the User response is Good or Bad
     @discardableResult func textFieldAnswer(_ chosenTextField: UITextField, personne: String) -> String {
         if tempsVerbe.text != "Imperative" {
+            
             if chosenTextField.text == personne {
                 premier.backgroundColor = UIColor.white
                 if personne == second {
@@ -257,6 +255,8 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 message = "false"
             }
         }else{
+            print(chosenTextField.text)
+            print(personne)
             if chosenTextField.text == personne {
                 if personne == second {
                     deuxieme.backgroundColor = UIColor.white
@@ -278,6 +278,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 if deuxieme.text != "" && quatrieme.text != "" {
                     message = "true"
                 }
+                print(message)
                 
             }else{
                 message = "false"
@@ -332,7 +333,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
             AudioServicesPlaySystemSound(soundID)
-            
             progressClaculation()
             let verb = verbeInfinitif.text
             let tense = tenseSelected
@@ -354,7 +354,11 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         sixieme.resignFirstResponder()
 
         if progressInt == 10.0 {
-            performSegue(withIdentifier: "showQuizResult", sender: nil)
+            let when = DispatchTime.now() + 1.5 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.performSegue(withIdentifier: "showQuizResult", sender: nil)
+            }
+            
         }
  
     }
@@ -367,27 +371,27 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
 //MARK: Notification for keyboard
     
-    func keyboardWillShow(_ notification: Notification){
-        if troisieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-            UIView.animate(withDuration: 1.5, animations: {
-                self.textFieldTopConstraint.constant = 1
-                self.textFieldTopConstraint2.constant = 1
-                self.view.layoutIfNeeded()
-                
-            })
-        }
-    }
-    func keyboardWillHide (_ notification: Notification){
-        if troisieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-            UIView.animate(withDuration: 1.5, animations: {
-                self.textFieldTopConstraint.constant = 20
-                self.textFieldTopConstraint2.constant = 20
-                
-                self.view.layoutIfNeeded()
-            })
-        }
-        
-    }
+//    func keyboardWillShow(_ notification: Notification){
+//        if (troisieme.isEditing || (tenseSelected == "Imperative" && quatrieme.isEditing)) && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+//            UIView.animate(withDuration: 1.5, animations: {
+//                self.textFieldTopConstraint.constant = 1
+//                self.textFieldTopConstraint2.constant = 1
+//                self.view.layoutIfNeeded()
+//                
+//            })
+//        }
+//    }
+//    func keyboardWillHide (_ notification: Notification){
+//        if (troisieme.isEditing || (tenseSelected == "Imperative" && quatrieme.isEditing)) && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+//            UIView.animate(withDuration: 1.5, animations: {
+//                self.textFieldTopConstraint.constant = 20
+//                self.textFieldTopConstraint2.constant = 20
+//                
+//                self.view.layoutIfNeeded()
+//            })
+//        }
+//        
+//    }
 // Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
         arrayVerb = verbArray as! [[String]]

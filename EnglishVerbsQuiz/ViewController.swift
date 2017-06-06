@@ -17,33 +17,26 @@ class ViewController: UIViewController {
             let verbArray = NSArray(contentsOfFile: plistPath){
             verbsArray = verbArray
         }
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-
         if segue.identifier == "showVerbList"{
             let controller = segue.destination as! VerbListTableViewController
             controller.verbArray = verbsArray
         }else if segue.identifier == "showQuizVerbSelection" {
             let controller = segue.destination as! OptionModeVerbeViewController
             controller.verbsArray = verbsArray
-            
         }else if segue.identifier == "showStatisticsController"{
             let backItem = UIBarButtonItem()
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-
-//            let controller = segue.destination as! StatisticController
-//            controller.verbArray = verbsArray
-            
         }
     }
 }

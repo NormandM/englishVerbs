@@ -36,6 +36,10 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     @IBOutlet weak var textFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var textFieldTopConstraint2: NSLayoutConstraint!
+    @IBOutlet weak var textFieldConstraint4Bottom: NSLayoutConstraint!
+    @IBOutlet weak var textFieldConsytaint4Top: NSLayoutConstraint!
+    @IBOutlet weak var quatreBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var quatreTopConstraint: NSLayoutConstraint!
     
     var soundURL: NSURL?
     var soundID:SystemSoundID = 0
@@ -83,9 +87,9 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         anotherOne.layer.cornerRadius = 10
         testCompltete = false
         UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
- //       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
  
- //       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         optionSlected()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -255,8 +259,6 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 message = "false"
             }
         }else{
-            print(chosenTextField.text)
-            print(personne)
             if chosenTextField.text == personne {
                 if personne == second {
                     deuxieme.backgroundColor = UIColor.white
@@ -371,27 +373,43 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
 //MARK: Notification for keyboard
     
-//    func keyboardWillShow(_ notification: Notification){
-//        if (troisieme.isEditing || (tenseSelected == "Imperative" && quatrieme.isEditing)) && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-//            UIView.animate(withDuration: 1.5, animations: {
-//                self.textFieldTopConstraint.constant = 1
-//                self.textFieldTopConstraint2.constant = 1
-//                self.view.layoutIfNeeded()
-//                
-//            })
-//        }
-//    }
-//    func keyboardWillHide (_ notification: Notification){
-//        if (troisieme.isEditing || (tenseSelected == "Imperative" && quatrieme.isEditing)) && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-//            UIView.animate(withDuration: 1.5, animations: {
-//                self.textFieldTopConstraint.constant = 20
-//                self.textFieldTopConstraint2.constant = 20
-//                
-//                self.view.layoutIfNeeded()
-//            })
-//        }
-//        
-//    }
+    func keyboardWillShow(_ notification: Notification){
+        if troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+            UIView.animate(withDuration: 1.5, animations: {
+                self.textFieldTopConstraint.constant = 1
+                self.textFieldTopConstraint2.constant = 1
+                self.view.layoutIfNeeded()
+                
+            })
+        }
+        if tenseSelected == "Imperative" && quatrieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+                deux.textColor = UIColor.clear
+                self.quatreBottomConstraint.isActive = false
+                self.quatreTopConstraint.constant = -75
+                self.textFieldConstraint4Bottom.isActive = false
+                self.textFieldConsytaint4Top.constant = -75
+                self.view.layoutIfNeeded()
+        }
+    }
+    func keyboardWillHide (_ notification: Notification){
+        if  troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+            UIView.animate(withDuration: 1.5, animations: {
+                self.textFieldTopConstraint.constant = 20
+                self.textFieldTopConstraint2.constant = 20
+                self.view.layoutIfNeeded()
+            })
+        }
+        if tenseSelected == "Imperative" && quatrieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+            deux.textColor = UIColor.black
+            self.quatreBottomConstraint.isActive = true
+            self.quatreTopConstraint.constant = 20
+            self.textFieldConstraint4Bottom.isActive = true
+            self.textFieldConsytaint4Top.constant = 20
+            self.view.layoutIfNeeded()
+        }
+
+        
+    }
 // Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
         arrayVerb = verbArray as! [[String]]

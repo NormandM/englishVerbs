@@ -177,7 +177,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
         }else{
             premier.text = ""
-            premier.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+            premier.backgroundColor = UIColor(red: 14.0/255.0, green: 172.0/255.0, blue: 75.0/255.0, alpha: 1.0)
             premier.isUserInteractionEnabled = true
             deuxieme.text = ""
             deuxieme.backgroundColor = UIColor.lightGray
@@ -227,7 +227,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                     deuxieme.text = second
                     deuxieme.backgroundColor = UIColor.white
                 }else if textIndex == 0{
-                    deuxieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+                    deuxieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
                     deuxieme.isUserInteractionEnabled = true
                 }
                 if personne == third || second == third || first == third{
@@ -235,7 +235,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                     troisieme.backgroundColor = UIColor.white
                 }else if textIndex < 2{
                     if textIndex != 0 || personne == fourth {
-                        troisieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+                        troisieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
                         troisieme.isUserInteractionEnabled = true
                     }
                 }
@@ -269,7 +269,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                     quatrieme.backgroundColor = UIColor.white
                     premier.isUserInteractionEnabled = false
                 }else{
-                    quatrieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+                    quatrieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
                     quatrieme.isUserInteractionEnabled = true
                 }
                 if personne == fifth {
@@ -373,7 +373,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
 //MARK: Notification for keyboard
     
-    func keyboardWillShow(_ notification: Notification){
+    @objc func keyboardWillShow(_ notification: Notification){
         if troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
             UIView.animate(withDuration: 1.5, animations: {
                 self.textFieldTopConstraint.constant = 1
@@ -391,7 +391,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 self.view.layoutIfNeeded()
         }
     }
-    func keyboardWillHide (_ notification: Notification){
+    @objc func keyboardWillHide (_ notification: Notification){
         if  troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
             UIView.animate(withDuration: 1.5, animations: {
                 self.textFieldTopConstraint.constant = 20
@@ -473,7 +473,7 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             sixieme.text = ""
             premier.borderStyle = .none
             premier.backgroundColor = UIColor.clear
-            deuxieme.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+            deuxieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
             deuxieme.isUserInteractionEnabled = true
             troisieme.borderStyle = .none
             troisieme.backgroundColor = UIColor.clear

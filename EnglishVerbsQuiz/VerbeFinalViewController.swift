@@ -27,10 +27,10 @@ class VerbeFinalViewController: UIViewController {
 
     func stringColor(_ person: String, pronom: String) {
         
-        let position = pronom.characters.count
-        let n = person.characters.count - position
-        myMutableString = NSMutableAttributedString(string: person, attributes: [NSFontAttributeName:UIFont(name: "Helvetica neue", size: 18.0)!])
-        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: NSRange(location: position, length: n))
+        let position = pronom.count
+        let n = person.count - position
+        myMutableString = NSMutableAttributedString(string: person, attributes: [NSAttributedStringKey.font:UIFont(name: "Helvetica neue", size: 18.0)!])
+        myMutableString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.blue, range: NSRange(location: position, length: n))
 
     }
    

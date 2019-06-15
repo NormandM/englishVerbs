@@ -1,0 +1,5046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>infinitif</key>
+		<string>be</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>was / were</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>be</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>been</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>have</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>had</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>have</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>haved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>do</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>did</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>do</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>done</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>say</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>said</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>say</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>sayed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>go</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>went</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>go</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>gone</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>get</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>got</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>get</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>getted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>make</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>made</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>make</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>maked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>know</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>knew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>know</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>knowed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>think</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>thought</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>think</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>thinked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>take</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>took</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>take</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>taked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>see</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>saw</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>see</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>seed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>come</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>came</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>come</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>comed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>want</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>wanted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>want</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>wont</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>look</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>looked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>look</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>loked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>use</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastGoodAnswer</key>
+		<string>used</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>use</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>1</string>
+		<key>panter</key>
+		<string>Gustav Klimt</string>
+		<key>pantingTitle</key>
+		<string>The Kiss</string>
+		<key>pastBadAnswer</key>
+		<string>use</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>find</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>found</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>find</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>finded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>give</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>gave</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>give</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>gived</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>tell</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>told</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>tell</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>telled</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>work</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>worked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>work</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>wark</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>call</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>called</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>call</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>call</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>try</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>tried</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>try</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>tryed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>ask</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>asked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>ask</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>ask</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>need</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>needed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>need</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>ned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>feel</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>felt</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>feel</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>feeled</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>become</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>became</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>become</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>becomed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>leave</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>left</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>leave</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>leaved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>put</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>put</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>put</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>puted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>mean</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>meant</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>mean</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>meaned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>keep</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>kept</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>keep</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>keeped</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>let</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastGoodAnswer</key>
+		<string>let</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>let</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>2</string>
+		<key>panter</key>
+		<string>Umberto Boccioni</string>
+		<key>pantingTitle</key>
+		<string>The Street Pavers</string>
+		<key>pastBadAnswer</key>
+		<string>letted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>begin</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>began</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>begin</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>begined</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>seem</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>seemed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>seem</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>seam</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>help</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>helped</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>help</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>help</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>talk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>talked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>talk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>tolk</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>turn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>turned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>turn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>turn</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>start</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>started</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>start</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>start</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>show</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>showed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>show</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>shew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>heard</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>heared</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>play</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>played</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>play</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>plaid</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>run</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>ran</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>run</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>runned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>move</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>moved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>move</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>moove</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>like</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>liked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>like</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>lake</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>live</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>lived</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>live</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>luve</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>believe</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>believed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>believe</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>beliefed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hold</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastGoodAnswer</key>
+		<string>held</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hold</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>3</string>
+		<key>panter</key>
+		<string>Tintoretto</string>
+		<key>pantingTitle</key>
+		<string>The Capture of Constantinople</string>
+		<key>pastBadAnswer</key>
+		<string>holded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>bring</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>brought</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>bring</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>bringed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>happen</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>happened</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>happen</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>happed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>write</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>wrote</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>write</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>writed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>provide</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>provided</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>provide</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>prooved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>sit</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>sat</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>sit</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>sitted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>stood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>standed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lose</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>lost</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lose</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>loosed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>pay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>paid</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>pay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>payed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>meet</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>met</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>meet</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>metted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>include</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>included</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>include</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>inclood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>continue</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>continued</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>continue</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>continuded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>set</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>set</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>set</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>setted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>learn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>learnt</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>learn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>learned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>change</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>changed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>change</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>chunge</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lead</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastGoodAnswer</key>
+		<string>led</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lead</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>4</string>
+		<key>panter</key>
+		<string>Jan Vermeer</string>
+		<key>pantingTitle</key>
+		<string>The Girl with a Pearl Earring</string>
+		<key>pastBadAnswer</key>
+		<string>leaded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>understand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>understood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>understand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>understanded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>watch</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>watched</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>watch</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>watchit</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>follow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>followed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>follow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>follew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stop</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>stopped</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stop</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>stop</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>create</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>created</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>create</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>cread</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>speak</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>spoke</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>speak</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>speaked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>read</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>read</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>read</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>readed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>allow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>allowed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>allow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>allew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>add</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>added</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>add</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>add</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>spend</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>spent</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>spend</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>spended</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>grow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>grew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>grow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>growed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>open</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>opened</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>open</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>opan</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>walk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>walked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>walk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>walket</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>win</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>won</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>win</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>winned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>offer</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastGoodAnswer</key>
+		<string>offered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>offer</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>5</string>
+		<key>panter</key>
+		<string>MichelAngelo</string>
+		<key>pantingTitle</key>
+		<string>The Last Judgment</string>
+		<key>pastBadAnswer</key>
+		<string>offert</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>remember</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>remembered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>remember</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>remembert</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>love</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>loved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>love</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>luve</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>consider</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>considered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>consider</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>consider</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>appear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>appeared</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>appear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>appered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>buy</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>bought</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>buy</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>buyed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>wait</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>waited</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>wait</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>wat</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>serve</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>served</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>serve</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>searve</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>die</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>died</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>die</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>dyed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>send</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>sent</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>send</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>sended</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>expect</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>expected</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>expect</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>expeak</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>build</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>built</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>build</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>builded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>stayed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>stood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>fall</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>fell</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>fall</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>falled</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>cut</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>cut</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>cut</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>cutted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>reach</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastGoodAnswer</key>
+		<string>reached</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>reach</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>6</string>
+		<key>panter</key>
+		<string>Artemisia Gentileschi</string>
+		<key>pantingTitle</key>
+		<string>Lot and his Daughters</string>
+		<key>pastBadAnswer</key>
+		<string>roach</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>be</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>been</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>be</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>was</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>have</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>had</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>have</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>haven</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>do</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>done</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>do</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>did</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>say</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>said</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>say</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>sayed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>go</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>gone</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>go</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>went</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>get</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>got</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>get</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>gotten</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>make</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>made</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>make</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>maden</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>know</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>known</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>know</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>knew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>think</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>thought</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>think</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>thinked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>take</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>taken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>take</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>took</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>see</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>seen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>see</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>saw</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>come</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>come</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>come</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>came</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>want</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>wanted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>want</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>wont</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>look</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>looked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>look</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>looken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>use</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastGoodAnswer</key>
+		<string>used</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>use</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>7</string>
+		<key>panter</key>
+		<string>Wassily Kandinski</string>
+		<key>pantingTitle</key>
+		<string>Sintflut</string>
+		<key>pastBadAnswer</key>
+		<string>use</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>find</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>found</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>find</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>finded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>give</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>given</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>give</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>gave</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>tell</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>told</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>tell</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>tellen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>work</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>worked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>work</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>worken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>call</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>called</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>call</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>call</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>try</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>tried</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>try</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>tryed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>ask</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>asked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>ask</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>asken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>need</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>needed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>need</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>needen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>feel</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>felt</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>feel</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>feeled</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>become</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>become</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>become</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>became</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>leave</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>left</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>leave</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>leaved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>put</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>put</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>put</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>putted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>mean</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>meant</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>mean</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>meaned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>keep</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>kept</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>keep</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>keeped</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>let</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastGoodAnswer</key>
+		<string>let</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>let</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>8</string>
+		<key>panter</key>
+		<string>Franz Marc</string>
+		<key>pantingTitle</key>
+		<string>Girl with Cat II</string>
+		<key>pastBadAnswer</key>
+		<string>letten</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>begin</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>begun</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>begin</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>began</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>seem</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>seemed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>seem</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>seem</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>help</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>helped</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>help</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>helpen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>talk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>talked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>talk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>talken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>turn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>turned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>turn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>turn</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>start</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>started</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>start</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>starten</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>show</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>shown</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>show</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>showned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>heard</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>heared</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>play</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>played</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>play</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>plaid</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>run</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>run</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>run</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>ran</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>move</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>moved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>move</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>moven</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>like</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>liked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>like</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>liken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>live</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>lived</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>live</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>liven</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>believe</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>believed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>believe</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>believen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hold</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastGoodAnswer</key>
+		<string>held</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>hold</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>9</string>
+		<key>panter</key>
+		<string>Simone Martini</string>
+		<key>pantingTitle</key>
+		<string>A Child fallen out his cradle</string>
+		<key>pastBadAnswer</key>
+		<string>holded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>bring</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>brought</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>bring</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>bringed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>happen</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>happened</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>happen</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>happenen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>write</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>written</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>write</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>wrote</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>provide</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>provided</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>provide</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>prooven</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>sit</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>sat</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>sit</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>sitted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>stood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>standed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lose</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>lost</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lose</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>losed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>pay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>paid</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>pay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>payed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>meet</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>met</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>meet</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>meeted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>include</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>included</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>include</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>incluid</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>continue</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>continued</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>continue</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>coninuen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>set</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>set</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>set</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>setted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>learn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>learnt</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>learn</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>learned</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>change</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>changed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>change</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>changen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lead</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastGoodAnswer</key>
+		<string>led</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>lead</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>10</string>
+		<key>panter</key>
+		<string>Piet Mondrian</string>
+		<key>pantingTitle</key>
+		<string>Tableau VII</string>
+		<key>pastBadAnswer</key>
+		<string>leaded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>understand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>understood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>understand</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>understanded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>watch</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>watched</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>watch</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>watch</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>follow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>followed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>follow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>followen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stop</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>stopped</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stop</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>stop</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>create</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>created</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>create</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>createn</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>speak</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>spoken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>speak</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>spoke</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>read</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>read</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>read</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>readed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>allow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>allowed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>allow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>allew</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>add</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>added</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>add</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>adden</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>spend</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>spent</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>spend</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>spended</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>grow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>grown</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>grow</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>growed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>open</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>opened</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>open</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>openen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>walk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>walked</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>walk</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>wlaken</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>win</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>won</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>win</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>wan</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>offer</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastGoodAnswer</key>
+		<string>offered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>offer</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>11</string>
+		<key>panter</key>
+		<string>Claude Monet</string>
+		<key>pantingTitle</key>
+		<string>Waterlilies</string>
+		<key>pastBadAnswer</key>
+		<string>offeren</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>remember</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>remembered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>remember</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>rememberen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>love</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>loved</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>love</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>luve</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>consider</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>considered</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>consider</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>consideren</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>appear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>appeared</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>appear</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>appearen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>buy</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>bought</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>buy</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>buyed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>wait</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>waited</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>wait</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>waiten</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>serve</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>served</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>serve</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>serven</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>die</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>died</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>die</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>dyed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>send</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>sent</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>send</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>sended</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>expect</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>expected</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>expect</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>expecten</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>build</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>built</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>build</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>builded</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>stayed</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>stay</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>stood</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>fall</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>fallen</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>fall</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>fell</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>cut</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>cut</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>cut</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>cutted</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>reach</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastGoodAnswer</key>
+		<string>reached</string>
+	</dict>
+	<dict>
+		<key>infinitif</key>
+		<string>reach</string>
+		<key>isFinished</key>
+		<string>n</string>
+		<key>paintingNumber</key>
+		<string>12</string>
+		<key>panter</key>
+		<string>Egon Schiele</string>
+		<key>pantingTitle</key>
+		<string>Portrait of Arthur Rössler</string>
+		<key>pastBadAnswer</key>
+		<string>reachen</string>
+	</dict>
+</array>
+</plist>

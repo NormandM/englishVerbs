@@ -7,15 +7,11 @@
 //
 
 import UIKit
-import CoreData
 import AudioToolbox
-
-class QuizViewController: UIViewController, UIPopoverPresentationControllerDelegate {
-    
-    let dataController = DataController.sharedInstance
-    
-    @IBOutlet weak var verbeInfinitif: UILabel!
-    @IBOutlet weak var tempsVerbe: UILabel!
+class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var typeOfVerbLabel: UILabel!
+    @IBOutlet weak var verbTenseLabel: UILabel!
     @IBOutlet weak var un: UILabel!
     @IBOutlet weak var deux: UILabel!
     @IBOutlet weak var trois: UILabel!
@@ -23,45 +19,37 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     @IBOutlet weak var cinq: UILabel!
     @IBOutlet weak var six: UILabel!
     @IBOutlet weak var goodResponseMessage: UILabel!
+    var response = UITextField()
+    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var premier: UITextField!
     @IBOutlet weak var deuxieme: UITextField!
     @IBOutlet weak var troisieme: UITextField!
     @IBOutlet weak var quatrieme: UITextField!
     @IBOutlet weak var cinquieme: UITextField!
     @IBOutlet weak var sixieme: UITextField!
-    
-    @IBOutlet weak var totalQuestion: UIProgressView!
-    @IBOutlet weak var anotherOne: UIButton!
-    
-    
-    @IBOutlet weak var textFieldTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var textFieldTopConstraint2: NSLayoutConstraint!
-    @IBOutlet weak var textFieldConstraint4Bottom: NSLayoutConstraint!
-    @IBOutlet weak var textFieldConsytaint4Top: NSLayoutConstraint!
-    @IBOutlet weak var quatreBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var quatreTopConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var tensePicker: UIPickerView!
+    @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var pickerTitleLabel: UILabel!
+    @IBOutlet weak var verbTensetTitle: UILabel!
+    @IBOutlet weak var verbTypeTitle: UILabel!
+    @IBOutlet weak var startQuizButton: UIButton!
+    @IBOutlet weak var oK1Button: UIButton!
+    @IBOutlet weak var oK2Button: UIButton!
+    @IBOutlet weak var oK3Button: UIButton!
+    @IBOutlet weak var oK4Button: UIButton!
+    @IBOutlet var messageView: UIView!
+    var distanceFromTextField = CGFloat()
+    var keyBoardRec = CGRect()
+    var effect: UIVisualEffect!
+    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+    var blurEffectView = UIVisualEffectView()
+    let modeAndTemp = ModeAndTemp()
+    lazy var temps = modeAndTemp.temp
+    var typeOfVerbs = [VerbForm.auxiliaryBe.rawValue, VerbForm.auxiliaryHave.rawValue, VerbForm.regularVerb.rawValue, VerbForm.irregularVerb.rawValue]
+    var infinitive = String()
     var soundURL: NSURL?
     var soundID:SystemSoundID = 0
-    var fenetre = UserDefaults.standard.bool(forKey: "fenetre")
-    var testCompltete = UserDefaults.standard.bool(forKey: "testCompltete")
-    var tenseSelected: String = ""
-    
-    enum TempsDeVerbe: String {
-        case Present
-        case Preterite
-        case PresentPerfect
-        case PastPerfect
-        case PresentContinuous
-        case PastContinuous
-        case PastPerfectContinuous
-        case FuturContinuous
-        case PresentPerfectContinuous
-        case FuturPerfectContinuous
-        case Futur
-        case FuturPerfect
-        case Imperative
-    }
+    var tenseSelected = String()
     var hint: String = ""
     var first: String = ""
     var second: String = ""
@@ -71,101 +59,131 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
     var sixth: String = ""
     var arrayVerb: [[String]] = []
     var arraySelection: [[String]] = []
-    var verbArray: NSArray = []
     var indexChoice: Int = 0
     var textIndex: Int = 0
     var message: String = ""
-    var progress: Float = 0.0
-    var progressInt: Float = 0.0
-    var goodResponse: Int = 0
-    
+    let fonts = FontsAndConstraintsOptions()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Quiz"
-        totalQuestion.progress = 0.0
-        anotherOne.layer.masksToBounds = true
-        anotherOne.layer.cornerRadius = 10
-        testCompltete = false
-        UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow , object: nil)
- 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        optionSlected()
+        self.title = "Verb Pattern Quiz"
+        self.tensePicker.delegate = self
+        self.tensePicker.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        goodResponseMessage.textColor = UIColor.black
+        goodResponseMessage.font = fonts.normalItaliqueBoldFont
+        premier.isUserInteractionEnabled = false
+        deuxieme.isUserInteractionEnabled = false
+        troisieme.isUserInteractionEnabled = false
+        quatrieme.isUserInteractionEnabled = false
+        cinquieme.isUserInteractionEnabled = false
+        sixieme.isUserInteractionEnabled = false
+        
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        verbTypeTitle.textColor = UIColor.white
+        verbTypeTitle.font = fonts.normalBoldFont
+        verbTensetTitle.font = fonts.normalBoldFont
+        verbTensetTitle.textColor = UIColor.white
+        OkButtonSetUp.buttonHidden(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
+        typeOfVerbLabel.isHidden = true
+        verbTenseLabel.isHidden = true
+        commentLabel.font = fonts.normalItaliqueBoldFont
+        commentLabel.text = "Understand the different verb forms and their combinations"
+        un.font = fonts.normalFont
+        deux.font = fonts.normalFont
+        trois.font = fonts.normalFont
+        quatre.font = fonts.normalFont
+        cinq.font = fonts.normalFont
+        six.font = fonts.normalFont
+    }
+
     override func viewDidAppear(_ animated: Bool) {
-        
-        let reponse = UserDefaults.standard
-        testCompltete = reponse.bool(forKey: "testCompltete")
-        if testCompltete == true && fenetre == false {
-            showAlert4()
-        }
+        OkButtonSetUp.dimensionAndColour(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
+        OkButtonSetUp.startQuizButtonSetUp(startQuizButton: startQuizButton)
+        let buttonText = """
+        Start
+        Quiz
+        """
+        startQuizButton.setTitle(buttonText, for: .normal)
+        goodResponseMessage.text = ""
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRightAnswer" {
-            let controller = segue.destination as! RightAnswerViewController
-            premier.text = ""
-            deuxieme.text = ""
-            troisieme.text = ""
-            quatrieme.text = ""
-            cinquieme.text = ""
-            sixieme.text = ""
-            message = ""
-            controller.first = first
-            controller.second = second
-            controller.third = third
-            controller.fourth = fourth
-            controller.fifth = fifth
-            controller.sixth = sixth
-            controller.tempsFinal = tenseSelected
-            controller.infinitifFinal = verbeInfinitif.text!
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if messageView.isDescendant(of: view) {
+            TensePickViewMessage.showPickerView(view: view, messageView: messageView, visualEffect: blurEffectView, effect: effect, title: pickerTitleLabel, okButton: okButton)
         }
-        if segue.identifier == "showQuizResult" {
-            let controller = segue.destination as! QuizResultViewController
-            controller.goodResponse = goodResponse
+        if startQuizButton.isDescendant(of: view) {
+            OkButtonSetUp.startQuizButtonSetUp(startQuizButton: startQuizButton)
+            OkButtonSetUp.dimensionAndColour(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
         }
-    }
-    @IBAction func unwindToLast(segue: UIStoryboardSegue) {
-        
-        optionSlected()
-        reinitializeTextFields()
-        if progressInt == 10.0{
-            progressInt = 0.0
-            progress = 0.0
-            goodResponse = 0
-            totalQuestion.progress = 0.0
-            
-        }
-    }
-
-
-// MARK: All buttons
-    @IBAction func hintButton(_ sender: AnyObject) {
-        showAlert()
     }
     
-    @IBAction func another(_ sender: AnyObject) {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return temps.count
+        }
+        return typeOfVerbs.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            tenseSelected = temps[row]
+            return temps[row]
+        }else{
+            return typeOfVerbs[row]
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            verbTenseLabel.text = temps[row]
+        }else{
+            let pickerChoice = modeAndTemp.pickerChoice(row: row, component: component)
+            infinitive = pickerChoice.1
+            typeOfVerbLabel.text = "To \(infinitive)"
+        }
         optionSlected()
-        reinitializeTextFields()
-        
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        for view in pickerView.subviews {
+            if view.frame.size.height < 1 {
+                var frame = view.frame
+                frame.size.height = 1
+                view.frame = frame
+                view.backgroundColor = UIColor.white
+            }
+        }
+        let pickerLabel = UILabel()
+        var titleData = String()
+        if component == 0 {
+            titleData = temps[row]
+        }else{
+            titleData = typeOfVerbs[row]
+        }
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:(fonts.smallBoldFont ),NSAttributedString.Key.foregroundColor:UIColor.white])
+        pickerLabel.textAlignment = .center
+        pickerLabel.attributedText = myTitle
+        return pickerLabel
     }
 
-    
  /////////////////////////////////////////////////////////
  // MARK: All functions
     func reinitializeTextFields() {
         textIndex = 0
-        goodResponseMessage.text = ""
         message = ""
-        if tempsVerbe.text == "Imperative"{
+        let buttonText = """
+            Try another
+            one
+            """
+        OkButtonSetUp.buttonHidden(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
+        startQuizButton.isHidden = false
+        startQuizButton.setTitle(buttonText, for: .normal)
+        if verbTenseLabel.text == "Imperative"{
             deuxieme.text = ""
             quatrieme.text = ""
             quatrieme.backgroundColor = UIColor.lightGray
@@ -173,73 +191,62 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             cinquieme.text = ""
             cinquieme.backgroundColor = UIColor.lightGray
             cinquieme.isUserInteractionEnabled = false
-            
-            
         }else{
             premier.text = ""
-            premier.backgroundColor = UIColor(red: 14.0/255.0, green: 172.0/255.0, blue: 75.0/255.0, alpha: 1.0)
+            premier.backgroundColor = UIColor(red: 178/255.0, green: 208/255.0, blue: 198/255.0, alpha: 1.0)
+            premier.textColor = UIColor.black
             premier.isUserInteractionEnabled = true
             deuxieme.text = ""
-            deuxieme.backgroundColor = UIColor.lightGray
+            deuxieme.backgroundColor = UIColor(red: 178/255.0, green: 208/255.0, blue: 198/255.0, alpha: 1.0)
             deuxieme.isUserInteractionEnabled = false
+            deuxieme.textColor = UIColor.black
             troisieme.text = ""
-            troisieme.backgroundColor = UIColor.lightGray
+            troisieme.backgroundColor = UIColor(red: 178/255.0, green: 208/255.0, blue: 198/255.0, alpha: 1.0)
             troisieme.isUserInteractionEnabled = false
+            troisieme.textColor = UIColor.black
             quatrieme.text = ""
-            quatrieme.backgroundColor = UIColor.lightGray
+            quatrieme.backgroundColor = UIColor(red: 178/255.0, green: 208/255.0, blue: 198/255.0, alpha: 1.0)
             quatrieme.isUserInteractionEnabled = false
+            quatrieme.textColor = UIColor.black
             cinquieme.text = ""
-            cinquieme.backgroundColor = UIColor.lightGray
+            cinquieme.backgroundColor = UIColor(red: 178/255.0, green: 208/255.0, blue: 198/255.0, alpha: 1.0)
             cinquieme.isUserInteractionEnabled = false
+            cinquieme.textColor = UIColor.black
             sixieme.text = ""
-            sixieme.backgroundColor = UIColor.lightGray
+            sixieme.backgroundColor = UIColor(red: 178/255.0, green: 208/255.0, blue: 198/255.0, alpha: 1.0)
             sixieme.isUserInteractionEnabled = false
-            
+            sixieme.textColor = UIColor.black
         }
-
-    }
-// This is the function displaying the content for the Hint button
-    func showAlert () {
-        let alertController = UIAlertController(title: "An example with the verb walk: ", message: hint, preferredStyle: .actionSheet)
-        alertController.popoverPresentationController?.sourceView = self.view
-        alertController.popoverPresentationController?.sourceRect = tempsVerbe.frame
-        
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: dismissAlert)
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    func dismissAlert(_ sender: UIAlertAction) {
-        
-    }
-    func resultQuiz () {
-
     }
 
-    
 //MARK: Function verifies in the User response is Good or Bad
     @discardableResult func textFieldAnswer(_ chosenTextField: UITextField, personne: String) -> String {
-        if tempsVerbe.text != "Imperative" {
-            
-            if chosenTextField.text == personne {
+        if verbTenseLabel.text != "Imperative" {
+            if chosenTextField.text == personne{
                 premier.backgroundColor = UIColor.white
                 if personne == second {
                     deuxieme.text = second
                     deuxieme.backgroundColor = UIColor.white
                 }else if textIndex == 0{
-                    deuxieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+                    deuxieme.backgroundColor = UIColor.clear
                     deuxieme.isUserInteractionEnabled = true
+                    oK1Button.isHidden = true
+                    oK2Button.isHidden = false
                 }
                 if personne == third || second == third || first == third{
                     troisieme.text = third
                     troisieme.backgroundColor = UIColor.white
                 }else if textIndex < 2{
                     if textIndex != 0 || personne == fourth {
-                        troisieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+                        troisieme.backgroundColor = UIColor.clear
                         troisieme.isUserInteractionEnabled = true
+                        oK1Button.isHidden = true
+                        oK2Button.isHidden = true
+                        oK3Button.isHidden = false
+                        oK4Button.isHidden = true
                     }
                 }
-                if personne == fourth || (second == fourth && textIndex > 0){
+                if personne == fourth  || (second == fourth && textIndex > 0){
                     quatrieme.text = fourth
                     quatrieme.backgroundColor = UIColor.white
                 }
@@ -263,13 +270,19 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 if personne == second {
                     deuxieme.backgroundColor = UIColor.white
                     premier.isUserInteractionEnabled = false
+
                 }
                 if personne == fourth {
                     quatrieme.text = fourth
                     quatrieme.backgroundColor = UIColor.white
                     premier.isUserInteractionEnabled = false
+                    oK1Button.isHidden = true
+                    oK2Button.isHidden = true
+                    oK3Button.isHidden = true
+                    oK4Button.isHidden = false
+                    
                 }else{
-                    quatrieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+                    quatrieme.backgroundColor = UIColor.white
                     quatrieme.isUserInteractionEnabled = true
                 }
                 if personne == fifth {
@@ -280,13 +293,10 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 if deuxieme.text != "" && quatrieme.text != "" {
                     message = "true"
                 }
-                print(message)
-                
             }else{
                 message = "false"
             }
         }
-        
         return message
     }
     func checkAnswer(){
@@ -308,159 +318,113 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if sixieme.isEditing{
             textFieldAnswer(sixieme, personne: sixth)
         }
-        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: dataController.managedObjectContext) as! Item
         if message == "true"{
             goodResponseMessage.text = "Great!"
             let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
             AudioServicesPlaySystemSound(soundID)
-            
-            progressClaculation()
-            goodResponse = goodResponse + 1
-            item.noBad = 0
-            item.tence = tenseSelected
-            item.verb = verbeInfinitif.text
-            item.numberGoodAnswers = item.numberGoodAnswers + 1
             premier.isUserInteractionEnabled = false
             deuxieme.isUserInteractionEnabled = false
             troisieme.isUserInteractionEnabled = false
             quatrieme.isUserInteractionEnabled = false
             cinquieme.isUserInteractionEnabled = false
             sixieme.isUserInteractionEnabled = false
-            dataController.saveContext()
-
+            let buttonText = """
+            Try another
+            one
+            """
+            OkButtonSetUp.buttonHidden(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
+            startQuizButton.isHidden = false
+            startQuizButton.setTitle(buttonText, for: .normal)
+            
         }else if message == "false" {
             let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
             AudioServicesCreateSystemSoundID(soundURL!, &soundID)
             AudioServicesPlaySystemSound(soundID)
-            progressClaculation()
-            let verb = verbeInfinitif.text
-            let tense = tenseSelected
-            item.numberBadAnswers = item.numberBadAnswers + 1
-            item.verb = verb
-            item.tence = tense
-            item.noBad = 1
-            
-            if progressInt != 10.0 {
-                performSegue(withIdentifier: "showRightAnswer", sender: nil)
-            }
+            //performSegue(withIdentifier: "showRightAnswer", sender: self)
+            premier.text = first
+            deuxieme.text = second
+            troisieme.text = third
+            quatrieme.text = fourth
+            cinquieme.text = fifth
+            sixieme.text = sixth
+            premier.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            deuxieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            troisieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            quatrieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            cinquieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            sixieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            premier.backgroundColor = UIColor.white
+            deuxieme.backgroundColor = UIColor.white
+            troisieme.backgroundColor = UIColor.white
+            quatrieme.backgroundColor = UIColor.white
+            cinquieme.backgroundColor = UIColor.white
+            sixieme.backgroundColor = UIColor.white
+            OkButtonSetUp.buttonHidden(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
+            goodResponseMessage.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            startQuizButton.isHidden = false
+            //startQuizButton.setTitle("Try ", for: .normal)
+            goodResponseMessage.text = "Sorry... See the right conjugation above."
         }
-        dataController.saveContext()
         premier.resignFirstResponder()
         deuxieme.resignFirstResponder()
         troisieme.resignFirstResponder()
         quatrieme.resignFirstResponder()
         cinquieme.resignFirstResponder()
         sixieme.resignFirstResponder()
-
-        if progressInt == 10.0 {
-            let when = DispatchTime.now() + 1.5 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                self.performSegue(withIdentifier: "showQuizResult", sender: nil)
-            }
-            
-        }
- 
     }
-    func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
-        if testReturnOrDone() {
-            checkAnswer()
-        }
+    func textFieldShouldReturn(_ response: UITextField) -> Bool {
+        answerDone()
         return true
-        
     }
 //MARK: Notification for keyboard
-    
     @objc func keyboardWillShow(_ notification: Notification){
         if troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-            UIView.animate(withDuration: 1.5, animations: {
-                self.textFieldTopConstraint.constant = 1
-                self.textFieldTopConstraint2.constant = 1
-                self.view.layoutIfNeeded()
-                
-            })
+             distanceFromTextField = view.frame.size.height - (troisieme.frame.size.height + troisieme.frame.origin.y + stackView.frame.origin.y)
+            guard let keyBoard = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+                return
+            }
+            keyBoardRec = keyBoard
+            
+        }else  if tenseSelected == "Imperative" && quatrieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
+            distanceFromTextField = view.frame.size.height - (quatrieme.frame.size.height + quatrieme.frame.origin.y + stackView.frame.origin.y)
+            guard let keyBoard = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+                return
+            }
+            keyBoardRec = keyBoard
         }
-        if tenseSelected == "Imperative" && quatrieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-                deux.textColor = UIColor.clear
-                self.quatreBottomConstraint.isActive = false
-                self.quatreTopConstraint.constant = -75
-                self.textFieldConstraint4Bottom.isActive = false
-                self.textFieldConsytaint4Top.constant = -75
-                self.view.layoutIfNeeded()
+        if notification.name == UIResponder.keyboardWillShowNotification{
+            animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
         }
     }
     @objc func keyboardWillHide (_ notification: Notification){
-        if  troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-            UIView.animate(withDuration: 1.5, animations: {
-                self.textFieldTopConstraint.constant = 20
-                self.textFieldTopConstraint2.constant = 20
-                self.view.layoutIfNeeded()
-            })
-        }
-        if tenseSelected == "Imperative" && quatrieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-            deux.textColor = UIColor.black
-            self.quatreBottomConstraint.isActive = true
-            self.quatreTopConstraint.constant = 20
-            self.textFieldConstraint4Bottom.isActive = true
-            self.textFieldConsytaint4Top.constant = 20
-            self.view.layoutIfNeeded()
-        }
-
-        
+        print(distanceFromTextField)
+        print(keyBoardRec.height)
+        animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
     }
 // Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
-        arrayVerb = verbArray as! [[String]]
-        if arraySelection[0].contains("100 most Common Verbs"){
-            if let plistPath = Bundle.main.path(forResource: "100MostUseEnglishVerbs", ofType: "plist"),
-                let verb100Verbs = NSArray(contentsOfFile: plistPath){
-                let numberOfVerbs = verb100Verbs.count
-                let random100 = Int(arc4random_uniform(UInt32(numberOfVerbs)))
-                let array100Verbs = verb100Verbs as! [[String]]
-                let verbChoisi100 = array100Verbs[random100][0]
-                var n = 0
-                for verb in arrayVerb {
-                    if verb.index(of: verbChoisi100) != nil{
-                        indexChoice = n
-                    }
-                    n = n + 1
-                }
-            }
-            
-        }else if arraySelection[0].contains("Irregular Verbs"){
-            if let plistPath = Bundle.main.path(forResource: "IrregularVerbs", ofType: "plist"),
-                let irregularVerb = NSArray(contentsOfFile: plistPath){
-                let numberIrregular = irregularVerb.count
-                indexChoice = Int(arc4random_uniform(UInt32(numberIrregular)))
-                let arrayIrregular = irregularVerb as! [[String]]
-                let verbeChoisiIrregular = arrayIrregular[indexChoice][0]
-                var n = 0
-                for verb in arrayVerb {
-                    if verb.index(of: verbeChoisiIrregular) != nil{
-                        indexChoice = n
-                    }
-                    n = n + 1
-                }
-            }
-        }else if arraySelection[0].contains("All 1000 Verbs!"){
-            let numberAllVerb = arrayVerb.count
-            indexChoice = Int(arc4random_uniform(UInt32(numberAllVerb)))
+        reinitializeTextFields()
+        tenseSelected = verbTenseLabel.text!
+        if infinitive == "walk"{
+            indexChoice = 960
+        }else if infinitive == "be"{
+            indexChoice = 47
+        }else if infinitive == "do"{
+            indexChoice = 257
+        }else if infinitive == "have"{
+            indexChoice = 376
         }
-        let countNumberOfTenses = arraySelection[1].count
-        let indexSelected = Int(arc4random_uniform(UInt32(countNumberOfTenses)))
-        tenseSelected = arraySelection[1][indexSelected]
-        first = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[0]
-        second = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[1]
-        third = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[2]
-        fourth = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[3]
-        fifth = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[4]
-        sixth = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[5]
-        hint = toChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: verbArray)[6]
-        let verbTran = verbArray as! [[String]]
-        verbeInfinitif.text = "to \(verbTran[indexChoice][0])"
-        tempsVerbe.text = tenseSelected
+        first = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[0]
+        second = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[1]
+        third = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[2]
+        fourth = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[3]
+        fifth = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[4]
+        sixth = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[5]
+        hint = ToChooseVerb().chooseVerb(temps: tenseSelected, indexChoice: indexChoice, verbArray: arrayVerb)[6]
+        verbTenseLabel.text = tenseSelected
         if tenseSelected == "Imperative"{
             un.text = ""
             deux.text = "(you)"
@@ -473,13 +437,12 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             sixieme.text = ""
             premier.borderStyle = .none
             premier.backgroundColor = UIColor.clear
-            deuxieme.backgroundColor = UIColor(red: 14/255, green: 172/255, blue: 75/255, alpha: 1.0)
+            deuxieme.backgroundColor = UIColor.clear
             deuxieme.isUserInteractionEnabled = true
             troisieme.borderStyle = .none
             troisieme.backgroundColor = UIColor.clear
             sixieme.borderStyle = .none
             sixieme.backgroundColor = UIColor.clear
-            
         }else{
             un.text = "I"
             deux.text = "you"
@@ -488,35 +451,27 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             cinq.text = "you"
             six.text = "they"
         }
-        if verbeInfinitif.text == "to be"{
-            if tenseSelected == "Present"{
+        if infinitive == "be"{
+            if tenseSelected == "Simple Present"{
                 first = "am"
                 second = "are"
                 third = "is"
                 fourth = "are"
                 fifth = "are"
                 sixth = "are"
-            }else if tenseSelected == "Preterite"{
+            }else if tenseSelected == "Simple Past"{
                 first = "was"
                 second = "were"
                 third = "was"
                 fourth = "were"
                 fifth = "were"
                 sixth = "were"
-
             }else if tenseSelected == "Imperative"{
                 second = "be"
-                fourth = "let's be"
+                fourth = "let’s be"
                 fifth = "be"
             }
-            
         }
-    }
-
-    func progressClaculation() {
-        progressInt = progressInt + 1
-        progress = progressInt / 10
-        totalQuestion.progress = progress
     }
     func testReturnOrDone() -> Bool {
         if premier.backgroundColor != UIColor.white || deuxieme.backgroundColor != UIColor.white || troisieme.backgroundColor != UIColor.white || quatrieme.backgroundColor != UIColor.white || cinquieme.backgroundColor != UIColor.white || sixieme.backgroundColor != UIColor.white {
@@ -525,38 +480,79 @@ class QuizViewController: UIViewController, UIPopoverPresentationControllerDeleg
             return false
         }
     }
-    
     @IBAction func done(_ sender: UIButton) {
+        answerDone()
+    }
+    @IBAction func chooseTenseOptionPushed(_ sender: UIButton) {
+        reinitializeTextFields()
+        premier.textColor = UIColor.black
+        deuxieme.textColor = UIColor.black
+        troisieme.textColor = UIColor.black
+        quatrieme.textColor = UIColor.black
+        cinquieme.textColor = UIColor.black
+        sixieme.textColor = UIColor.black
+        commentLabel.isHidden = true
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        effect = blurEffectView.effect
+        view.addSubview(blurEffectView)
+        goodResponseMessage.textColor = UIColor.black
+        goodResponseMessage.isHidden = false
+        TensePickViewMessage.showPickerView(view: view, messageView: messageView, visualEffect: blurEffectView, effect: effect, title: pickerTitleLabel, okButton: okButton)
+    }
+    @IBAction func okButtonPushed(_ sender: UIButton) {
+        TensePickViewMessage.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
+        let selectedRow = tensePicker.selectedRow(inComponent: 0)
+        let selectedRow2 = tensePicker.selectedRow(inComponent: 1)
+        let pickerChoice = modeAndTemp.choice(position1: selectedRow, position2: selectedRow2)
+        verbTenseLabel.text = pickerChoice.0
+        infinitive = pickerChoice.2
+        typeOfVerbLabel.text = "To \(infinitive)"
+        optionSlected()
+        if tenseSelected == "Imperative"{
+            deuxieme.becomeFirstResponder()
+            oK1Button.isHidden = true
+            oK2Button.isHidden = false
+        }else{
+            premier.becomeFirstResponder()
+            oK1Button.isHidden = false
+        }
+        premier.backgroundColor = UIColor.white
+        if tenseSelected != "Imperative" {
+            premier.borderStyle = .roundedRect
+            troisieme.borderStyle = .roundedRect
+            sixieme.borderStyle = .roundedRect
+        }
+        startQuizButton.isHidden = true
+        typeOfVerbLabel.isHidden = false
+        verbTenseLabel.isHidden = false
+    }
+    func answerDone() {
         if testReturnOrDone() {
             checkAnswer()
         }
-        
-    }
-    func showAlert4 () {
-        
-        let alert = UIAlertController(title: "English Verbs Quiz", message: "Please leave your comments. It is the only way I can improve this App.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK ", style: UIAlertActionStyle.default, handler:{(alert: UIAlertAction!) in self.rateApp(appId: "id1170835814") { success in
-            print("RateApp \(success)")
-            }}))
-        alert.addAction(UIAlertAction(title: "Not now", style: UIAlertActionStyle.default, handler: nil))
-        //self.present(alert, animated: true, completion: nil)
-        alert.addAction(UIAlertAction(title: "Do not show me this window again", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.fenetre = true; UserDefaults.standard.set(self.fenetre, forKey: "fenetre") }))
-        self.present(alert, animated: true, completion: nil)
-        testCompltete = false
-        UserDefaults.standard.set(self.testCompltete, forKey: "testCompltete")
-
-    }
-    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
-        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
-            completion(false)
-            return
+        if tenseSelected != "Imperative"{
+            if deuxieme.text == ""{
+                deuxieme.becomeFirstResponder()
+                
+            }else if troisieme.text == ""{
+                troisieme.becomeFirstResponder()
+            }
+        }else{
+            quatrieme.becomeFirstResponder()
+            oK2Button.isHidden = true
+            oK4Button.isHidden = false
+            if quatrieme.text != "" { oK4Button.isHidden = true}
         }
-        guard #available(iOS 10, *) else {
-            completion(UIApplication.shared.openURL(url))
-            return
-        }
-        UIApplication.shared.open(url, options: [:], completionHandler: completion)
     }
-
-    
+    func animateViewMoving (_ up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+        UIView.commitAnimations()
+    }
 }

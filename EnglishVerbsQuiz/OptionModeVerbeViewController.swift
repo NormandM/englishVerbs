@@ -10,75 +10,67 @@ import UIKit
 import QuartzCore
 class OptionModeVerbeViewController: UIViewController {
  
-    @IBOutlet weak var commonVerbs: UITextView!
-    @IBOutlet weak var irregularVerbs: UITextView!
+    @IBOutlet weak var verbConjugationForm: UITextView!
+    @IBOutlet weak var pastAndPastParticiple: UITextView!
     @IBOutlet weak var allVerbs: UITextView!
-    @IBOutlet weak var def100Verbs: UITextView!
-    @IBOutlet weak var defIrregularVerbs: UITextView!
+    @IBOutlet weak var defVerbConjugation: UITextView!
+    @IBOutlet weak var defPastAndPastParticiple: UITextView!
     @IBOutlet weak var defAllVerbs: UITextView!
-    
-    var verbsArray: NSArray = []
+    var verbsArray = [[String]]()
     var groupeVerbe: String = ""
-
-    
+    let fonts = FontsAndConstraintsOptions()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose a group of verbs"
-        def100Verbs.layer.masksToBounds = true
-        def100Verbs.layer.cornerRadius = 10
-        def100Verbs.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 0)
-        defIrregularVerbs.layer.masksToBounds  = true
-        defIrregularVerbs.layer.cornerRadius = 10
-        defIrregularVerbs.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 0)
+        defVerbConjugation.layer.masksToBounds = true
+        defVerbConjugation.layer.cornerRadius = 10
+        defVerbConjugation.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 0)
+        defPastAndPastParticiple.layer.masksToBounds  = true
+        defPastAndPastParticiple.layer.cornerRadius = 10
+        defPastAndPastParticiple.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 0)
         defAllVerbs.layer.masksToBounds  = true
         defAllVerbs.layer.cornerRadius = 10
-        defAllVerbs.textContainerInset = UIEdgeInsetsMake(10, 10, 0, 0)
-        commonVerbs.layer.masksToBounds = true
-        irregularVerbs.layer.masksToBounds = true
+        defAllVerbs.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 0)
+        verbConjugationForm.layer.masksToBounds = true
+        pastAndPastParticiple.layer.masksToBounds = true
         allVerbs.layer.masksToBounds = true
-        commonVerbs.layer.cornerRadius = 10
-        irregularVerbs.layer.cornerRadius = 10
+        verbConjugationForm.layer.cornerRadius = 10
+        pastAndPastParticiple.layer.cornerRadius = 10
         allVerbs.layer.cornerRadius = 10
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        verbConjugationForm.font = fonts.smallBoldFont
+        pastAndPastParticiple.font = fonts.smallBoldFont
+        allVerbs.font = fonts.normalBoldFont
+        defVerbConjugation.font = fonts.smallItaliqueFont
+        defPastAndPastParticiple.font = fonts.smallItaliqueFont
+        
     }
-    
-
-    
     // MARK: - Navigation
-
     @IBAction func showCommon(_ sender: UITapGestureRecognizer) {
-
             groupeVerbe = "100 most Common Verbs"
             performSegue(withIdentifier: "showTempVerbe", sender: sender)
     }
     
-    @IBAction func showIrregularVerbs(_ sender: UITapGestureRecognizer) {
+    @IBAction func showPastParticiple(_ sender: UITapGestureRecognizer) {
         groupeVerbe = "Irregular Verbs"
-        performSegue(withIdentifier: "showTempVerbe", sender: sender)
-
+        performSegue(withIdentifier: "showPastParticipleMenu", sender: sender)
     }
-    
     @IBAction func showAllVerbs(_ sender: UITapGestureRecognizer) {
         groupeVerbe = "All 1000 Verbs!"
         performSegue(withIdentifier: "showTempVerbe", sender: sender)
     }
-    
- 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
         if segue.identifier == "showTempVerbe"{
-            let controller = segue.destination as! OptionListTableViewController
-            controller.verbArray = verbsArray
+            let controller = segue.destination as! QuizOptionsController
+            controller.arrayVerb = verbsArray
             controller.groupeVerbe = groupeVerbe
         }
+        if segue.identifier == "showPastParticipleMenu"{
+            let controller = segue.destination as! MenuViewControllerForPastParticiple
+        }
     }
- 
-    
-
 }

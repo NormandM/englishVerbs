@@ -28,10 +28,13 @@ class tempsDeVerbeTableViewController: UITableViewController {
         super.viewDidLoad()
         
      }
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+    let MinHeight: CGFloat = 50
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let tHeight = tableView.frame.height - (navigationController?.navigationBar.frame.height)!
+        let temp = tHeight/CGFloat(temps.count + 1)
+        return temp > MinHeight ? temp : MinHeight
     }
+
     override func viewDidAppear(_ animated: Bool) {
         self.title = "Choose Verb Tense"
     }

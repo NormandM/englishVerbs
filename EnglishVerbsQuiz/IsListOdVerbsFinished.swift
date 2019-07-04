@@ -14,8 +14,6 @@ struct IsListOfVerbsFinished{
     init (){
         var arrayPastIsfInished = [Bool]()
         var arrayParticipleIsFinished = [Bool]()
-        print("numberOfPastListFinished: \(numberOfPastListFinished)")
-        print("numberOfParticipleFinished: \(numberOfParticipleFinished)")
         switch numberOfPastListFinished {
         case 0 :
             arrayPastIsfInished = [false, false, false, false, false, false]

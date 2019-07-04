@@ -1,16 +1,14 @@
 //
-//  MessageViewIntroduction.swift
-//  PaintingsAndArtists
+//  MessageViewforHelp.swift
+//  EnglishVerbsQuiz
 //
-//  Created by Normand Martin on 2018-09-10.
-//  Copyright © 2018 Normand Martin. All rights reserved.
+//  Created by Normand Martin on 2019-06-26.
+//  Copyright © 2019 Normand Martin. All rights reserved.
 //
 
 import UIKit
-
-class IntroductionMessage {
-    
-    class func showMessageView(view: UIView, messageView: UIView, visualEffect: UIVisualEffectView, effect:UIVisualEffect, title: UILabel, pastButton: UIButton, participleButton: UIButton, consultAndLearnLabel: UILabel?, seeYourAchievementButton: UIButton?){
+class MessageViewForHelp {
+    class func showMessageView(view: UIView, messageView: UIView, visualEffect: UIVisualEffectView, effect:UIVisualEffect, title: UILabel){
         let colorReference = ColorReference()
         let fontsAndConstraints = FontsAndConstraintsOptions()
         messageView.layer.cornerRadius = 5
@@ -30,32 +28,19 @@ class IntroductionMessage {
             messageView.transform = CGAffineTransform.identity
         }
         messageView.frame = CGRect(x: messageXPosition, y: messageYPosition , width: messageViewWidth, height: messageViewHeight)
-        title.font = fontsAndConstraints.smallBoldFont
-        title.textColor = colorReference.specialGray
-        pastButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
-        participleButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
-        if let button = seeYourAchievementButton {
-            button.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
-        }
-        
-        if let label = consultAndLearnLabel {
-            label.font = fontsAndConstraints.smallFont
-            label.textColor = colorReference.specialGray
-        }
+        title.font = fontsAndConstraints.normalBoldFont
+        title.textColor = colorReference.specialGray     
+    
     }
-    class func dismissMessageview(messageView: UIView, visualEffect: UIVisualEffectView, effect:UIVisualEffect) {
+    class func dismissMessageview(view: UIView, messageView: UIView, visualEffect: UIVisualEffectView, effect:UIVisualEffect){
         UIView.animate(withDuration: 0.8, animations: {
             messageView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
             messageView.alpha = 0
-            visualEffect.effect = nil
+            //visualEffect.effect = nil
+            visualEffect.removeFromSuperview()
+            
         }) { (success: Bool) in
             messageView.removeFromSuperview()
         }
     }
 }
-enum MessageType {
-    case introduction
-    case endOfQuiz
-    
-}
-

@@ -27,6 +27,7 @@ class PaintingViewController: UIViewController {
     @IBOutlet weak var returnToMenuButton: UIButton!
     @IBOutlet weak var consultAndLearn: UILabel!
     let isFinished = IsListOfVerbsFinished().arrayIsfinished
+    let colorReference = ColorReference()
     var effect: UIVisualEffect!
     var typeOfQuiz = TypeOfQuiz.simplePast
     var soundPlayer: SoundPlayer?
@@ -53,20 +54,7 @@ class PaintingViewController: UIViewController {
             let verbArray = NSArray(contentsOfFile: plistPath){
             arrayVerbe = verbArray as! [[String: String]]
         }
-
-        ///////////////////////////////////////
-//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = view.bounds
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        view.addSubview(blurEffectView)
-//        messageTitle.text = "Great Jobs!"
-//        consultAndLearn.text = """
-//        You know the simple past
-//        of the main verbs.
-//        """
-//        IntroductionMessage.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: messageTitle, pastButton: seeAchievementsButton, participleButton: returnToMenuButton, consultAndLearnLabel: consultAndLearn, seeYourAchievementButton: nil)
-        /////////////////////////////////////////////////////
+        self.title = "Choose Verb Tenses"
     }
     override func viewWillAppear(_ animated: Bool) {
         verbBackGroundView.layer.cornerRadius = 50
@@ -96,12 +84,26 @@ class PaintingViewController: UIViewController {
         backgroundView.backgroundColor =  UIColor(red: 254/255, green: 177/255, blue: 95/255, alpha: 0.5)
         backgroundView.layer.borderColor = UIColor(red: 254/255, green: 177/255, blue: 95/255, alpha: 1.0).cgColor
         backgroundView.layer.cornerRadius = 15
-        tryAgainButton.setTitle("Try Again", for: .normal)
-        tryAgainButton.titleLabel?.font = fontsAndConstraints.normalBoldFont
-        tryAgainButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
-        tryAgainButton.layer.cornerRadius = 10
+       
         tryAgainButton.isHidden = true
         setUpCards()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        let buttonText = """
+        Try
+        Again
+        """
+        tryAgainButton.titleLabel?.numberOfLines = 0
+        tryAgainButton.titleLabel?.textAlignment = .center
+        tryAgainButton.layer.cornerRadius = tryAgainButton.frame.height/2
+        tryAgainButton.setTitle(buttonText, for: .normal)
+        tryAgainButton.titleLabel?.font = fontsAndConstraints.smallBoldFont
+        tryAgainButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.barTintColor = colorReference.specialGray
+         self.navigationController?.isNavigationBarHidden = true
     }
 
     func questionSelection(){
@@ -119,8 +121,6 @@ class PaintingViewController: UIViewController {
         badAnswerPosition = question.relation.1
         let goodResponseText = question.goodCard.cardVerb
         let badResponseText = question.badCard.cardVerb
-        print(quizNumber)
-        print(goodAnswerPosition)
         goodResponseButton = cardButtons[goodAnswerPosition - quizNumber]
         badResponseButton = cardButtons[badAnswerPosition - quizNumber]
         goodResponseButton.isEnabled = true
@@ -180,7 +180,7 @@ class PaintingViewController: UIViewController {
                             You know the simple past
                             of the main verbs.
                             """
-                            IntroductionMessage.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: messageTitle, pastButton: seeAchievementsButton, participleButton: returnToMenuButton, consultAndLearnLabel: consultAndLearn, seeYourAchievementButton: nil)
+                            MenuFinishedQuiz.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: messageTitle, pastButton: seeAchievementsButton, participleButton: returnToMenuButton, consultAndLearnLabel: consultAndLearn, seeYourAchievementButton: nil)
                         }
                     case .pastParticiple:
                         if cardSelection.paintingNumber == "12" {
@@ -194,7 +194,7 @@ class PaintingViewController: UIViewController {
                             You know the past participle
                             of the main verbs.
                             """
-                            IntroductionMessage.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: messageTitle, pastButton: seeAchievementsButton, participleButton: returnToMenuButton, consultAndLearnLabel: consultAndLearn, seeYourAchievementButton: nil)
+                            MenuFinishedQuiz.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: messageTitle, pastButton: seeAchievementsButton, participleButton: returnToMenuButton, consultAndLearnLabel: consultAndLearn, seeYourAchievementButton: nil)
                             
                         }
                     }
@@ -203,7 +203,14 @@ class PaintingViewController: UIViewController {
                     messageLabel.text = "Great Job!"
                     soundPlayer?.playSound(soundName: "chime_clickbell_octave_up", type: "mp3")
                     tryAgainButton.isHidden = false
-                    tryAgainButton.setTitle("Next Verbs", for: .normal)
+                    let textButton = """
+                    Next
+                    Verbs
+                    """
+                    tryAgainButton.titleLabel?.numberOfLines = 0
+                    tryAgainButton.titleLabel?.textAlignment = .center
+                    tryAgainButton.titleLabel?.lineBreakMode = .byWordWrapping
+                    tryAgainButton.setTitle(textButton, for: .normal)
                 }
                 
             }else{
@@ -258,7 +265,6 @@ class PaintingViewController: UIViewController {
         position = []
         cardVerbArray = []
         relationArray = []
-        print(quizNumber)
         for n in quizNumber...29 + quizNumber{
             cardVerbArray.append(arrayVerbe[n])
             position.append(n)
@@ -268,8 +274,6 @@ class PaintingViewController: UIViewController {
         }
         position.shuffle()
         for n in stride(from: 0, to: 29, by: 2) {
-            print(position)
-            print(n)
             let goodCardPosition = position[n]
             let badCardPosition = position[n+1]
             var cardGoodImage = UIImage()

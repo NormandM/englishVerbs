@@ -1,15 +1,13 @@
 //
-//  MessageViewIntroduction.swift
-//  PaintingsAndArtists
+//  SecondMessageView.swift
+//  EnglishVerbsQuiz
 //
-//  Created by Normand Martin on 2018-09-10.
-//  Copyright © 2018 Normand Martin. All rights reserved.
+//  Created by Normand Martin on 2019-06-23.
+//  Copyright © 2019 Normand Martin. All rights reserved.
 //
 
 import UIKit
-
-class IntroductionMessage {
-    
+class SecondMessageView {
     class func showMessageView(view: UIView, messageView: UIView, visualEffect: UIVisualEffectView, effect:UIVisualEffect, title: UILabel, pastButton: UIButton, participleButton: UIButton, consultAndLearnLabel: UILabel?, seeYourAchievementButton: UIButton?){
         let colorReference = ColorReference()
         let fontsAndConstraints = FontsAndConstraintsOptions()
@@ -30,14 +28,13 @@ class IntroductionMessage {
             messageView.transform = CGAffineTransform.identity
         }
         messageView.frame = CGRect(x: messageXPosition, y: messageYPosition , width: messageViewWidth, height: messageViewHeight)
-        title.font = fontsAndConstraints.smallBoldFont
+        title.font = fontsAndConstraints.largeFont
         title.textColor = colorReference.specialGray
-        pastButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
-        participleButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
+        pastButton.titleLabel?.font = fontsAndConstraints.normalBoldFont
+        participleButton.titleLabel?.font = fontsAndConstraints.normalBoldFont
         if let button = seeYourAchievementButton {
-            button.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
+            button.titleLabel?.font = fontsAndConstraints.normalBoldFont
         }
-        
         if let label = consultAndLearnLabel {
             label.font = fontsAndConstraints.smallFont
             label.textColor = colorReference.specialGray
@@ -52,10 +49,5 @@ class IntroductionMessage {
             messageView.removeFromSuperview()
         }
     }
-}
-enum MessageType {
-    case introduction
-    case endOfQuiz
-    
 }
 

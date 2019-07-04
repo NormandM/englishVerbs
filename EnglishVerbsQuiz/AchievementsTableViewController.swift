@@ -23,7 +23,7 @@ class AchievementsTableViewController: UITableViewController {
     var  quiz = [[String]]()
     var AllInfinitiveVerbs = [[[String]]]()
     var isFinishedArray = IsListOfVerbsFinished().arrayIsfinished
-    let fontsAndConstraints = FontsAndConstraintsOptions()
+    let fonts = FontsAndConstraintsOptions()
     var startOverButton = UIButton()
     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
     lazy var blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -33,7 +33,9 @@ class AchievementsTableViewController: UITableViewController {
         effect = visualEffect.effect
         visualEffect.effect = nil
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start Over?", style: .plain, target: self, action: #selector(StartOver))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(backToMenu))
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: fonts.normalBoldFont], for: .normal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(backToMenu))
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: fonts.normalBoldFont], for: .normal)
         if let plistPath = Bundle.main.path(forResource: "ArtistesAndPaintings", ofType: "plist"),
             let verbArray = NSArray(contentsOfFile: plistPath){
             arrayPaintingInfo = verbArray as! [[String]]
@@ -53,8 +55,9 @@ class AchievementsTableViewController: UITableViewController {
         header.contentView.backgroundColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
         header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0 //make the header transparent
-        header.textLabel?.font = fontsAndConstraints.largeItaliqueFont
+        header.textLabel?.font = fonts.largeItaliqueFont
     }
+
     let MinHeight: CGFloat = 100.0
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
                 let tHeight = tableView.bounds.height
@@ -73,6 +76,9 @@ class AchievementsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imageNameArray[section].count
     }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.view.frame.height/25
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let indexPathToItemNumber = IndexPathToItemNumber(indexPath: indexPath)
@@ -80,18 +86,16 @@ class AchievementsTableViewController: UITableViewController {
         let paintingAndTheirVerbs = PaintingsAndTheirVerbs(arrayDictTestInfo: arrayVerbe, arrayPainting: arrayPaintingInfo, item: itemFromTest)
         let painterName = paintingAndTheirVerbs.painter
         let paintingNumber = paintingAndTheirVerbs.paintingNumber
-        cell.textLabel?.font = fontsAndConstraints.normalItaliqueBoldFont
-        cell.detailTextLabel?.font = fontsAndConstraints.smallFont
+        cell.textLabel?.font = fonts.smallBoldFont
+        cell.detailTextLabel?.font = fonts.smallItaliqueFont
         var paintingImage = UIImage()
         cell.textLabel?.textColor = UIColor.black
         var imageName = String()
-        print(isFinishedArray)
         if isFinishedArray[Int(paintingNumber)! - 1]{
             cell.textLabel!.text = "See the Verb List and learn something about \(painterName)"
             imageName = imageNameArray[indexPath.section][indexPath.row]
             cell.isUserInteractionEnabled = true
         }else{
-            print(indexPath)
             imageName = "question2"
             cell.textLabel!.text = "You have not finished this verb list"
             cell.isUserInteractionEnabled = false
@@ -133,6 +137,9 @@ class AchievementsTableViewController: UITableViewController {
                 controller.webAdress = webAdress
                 controller.painterAnniversary = painterAnniversary
             }
+            if segue.identifier == "showMainMenu" {
+                
+            }
         }
         // Pass the selected object to the new view controller.
     }
@@ -148,17 +155,17 @@ class AchievementsTableViewController: UITableViewController {
         All your achievments
         will be lost
         """
-        IntroductionMessage.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: titleLabel, pastButton: morePracticeButton, participleButton: returnToachievementButton, consultAndLearnLabel: commentLabel, seeYourAchievementButton: nil)
+        SecondMessageView.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: titleLabel, pastButton: morePracticeButton, participleButton: returnToachievementButton, consultAndLearnLabel: commentLabel, seeYourAchievementButton: nil)
     }
     @IBAction func returnToAchievementsButtonPushed(_ sender: UIButton) {
-        IntroductionMessage.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
+        SecondMessageView.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
         
     }
     @IBAction func needPracticeButtonPushed(_ sender: UIButton) {
         UserDefaults.standard.set(0, forKey: "quizNumber")
         UserDefaults.standard.set(0, forKey: "numberForQuizSimplePast")
         UserDefaults.standard.set(180, forKey: "numberForQuizPastParticiple")
-        IntroductionMessage.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
+        SecondMessageView.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
         isFinishedArray = IsListOfVerbsFinished().arrayIsfinished
         tableView.reloadData()
     }

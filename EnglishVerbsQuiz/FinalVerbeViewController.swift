@@ -65,6 +65,7 @@ class FinalVerbeViewController: UIViewController {
                 cinquieme.text = "were"
                 sixieme.text = "were"
             }
+            
         }
         infinitif.text = verbInfinitif.capitalizingFirstLetter()
         temps.text = temp.capitalizingFirstLetter()
@@ -80,12 +81,11 @@ class FinalVerbeViewController: UIViewController {
         fourth.text = choixDeLaPersonne4.pronom
         fifth.text = choixDeLaPersonne5.pronom
         sixth.text = choixDeLaPersonne6.pronom
-        
+        self.title = "Conjugated Verb"
     }
     override func viewWillAppear(_ animated: Bool) {
         backgrounColorView.layer.cornerRadius = 50
         infinitif.font = fonts.largeBoldFont
-        mode.font = fonts.largeFont
         temps.font = fonts.largeFont
         premier.font = fonts.smallItaliqueBoldFont
         deuxieme.font = fonts.smallItaliqueBoldFont

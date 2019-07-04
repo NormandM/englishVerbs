@@ -63,12 +63,13 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     var textIndex: Int = 0
     var message: String = ""
     let fonts = FontsAndConstraintsOptions()
+    let colorReference = ColorReference()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Verb Pattern Quiz"
+        self.title = "Quiz of Verb Forms"
         self.tensePicker.delegate = self
         self.tensePicker.dataSource = self
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         goodResponseMessage.textColor = UIColor.black
         goodResponseMessage.font = fonts.normalItaliqueBoldFont
@@ -78,7 +79,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         quatrieme.isUserInteractionEnabled = false
         cinquieme.isUserInteractionEnabled = false
         sixieme.isUserInteractionEnabled = false
-        
+        pickerViewSelected()
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -350,12 +351,12 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
             quatrieme.text = fourth
             cinquieme.text = fifth
             sixieme.text = sixth
-            premier.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
-            deuxieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
-            troisieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
-            quatrieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
-            cinquieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
-            sixieme.textColor = UIColor(red: 218/255, green: 69/255, blue: 49/255, alpha: 1.0)
+            premier.textColor = colorReference.specialRed
+            deuxieme.textColor = colorReference.specialRed
+            troisieme.textColor = colorReference.specialRed
+            quatrieme.textColor = colorReference.specialRed
+            cinquieme.textColor = colorReference.specialRed
+            sixieme.textColor = colorReference.specialRed
             premier.backgroundColor = UIColor.white
             deuxieme.backgroundColor = UIColor.white
             troisieme.backgroundColor = UIColor.white
@@ -380,29 +381,34 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         return true
     }
 //MARK: Notification for keyboard
-    @objc func keyboardWillShow(_ notification: Notification){
-        if troisieme.isEditing  && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-             distanceFromTextField = view.frame.size.height - (troisieme.frame.size.height + troisieme.frame.origin.y + stackView.frame.origin.y)
-            guard let keyBoard = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+    @objc func keyBoardWillShow(notification: Notification) {
+        if troisieme.isEditing && UIApplication.shared.statusBarOrientation.isLandscape {
+            let distanceFromTextField = view.frame.size.height - (troisieme.frame.size.height + troisieme.frame.origin.y + stackView.frame.origin.y)
+            guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
                 return
             }
-            keyBoardRec = keyBoard
-            
-        }else  if tenseSelected == "Imperative" && quatrieme.isEditing && UIDevice.current.userInterfaceIdiom == .pad && (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) {
-            distanceFromTextField = view.frame.size.height - (quatrieme.frame.size.height + quatrieme.frame.origin.y + stackView.frame.origin.y)
-            guard let keyBoard = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+            if notification.name == UIResponder.keyboardWillShowNotification{
+                animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
+            }else if notification.name == UIResponder.keyboardWillHideNotification{
+                animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+            }
+        }else if quatrieme.isEditing && UIApplication.shared.statusBarOrientation.isLandscape{
+            let distanceFromTextField = view.frame.size.height - (quatrieme.frame.size.height + quatrieme.frame.origin.y + stackView.frame.origin.y)
+            guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
                 return
             }
-            keyBoardRec = keyBoard
-        }
-        if notification.name == UIResponder.keyboardWillShowNotification{
-            animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
+            if notification.name == UIResponder.keyboardWillShowNotification{
+                animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
+            }else if notification.name == UIResponder.keyboardWillHideNotification{
+                animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+            }
         }
     }
     @objc func keyboardWillHide (_ notification: Notification){
-        print(distanceFromTextField)
-        print(keyBoardRec.height)
-        animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+        if (troisieme.isEditing || quatrieme.isEditing) && UIApplication.shared.statusBarOrientation.isLandscape {
+            animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+        }
+        
     }
 // Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
@@ -484,22 +490,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         answerDone()
     }
     @IBAction func chooseTenseOptionPushed(_ sender: UIButton) {
-        reinitializeTextFields()
-        premier.textColor = UIColor.black
-        deuxieme.textColor = UIColor.black
-        troisieme.textColor = UIColor.black
-        quatrieme.textColor = UIColor.black
-        cinquieme.textColor = UIColor.black
-        sixieme.textColor = UIColor.black
-        commentLabel.isHidden = true
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        effect = blurEffectView.effect
-        view.addSubview(blurEffectView)
-        goodResponseMessage.textColor = UIColor.black
-        goodResponseMessage.isHidden = false
-        TensePickViewMessage.showPickerView(view: view, messageView: messageView, visualEffect: blurEffectView, effect: effect, title: pickerTitleLabel, okButton: okButton)
+        pickerViewSelected()
     }
     @IBAction func okButtonPushed(_ sender: UIButton) {
         TensePickViewMessage.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
@@ -554,5 +545,24 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         UIView.setAnimationDuration(movementDuration )
         self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
         UIView.commitAnimations()
+    }
+    func pickerViewSelected() {
+        reinitializeTextFields()
+        premier.textColor = UIColor.black
+        deuxieme.textColor = UIColor.black
+        troisieme.textColor = UIColor.black
+        quatrieme.textColor = UIColor.black
+        cinquieme.textColor = UIColor.black
+        sixieme.textColor = UIColor.black
+        commentLabel.isHidden = true
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        effect = blurEffectView.effect
+        effect = blurEffectView.effect
+        view.addSubview(blurEffectView)
+        goodResponseMessage.textColor = UIColor.black
+        goodResponseMessage.isHidden = false
+        TensePickViewMessage.showPickerView(view: view, messageView: messageView, visualEffect: blurEffectView, effect: effect!, title: pickerTitleLabel, okButton: okButton)
     }
 }

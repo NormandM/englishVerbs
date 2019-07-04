@@ -82,6 +82,9 @@ class VerbListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return cell;
     }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexDuVerbe = indexPath.row
     }

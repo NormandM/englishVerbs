@@ -3271,5 +3271,26 @@
 		<string>writes</string>
 		<string>writing</string>
 	</array>
+	<array>
+		<string>be</string>
+		<string>was/were</string>
+		<string>been</string>
+		<string>is</string>
+		<string>being</string>
+	</array>
+	<array>
+		<string>get</string>
+		<string>got</string>
+		<string>got</string>
+		<string>gets</string>
+		<string>getting</string>
+	</array>
+	<array>
+		<string>go</string>
+		<string>went</string>
+		<string>gone</string>
+		<string>goes</string>
+		<string>going</string>
+	</array>
 </array>
 </plist>

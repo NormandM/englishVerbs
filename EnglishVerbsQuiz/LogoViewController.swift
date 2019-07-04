@@ -16,6 +16,7 @@ class LogoViewController: UIViewController {
     var soundURL: NSURL?
     var soundID:SystemSoundID = 0
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         let appsLabelFrame  = appsLabel.frame
         let appsLabel2Frame = appsLabel2.frame
         let maxXappsLabel = appsLabelFrame.maxX
@@ -26,6 +27,9 @@ class LogoViewController: UIViewController {
         AudioServicesPlaySystemSound(soundID)
         UIView.animate(withDuration: 3, animations: {
             self.appsLabel2.transform = CGAffineTransform(translationX: maxXappsLabel - maxXappsLabel2 , y: 0)}, completion: {finished in self.completionAnimation()})
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     func completionAnimation() {
         let when = DispatchTime.now() + 0.5

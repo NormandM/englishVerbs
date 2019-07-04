@@ -12,11 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigationBarAppearace = UINavigationBar.appearance()
-    
+    let colorReference = ColorReference()
     let fonts = FontsAndConstraintsOptions()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         navigationBarAppearace.tintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        navigationBarAppearace.barTintColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
+        navigationBarAppearace.barTintColor = colorReference.specialGray
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.font: fonts.normalBoldFont, NSAttributedString.Key.foregroundColor:UIColor.white]
         // get current number of times app has been launched
         let currentCount = UserDefaults.standard.integer(forKey: "launchCount")

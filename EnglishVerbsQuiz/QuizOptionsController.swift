@@ -27,20 +27,21 @@ class QuizOptionsController: UITableViewController {
         let request  = NSFetchRequest<NSFetchRequestResult>(entityName: Item.identifier)
         return request
     }()
+    let colorReference = ColorReference()
     override func viewDidLoad() {
         
 
     }
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-        header.contentView.backgroundColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
+        header.contentView.backgroundColor = colorReference.specialGray
         header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 1.0 //make the header transparent
-        header.textLabel?.font = fontsAndConstraints.largeItaliqueFont
+        header.textLabel?.font = fontsAndConstraints.normalItaliqueFont
     }
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Regular Verb Conjugation"
-        let yPosition = view.frame.height * 0.8
+        let yPosition = view.frame.height * 0.85
         let buttonWidth = view.frame.height * 0.1
         let xPosition = view.frame.width/2 - buttonWidth/2
         let buttonHeight = buttonWidth
@@ -107,10 +108,5 @@ class QuizOptionsController: UITableViewController {
     }
     @objc func quizButtonPushed() {
         performSegue(withIdentifier: "showQuizController", sender: self)
-    }
-
-
-    @IBAction func okButtonPressed(_ sender: UIBarButtonItem) {
-
     }
 }

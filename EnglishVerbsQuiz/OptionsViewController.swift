@@ -16,6 +16,9 @@ class OptionsViewController: UIViewController{
     let fonts = FontsAndConstraintsOptions()
     let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
     var arrayVerbe: [[String]] = []
+    var contextuelVerbs = [[String]]()
+    var irregularVerbs = [[String]]()
+    var infiniveIrregular = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         UserDefaults.standard.set(0, forKey: "thisQuizHintAnswer")
@@ -31,18 +34,31 @@ class OptionsViewController: UIViewController{
             let verbArray = NSArray(contentsOfFile: plistPath){
             arrayVerbe = verbArray as! [[String]]
         }
+        if let plistPath = Bundle.main.path(forResource: "ContextualVerbs", ofType: "plist"),
+            let verbArray = NSArray(contentsOfFile: plistPath){
+            contextuelVerbs = verbArray as! [[String]]
+        }
+        if let plistPath = Bundle.main.path(forResource: "IrregularVerbs", ofType: "plist"),
+            let verbArray = NSArray(contentsOfFile: plistPath){
+            irregularVerbs = verbArray as! [[String]]
+        }
+        for verb in irregularVerbs {
+            infiniveIrregular.append(verb[0])
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
-        
         self.navigationItem.setHidesBackButton(true, animated:true)
         let fonts = FontsAndConstraintsOptions()
         listeDesVerbes.font = fonts.smallItaliqueBoldFont
         quizDeBase.font = fonts.smallItaliqueBoldFont
+        quizDeBase.text = """
+        BASIC QUIZ
+        AND KNOWLEDGE
+        """
         quizContextuel.font = fonts.smallItaliqueBoldFont
         statistiques.font = fonts.smallItaliqueBoldFont
     }
     override func viewDidAppear(_ animated: Bool) {
-        
         self.title = "Choose an Option"
     }
 
@@ -52,16 +68,27 @@ class OptionsViewController: UIViewController{
         if segue.identifier == "showVerbList"{
             let controller = segue.destination as! VerbListViewController
             controller.arrayVerbe = arrayVerbe
-        }else if segue.identifier == "showQuizOption"{
-            let controller = segue.destination as! OptionModeVerbeViewController
-            controller.verbsArray = arrayVerbe
-        }else if segue.identifier == "showContextuelQuizOptionController"{
-            //let controller = segue.destination as! ContextuelQuizOptionController
-            //controller.arrayVerb = arrayVerbe
+        }else if segue.identifier == "showOptions"{
+            let controller = segue.destination as! MenuViewControllerForPastParticiple
+            controller.arrayVerbes = arrayVerbe
+            controller.irregularVerbs = irregularVerbs
+            controller.infiniveIrregular = infiniveIrregular
+        }else if segue.identifier == "showContextualQuizOptions"{
+            let controller = segue.destination as! ContextuelQuizOptionController
+            controller.sentenceArray = contextuelVerbs
+            controller.arrayVerb = arrayVerbe
+            controller.infiniveIrregular = infiniveIrregular
+        }
+        if segue.identifier == "showStatistiques"{
+            
         }
         let backItem = UIBarButtonItem()
         backItem.title = ""
+        let colorReference = ColorReference()
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
+        navigationItem.backBarButtonItem?.tintColor = colorReference.specialGreen
+    }
+    @IBAction func unwindToMainMenu(_ unwindSegue: UIStoryboardSegue) {
+
     }
 }

@@ -30,7 +30,10 @@ class TensePickViewMessage {
         messageView.frame = CGRect(x: messageXPosition, y: messageYPosition , width: messageViewWidth, height: messageViewHeight)
         title.font = fontsAndConstraints.normalBoldFont
         title.textColor = UIColor.white
-        title.text = "Choose"
+        title.text = """
+        Understand Verb Forms
+        and their Combinations
+        """
         okButton.titleLabel?.textColor = UIColor.white
         okButton.setTitle("OK", for: .normal)
         okButton.titleLabel?.font = fontsAndConstraints.largeBoldFont
@@ -39,7 +42,7 @@ class TensePickViewMessage {
         UIView.animate(withDuration: 0.8, animations: {
             messageView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
             messageView.alpha = 0
-            visualEffect.effect = nil
+            //visualEffect.effect = nil
             visualEffect.removeFromSuperview()
         }) { (success: Bool) in
             messageView.removeFromSuperview()

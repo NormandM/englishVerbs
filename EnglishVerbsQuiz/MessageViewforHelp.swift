@@ -36,9 +36,7 @@ class MessageViewForHelp {
         UIView.animate(withDuration: 0.8, animations: {
             messageView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
             messageView.alpha = 0
-            //visualEffect.effect = nil
             visualEffect.removeFromSuperview()
-            
         }) { (success: Bool) in
             messageView.removeFromSuperview()
         }

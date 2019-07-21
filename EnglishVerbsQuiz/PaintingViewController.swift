@@ -84,7 +84,6 @@ class PaintingViewController: UIViewController {
         backgroundView.backgroundColor =  UIColor(red: 254/255, green: 177/255, blue: 95/255, alpha: 0.5)
         backgroundView.layer.borderColor = UIColor(red: 254/255, green: 177/255, blue: 95/255, alpha: 1.0).cgColor
         backgroundView.layer.cornerRadius = 15
-       
         tryAgainButton.isHidden = true
         setUpCards()
     }
@@ -103,7 +102,7 @@ class PaintingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = colorReference.specialGray
-         self.navigationController?.isNavigationBarHidden = true
+         self.navigationController?.isNavigationBarHidden = false
     }
 
     func questionSelection(){
@@ -141,14 +140,12 @@ class PaintingViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAchievements" {
-            let backItem = UIBarButtonItem()
-            backItem.title = ""
-            navigationItem.backBarButtonItem = nil
             let controller = segue.destination as! AchievementsTableViewController
             controller.arrayVerbe  = arrayVerbe
         }
     }
     @IBAction func cardPushed(_ sender: UIButton) {
+        print("card pushed")
         if let cardNumberGood = cardButtons.firstIndex(of: sender){
             if cardNumberGood == goodAnswerPosition - quizNumber {
                 let cardSelection = cardArray[goodAnswerPosition - quizNumber]
@@ -168,6 +165,7 @@ class PaintingViewController: UIViewController {
                 }else{
                     switch typeOfQuiz {
                     ////////////////////////////////////////
+                        
                     case .simplePast:
                         if cardSelection.paintingNumber == "6" {
                             let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
@@ -221,6 +219,7 @@ class PaintingViewController: UIViewController {
                     button.backgroundColor = UIColor.clear
                     button.layer.cornerRadius = 0
                     button.setNeedsDisplay()
+                    button.isEnabled = false
                     soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
                     messageLabel.text = "Sorry... "
                 }
@@ -308,5 +307,8 @@ class PaintingViewController: UIViewController {
     }
     
     @IBAction func returnToMenuPushed(_ sender: UIButton) {
+    }
+    @IBAction func seeAchievementWasPushed(_ sender: UIButton) {
+        performSegue(withIdentifier: "showAchievements", sender: self)
     }
 }

@@ -8,19 +8,14 @@
 
 import UIKit
 class MenuViewControllerForPastParticiple: UIViewController {
-    @IBOutlet weak var titleLabel: UILabel!
+
     @IBOutlet weak var pastButton: UIButton!
     @IBOutlet weak var participlaButton: UIButton!
-    @IBOutlet weak var consultAndLearnLabel: UILabel!
-    @IBOutlet weak var borderLabel: UILabel!
     @IBOutlet weak var studyAndlearnTitle: UILabel!
-    @IBOutlet weak var studyAnLearnComment: UILabel!
-    @IBOutlet weak var irregularVerbButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    
-    @IBOutlet weak var borderLabelStudyAndLearn: UILabel!
     @IBOutlet weak var verbFormButton: UIButton!
     @IBOutlet weak var achievementButton: UIButton!
+    @IBOutlet weak var mostCommonIrregularVerbsButton: UIButton!
     @IBOutlet var menuView: UIView!
     @IBOutlet weak var visualEffect: UIVisualEffectView!
     @IBOutlet weak var grandeJatte: UIImageView!
@@ -43,7 +38,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
             UserDefaults.standard.set(0, forKey: "numberForQuizSimplePast")
             UserDefaults.standard.set(180, forKey: "numberForQuizPastParticiple")
         }
-        IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, title: self.titleLabel, pastButton: self.pastButton, participleButton: self.participlaButton, consultAndLearnLabel: self.consultAndLearnLabel, seeYourAchievementButton: self.achievementButton)
+        IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, pastButton: self.pastButton, participleButton: self.participlaButton, seeYourAchievementButton: self.achievementButton)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -53,10 +48,6 @@ class MenuViewControllerForPastParticiple: UIViewController {
         }else{
             ImageManager.choosImage(imageView: grandeJatte, imageName: "BigBen")
         }
-        borderLabel.layer.borderColor = colorReference.specialGray.cgColor
-        borderLabel.layer.borderWidth = 2
-        borderLabelStudyAndLearn.layer.borderWidth = 2
-        borderLabelStudyAndLearn.layer.borderColor = colorReference.specialGray.cgColor
         let buttonTitle = """
         Verbs Forms
         and their
@@ -66,11 +57,17 @@ class MenuViewControllerForPastParticiple: UIViewController {
         verbFormButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
         verbFormButton.titleLabel?.numberOfLines = 0
         verbFormButton.titleLabel?.textAlignment = .center
-        irregularVerbButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
+        let buttonIrregular = """
+        Most Common
+        Irregular
+        Verbs
+        """
+        mostCommonIrregularVerbsButton.titleLabel?.numberOfLines = 0
+        mostCommonIrregularVerbsButton.titleLabel?.font = fontsAndConstraints.smallItaliqueBoldFont
+        mostCommonIrregularVerbsButton.titleLabel?.textAlignment = .center
+        mostCommonIrregularVerbsButton.setTitle(buttonIrregular, for: .normal)
         studyAndlearnTitle.font = fontsAndConstraints.smallBoldFont
         studyAndlearnTitle.textColor = colorReference.specialGray
-        studyAnLearnComment.font = fontsAndConstraints.smallFont
-        studyAnLearnComment.textColor = colorReference.specialGray
         backButton.titleLabel?.font = fontsAndConstraints.largeFont
         
     }
@@ -80,7 +77,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
         navigationController?.navigationBar.barTintColor = colorReference.specialGray
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        IntroductionMessage.showMessageView(view: view, messageView: menuView, visualEffect: visualEffect, effect:effect, title: titleLabel, pastButton: pastButton, participleButton: participlaButton, consultAndLearnLabel: consultAndLearnLabel, seeYourAchievementButton: achievementButton)
+        IntroductionMessage.showMessageView(view: view, messageView: menuView, visualEffect: visualEffect, effect:effect, pastButton: pastButton, participleButton: participlaButton, seeYourAchievementButton: achievementButton)
     }
 
     // MARK: - Navigation
@@ -119,6 +116,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
             let controller = segue.destination as! IrregularVerbsTableViewController
             controller.irregularVerbs = irregularVerbs
             controller.infiniveIrregular = infiniveIrregular
+
         }
     }
     func userAlreadyExist(credit: String) -> Bool {

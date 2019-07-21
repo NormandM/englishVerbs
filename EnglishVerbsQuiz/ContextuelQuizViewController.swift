@@ -28,6 +28,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var rule3Label: UILabel!
     @IBOutlet weak var rule4Label: UILabel!
     @IBOutlet weak var rule5Label: UILabel!
+    var distanceFromTextField = CGFloat()
     var effect: UIVisualEffect!
     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
     lazy var blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -85,14 +86,17 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         uneAutreQuestionButton.titleLabel?.textAlignment = .center
         uneAutreQuestionButton.titleLabel?.numberOfLines = 0
         uneAutreQuestionButton.setTitle(buttonText, for: .normal)
-        uneAutreQuestionButton.layer.cornerRadius = uneAutreQuestionButton.frame.height / 2.0
-        suggestionButton.layer.cornerRadius = suggestionButton.frame.height / 2.0
+        uneAutreQuestionButton.isHidden = true
+        suggestionButton.isHidden = true
         choiceOfSentence()
     }
     override func viewDidAppear(_ animated: Bool) {
+        uneAutreQuestionButton.layer.cornerRadius = uneAutreQuestionButton.frame.height / 2.0
+        suggestionButton.layer.cornerRadius = suggestionButton.frame.height / 2.0
+        distanceFromTextField = view.frame.size.height - verbTextField.frame.maxY
         verbTextField.becomeFirstResponder()
-
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.set(0, forKey: "thisQuizHintAnswer")
         UserDefaults.standard.set(0, forKey: "thisQuizGoodAnswer")
@@ -109,11 +113,11 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         if helpView.isDescendant(of: view) {
             MessageViewForHelp.showMessageView(view: view, messageView: helpView, visualEffect: blurEffectView, effect: effect, title: titleHelpViewLabel)
         }
-        verbTextField.becomeFirstResponder()
+        distanceFromTextField = view.frame.size.height - verbTextField.frame.maxY
         uneAutreQuestionButton.layer.cornerRadius = uneAutreQuestionButton.frame.height / 2.0
         suggestionButton.layer.cornerRadius = suggestionButton.frame.height / 2.0
         uneAutreQuestionButton.setNeedsLayout()
-        
+        verbTextField.becomeFirstResponder()
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3
@@ -125,23 +129,28 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         UIView.commitAnimations()
     }
     @objc func keyBoardWillChange(notification: Notification) {
-        let distanceFromTextField = view.frame.size.height - (verbTextField.frame.size.height + verbTextField.frame.origin.y)
+        suggestionButton.isHidden = false
+        uneAutreQuestionButton.isHidden = false
         guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
             return
         }
         if (keyBoardRec.height - distanceFromTextField + 5) > 0{
-            let x = tempsLabel.frame.minX
-            let y = tempsLabel.frame.minY
-            let width = tempsLabel.frame.width
-            let height = tempsLabel.frame.height
+            let adjustement = keyBoardRec.height - distanceFromTextField + 5
             if notification.name == UIResponder.keyboardWillShowNotification && !textFieldIsActivated{
                 textFieldIsActivated = true
-                tempsLabel.frame = CGRect(x: x, y: y + 20, width: width, height: height)
-                animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
+                animateViewMoving(true, moveValue: adjustement)
+                UIView.animate(withDuration: 3, animations: {
+                    self.suggestionButton.transform = CGAffineTransform(translationX: 0, y: adjustement/2)}, completion: nil)
+                UIView.animate(withDuration: 3, animations: {
+                    self.tempsLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/1.8)}, completion: nil)
+                UIView.animate(withDuration: 3, animations: {
+                    self.sentenceLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/4)}, completion: nil)
             }else if notification.name == UIResponder.keyboardWillHideNotification{
                 textFieldIsActivated = false
-                tempsLabel.frame = CGRect(x: x, y: y - 20, width: width, height: height)
-                animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
+                animateViewMoving(true, moveValue: -adjustement)
+                suggestionButton.transform = .identity
+                tempsLabel.transform = .identity
+                sentenceLabel.transform = .identity
             }
         }
     }
@@ -150,9 +159,10 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         return true
     }
     func choiceOfSentence () {
-        indexSentence = indexSentence + 1
+        print(indexSentence)
+        print(selectedSentences)
         sentences = Sentences(selectedSentences: selectedSentences, indexSentence: indexSentence)
-        if indexSentence == selectedSentences.count - 1 {indexSentence = 0}
+       
         questionInitialisation()
     }
     // MARK: - Navigation
@@ -204,7 +214,6 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
             verbTextField.textColor = colorRefereences.specialRed
             sentenceLabel.attributedText = sentences.attributeMauvaiseReponse
         }
-        verbTextField.resignFirstResponder()
         checkButton.isEnabled = false
         checkButton.setTitleColor(UIColor.gray, for: .disabled)
         checkButton.isHidden = true
@@ -217,6 +226,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
                 self.performSegue(withIdentifier: "showResult", sender: nil)
             }
         }
+        indexSentence = indexSentence + 1
+        if indexSentence == selectedSentences.count - 1 {indexSentence = 0}
     }
     func selectionAutreQuestion() {
         suggestionButton.isEnabled = true
@@ -246,7 +257,11 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
 
     }
     @IBAction func suggestionButtonWasPressed(_ sender: UIButton) {
+        suggestionButton.transform = .identity
+        tempsLabel.transform = .identity
+        sentenceLabel.transform = .identity
         difficulté = .FACILE
+        self.navigationItem.setHidesBackButton(true, animated:true)
         verbTextField.resignFirstResponder()
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -293,6 +308,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         }else{rule5Label.text = ""}
     }
     @IBAction func doneWasPressed(_ sender: UIButton) {
+        self.navigationItem.setHidesBackButton(false, animated:true)
         MessageViewForHelp.dismissMessageview(view: view, messageView: helpView, visualEffect: blurEffectView, effect: effect)
         verbTextField.becomeFirstResponder()
     }

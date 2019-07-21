@@ -34,6 +34,7 @@ struct ResponseEvaluation {
         }else{
             itemVerbe = itemVerbArray![0]
         }
+
         if   itemVerbe.tence?.caseInsensitiveCompare(tempsVerb) == .orderedSame && (userResponse.caseInsensitiveCompare(rightAnswer)  == .orderedSame || (userResponse.caseInsensitiveCompare(rightAnswer2) == .orderedSame && rightAnswer2 != "")){
             if difficultyLevel == .FACILE {
                 itemVerbe.noBad = itemVerbe.noBad + 1

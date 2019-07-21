@@ -10,7 +10,6 @@ import UIKit
 
 class IrregularVerbsTableViewController: UITableViewController, UISearchBarDelegate {
     var irregularVerbs = [[String]]()
-
     let colorReference = ColorReference()
     let fonts = FontsAndConstraintsOptions()
     var searchActive : Bool = false
@@ -95,6 +94,7 @@ class IrregularVerbsTableViewController: UITableViewController, UISearchBarDeleg
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! IrregularVerbTableViewCell
+        print(irregularVerbs[indexPath.row][0])
         cell.infinitive.text = "to \(irregularVerbs[indexPath.row][0])"
         cell.simplePast.text = irregularVerbs[indexPath.row][1]
         cell.PastParticiple.text = irregularVerbs[indexPath.row][2]

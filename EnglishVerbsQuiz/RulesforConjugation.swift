@@ -16,6 +16,7 @@ class RulesforConjugation {
     let conjugationRule6: String
     let isIrregularVerb: Bool
     init(infinitif: String, infiniveIrregular: [String],  tempsDuVerbe: String){
+        print("infinitif: \(infinitif)")
         let modeAndTemp = ModeAndTemp()
         let pattern = modeAndTemp.pattern
         let temp = modeAndTemp.tempContexte

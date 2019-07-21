@@ -32,6 +32,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     @IBOutlet weak var pickerTitleLabel: UILabel!
     @IBOutlet weak var verbTensetTitle: UILabel!
     @IBOutlet weak var verbTypeTitle: UILabel!
+    
     @IBOutlet weak var startQuizButton: UIButton!
     @IBOutlet weak var oK1Button: UIButton!
     @IBOutlet weak var oK2Button: UIButton!
@@ -64,6 +65,12 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     var message: String = ""
     let fonts = FontsAndConstraintsOptions()
     let colorReference = ColorReference()
+    let textFieldDistances = TextFielDistances.firstPerson
+    var distancePremier = CGFloat()
+    var distanceDeuxieme = CGFloat()
+    var distanceTroisieme = CGFloat()
+    var distanceQuatrieme = CGFloat()
+    var keyBoardHeight = CGFloat()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Quiz of Verb Forms"
@@ -112,6 +119,10 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         """
         startQuizButton.setTitle(buttonText, for: .normal)
         goodResponseMessage.text = ""
+        distancePremier = view.frame.size.height - (premier.frame.maxY + stackView.frame.minY)
+        distanceDeuxieme =  view.frame.size.height - (deuxieme.frame.maxY + stackView.frame.minY)
+        distanceTroisieme = view.frame.size.height - (troisieme.frame.maxY + stackView.frame.minY)
+        distanceQuatrieme = view.frame.size.height - (quatrieme.frame.maxY + stackView.frame.minY)
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         if messageView.isDescendant(of: view) {
@@ -339,6 +350,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
             startQuizButton.isHidden = false
             startQuizButton.setTitle(buttonText, for: .normal)
             
+            
         }else if message == "false" {
             let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
             soundURL = NSURL(fileURLWithPath: filePath!)
@@ -382,33 +394,20 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     }
 //MARK: Notification for keyboard
     @objc func keyBoardWillShow(notification: Notification) {
-        if troisieme.isEditing && UIApplication.shared.statusBarOrientation.isLandscape {
-            let distanceFromTextField = view.frame.size.height - (troisieme.frame.size.height + troisieme.frame.origin.y + stackView.frame.origin.y)
-            guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
-                return
-            }
-            if notification.name == UIResponder.keyboardWillShowNotification{
-                animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
-            }else if notification.name == UIResponder.keyboardWillHideNotification{
-                animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
-            }
-        }else if quatrieme.isEditing && UIApplication.shared.statusBarOrientation.isLandscape{
-            let distanceFromTextField = view.frame.size.height - (quatrieme.frame.size.height + quatrieme.frame.origin.y + stackView.frame.origin.y)
-            guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
-                return
-            }
-            if notification.name == UIResponder.keyboardWillShowNotification{
-                animateViewMoving(true, moveValue: keyBoardRec.height - distanceFromTextField + 5)
-            }else if notification.name == UIResponder.keyboardWillHideNotification{
-                animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
-            }
+        guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+            return
         }
+        keyBoardHeight = keyBoardRec.height
+        if premier.isEditing && ((keyBoardRec.height - distancePremier + 5) > 0) {
+            distanceFromTextField =  keyBoardRec.height - distancePremier + 5
+        }else if deuxieme.isEditing && ((keyBoardRec.height - distanceDeuxieme + 5) > 0){
+            distanceFromTextField =  keyBoardRec.height - distanceDeuxieme + 5
+        }
+        animateViewMoving(true, moveValue: distanceFromTextField)
     }
     @objc func keyboardWillHide (_ notification: Notification){
-        if (troisieme.isEditing || quatrieme.isEditing) && UIApplication.shared.statusBarOrientation.isLandscape {
-            animateViewMoving(true, moveValue: distanceFromTextField - keyBoardRec.height - 5)
-        }
-        
+        self.view.frame.origin.y = 0
+        distanceFromTextField = 0
     }
 // Mark: Function chosing verb randomly according to chosen parameters
     func optionSlected () {
@@ -518,24 +517,42 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         startQuizButton.isHidden = true
         typeOfVerbLabel.isHidden = false
         verbTenseLabel.isHidden = false
+        distanceFromTextField = 0
     }
     func answerDone() {
         if testReturnOrDone() {
             checkAnswer()
         }
+        var fromTextField = CGFloat()
         if tenseSelected != "Imperative"{
             if deuxieme.text == ""{
                 deuxieme.becomeFirstResponder()
-                
+                if keyBoardHeight - distanceDeuxieme + 5 > 0 {
+                    fromTextField =  keyBoardHeight - distanceDeuxieme + 5
+                    distanceFromTextField = distanceFromTextField + fromTextField
+                }
             }else if troisieme.text == ""{
                 troisieme.becomeFirstResponder()
+                if keyBoardHeight - distanceTroisieme + 5 > 0 {
+                    fromTextField =  keyBoardHeight - distanceTroisieme + 5
+                    distanceFromTextField = distanceFromTextField + fromTextField
+                }
             }
         }else{
-            quatrieme.becomeFirstResponder()
-            oK2Button.isHidden = true
-            oK4Button.isHidden = false
-            if quatrieme.text != "" { oK4Button.isHidden = true}
+            if quatrieme.text == ""{
+                quatrieme.becomeFirstResponder()
+                oK2Button.isHidden = true
+                oK4Button.isHidden = false
+                if quatrieme.text != "" { oK4Button.isHidden = true}
+                if keyBoardHeight - distanceQuatrieme + 5 > 0 {
+                    fromTextField = keyBoardHeight - distanceQuatrieme + 5
+                    distanceFromTextField = distanceFromTextField + fromTextField
+                }
+            }
         }
+        animateViewMoving(true, moveValue: fromTextField)
+        print(fromTextField)
+        print(distanceFromTextField)
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3

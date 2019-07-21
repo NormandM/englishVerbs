@@ -65,9 +65,11 @@ class OptionsViewController: UIViewController{
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showVerbList"{
-            let controller = segue.destination as! VerbListViewController
+        if segue.identifier == "showMenuForVerbList"{
+            let controller = segue.destination as! MenuOfVerbListViewController
             controller.arrayVerbe = arrayVerbe
+            controller.irregularVerbs = irregularVerbs
+            controller.infiniveIrregular = infiniveIrregular
         }else if segue.identifier == "showOptions"{
             let controller = segue.destination as! MenuViewControllerForPastParticiple
             controller.arrayVerbes = arrayVerbe

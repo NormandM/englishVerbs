@@ -1,23 +1,25 @@
 //
-//  MenuOfVerbListViewController.swift
+//  ContextuelMenuController.swift
 //  EnglishVerbsQuiz
 //
-//  Created by Normand Martin on 2019-07-10.
+//  Created by Normand Martin on 2019-07-22.
 //  Copyright © 2019 Normand Martin. All rights reserved.
 //
 
 import UIKit
 
-class MenuOfVerbListViewController: UIViewController {
+class ContextuelMenuController: UIViewController {
     @IBOutlet weak var MessageForVerbListMenu: UIView!
     @IBOutlet weak var visualEffect: UIVisualEffectView!
-    @IBOutlet weak var seeConjugatedVerbButton: UIButton!
-    @IBOutlet weak var seeIrregularVerbButton: UIButton!
+    @IBOutlet weak var contextualQuizButton: UIButton!
+    @IBOutlet weak var contextualQuizStatisticsButton: UIButton!
     @IBOutlet weak var grandeJatte: UIImageView!
     @IBOutlet weak var backButton: UIButton!
-    var irregularVerbs = [[String]]()
+    var sentenceArray = [[String]]()
+    let modeAndTemp = ModeAndTemp()
     var infiniveIrregular = [String]()
-    var arrayVerbe: [[String]] = []
+    var irregularVerbs = [[String]]()
+    var arrayVerb: [[String]] = []
     let fonts = FontsAndConstraintsOptions()
     let colorReference = ColorReference()
     var effect: UIVisualEffect!
@@ -28,7 +30,7 @@ class MenuOfVerbListViewController: UIViewController {
         effect = visualEffect.effect
         MessageForVerbListMenu.layer.cornerRadius = 5
         visualEffect.effect = nil
-        VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: seeConjugatedVerbButton, seeIrregularVerb: seeIrregularVerbButton)
+        VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: contextualQuizButton, seeIrregularVerb: contextualQuizStatisticsButton)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
@@ -37,8 +39,8 @@ class MenuOfVerbListViewController: UIViewController {
         }else{
             ImageManager.choosImage(imageView: grandeJatte, imageName: "BigBen")
         }
-        seeConjugatedVerbButton.titleLabel?.font = fonts.smallBoldFont
-        seeIrregularVerbButton.titleLabel?.font = fonts.smallBoldFont
+        contextualQuizButton.titleLabel?.font = fonts.smallBoldFont
+        contextualQuizStatisticsButton.titleLabel?.font = fonts.smallBoldFont
         backButton.titleLabel?.font = fonts.largeFont
         
     }
@@ -48,24 +50,23 @@ class MenuOfVerbListViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = colorReference.specialGray
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: seeConjugatedVerbButton, seeIrregularVerb: seeIrregularVerbButton)
+        VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: contextualQuizButton, seeIrregularVerb: contextualQuizStatisticsButton)
     }
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         let colorReference = ColorReference()
         navigationItem.backBarButtonItem = backItem
         navigationItem.backBarButtonItem?.tintColor = colorReference.specialGreen
-        if segue.identifier == "showVerbList"{
-            let controller = segue.destination as! VerbListViewController
-            controller.arrayVerbe = arrayVerbe
-        }
-        if segue.identifier == "showIrregularVerbs"{
-            let controller = segue.destination as! IrregularVerbsTableViewController
-            controller.irregularVerbs = irregularVerbs
+        if segue.identifier == "showContextQuiz"{
+            let controller = segue.destination as! ContextuelQuizOptionController
+            controller.sentenceArray = sentenceArray
+            controller.arrayVerb = arrayVerb
             controller.infiniveIrregular = infiniveIrregular
+        }
+        if segue.identifier == "showContextQuizStatistic"{
             
         }
     }

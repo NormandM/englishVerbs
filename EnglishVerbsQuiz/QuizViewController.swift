@@ -551,8 +551,6 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
             }
         }
         animateViewMoving(true, moveValue: fromTextField)
-        print(fromTextField)
-        print(distanceFromTextField)
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3

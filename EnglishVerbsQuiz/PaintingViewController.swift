@@ -26,6 +26,9 @@ class PaintingViewController: UIViewController {
     @IBOutlet weak var seeAchievementsButton: UIButton!
     @IBOutlet weak var returnToMenuButton: UIButton!
     @IBOutlet weak var consultAndLearn: UILabel!
+    @IBOutlet weak var quizNumberLabel: UILabel!
+    @IBOutlet weak var seeAchievements: UIButton!
+    
     let isFinished = IsListOfVerbsFinished().arrayIsfinished
     let colorReference = ColorReference()
     var effect: UIVisualEffect!
@@ -45,6 +48,7 @@ class PaintingViewController: UIViewController {
     var quizNumber = UserDefaults.standard.integer(forKey: "quizNumber")
     var numberForQuizPastParticiple =  UserDefaults.standard.integer(forKey: "numberForQuizPastParticiple")
     var numberForQuizSimplePast =  UserDefaults.standard.integer(forKey: "numberForQuizSimplePast")
+    var verbListNumber = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         soundPlayer = SoundPlayer()
@@ -57,16 +61,22 @@ class PaintingViewController: UIViewController {
         self.title = "Choose Verb Tenses"
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         verbBackGroundView.layer.cornerRadius = 50
         self.navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor.black
+        quizNumberLabel.font = fontsAndConstraints.normalBoldFont
+        quizNumberLabel.textColor = .white
+        quizNumberLabel.textAlignment = .center
         switch typeOfQuiz {
         case .pastParticiple:
             quizNumber = numberForQuizPastParticiple
             self.title = "Choose the correct Past Participle"
+            quizNumberLabel.text = "Verb List # \(verbListNumber) of 6"
         case.simplePast:
             quizNumber = numberForQuizSimplePast
             self.title = "Choose the correct Simple Past"
+            quizNumberLabel.text = "Verb List # \(quizNumber) of 6"
         }
         messageTopConstraint.constant = messageBottonConstraint.constant
         messageLabel.text = ""
@@ -88,6 +98,13 @@ class PaintingViewController: UIViewController {
         setUpCards()
     }
     override func viewDidAppear(_ animated: Bool) {
+        switch typeOfQuiz {
+        case .pastParticiple:
+            let number = String(Int(verbListNumber)! - 6)
+            quizNumberLabel.text = "Verb List # \(number) of 6"
+        case.simplePast:
+             quizNumberLabel.text = "Verb List # \(verbListNumber) of 6"
+        }
         let buttonText = """
         Try
         Again
@@ -98,6 +115,15 @@ class PaintingViewController: UIViewController {
         tryAgainButton.setTitle(buttonText, for: .normal)
         tryAgainButton.titleLabel?.font = fontsAndConstraints.smallBoldFont
         tryAgainButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
+        let buttonString = """
+        See
+        Results
+        """
+        seeAchievements.setTitle(buttonString, for: .normal)
+        seeAchievements.titleLabel?.numberOfLines = 0
+        seeAchievements.titleLabel?.textAlignment = .center
+        seeAchievements.titleLabel?.font = fontsAndConstraints.smallBoldFont
+        seeAchievements.layer.cornerRadius = seeAchievements.frame.height/2
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isTranslucent = true
@@ -145,7 +171,6 @@ class PaintingViewController: UIViewController {
         }
     }
     @IBAction func cardPushed(_ sender: UIButton) {
-        print("card pushed")
         if let cardNumberGood = cardButtons.firstIndex(of: sender){
             if cardNumberGood == goodAnswerPosition - quizNumber {
                 let cardSelection = cardArray[goodAnswerPosition - quizNumber]
@@ -255,6 +280,14 @@ class PaintingViewController: UIViewController {
                 label.text = " "
             }
             setUpCards()
+            switch typeOfQuiz {
+            case .pastParticiple:
+                let number = String(Int(verbListNumber)! - 6)
+                quizNumberLabel.text = "Verb List # \(number) of 6"
+            case.simplePast:
+                quizNumberLabel.text = "Verb List # \(verbListNumber) of 6"
+            }
+
         }
         messageLabel.text = ""
     }
@@ -289,6 +322,7 @@ class PaintingViewController: UIViewController {
             cardArray.append(goodCard)
             cardArray.append(badCard)
             relationArray.append(cardRelation)
+            verbListNumber = cardRelation.paintingNumber
         }
         relationArray.shuffle()
         questionSelection()
@@ -311,4 +345,8 @@ class PaintingViewController: UIViewController {
     @IBAction func seeAchievementWasPushed(_ sender: UIButton) {
         performSegue(withIdentifier: "showAchievements", sender: self)
     }
+    @IBAction func seeAchiementsPushed(_ sender: UIButton) {
+        performSegue(withIdentifier: "showAchievements", sender: self)
+    }
+    
 }

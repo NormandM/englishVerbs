@@ -33,6 +33,7 @@
 		8E24AD2422DFB6DC003A60ED /* music_harp_gliss_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E24AD2322DFB6DC003A60ED /* music_harp_gliss_up.wav */; };
 		8E24AD2622DFC2EA003A60ED /* ResultMiniQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24AD2522DFC2EA003A60ED /* ResultMiniQuizViewController.swift */; };
 		8E24AD2822E4E3E5003A60ED /* FinishedQuizMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24AD2722E4E3E5003A60ED /* FinishedQuizMessage.swift */; };
+		8E24AD2A22E659C5003A60ED /* ContextuelMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24AD2922E659C5003A60ED /* ContextuelMenuController.swift */; };
 		8E46BC641DA44C51005AD256 /* 100MostUseEnglishVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */; };
 		8E46BC661DA44C64005AD256 /* AllVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E46BC651DA44C64005AD256 /* AllVerbs.plist */; };
 		8E66A66922C3F218005E5877 /* ContextualVerbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E66A66822C3F218005E5877 /* ContextualVerbs.plist */; };
@@ -151,6 +152,7 @@
 		8E24AD2322DFB6DC003A60ED /* music_harp_gliss_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music_harp_gliss_up.wav; sourceTree = "<group>"; };
 		8E24AD2522DFC2EA003A60ED /* ResultMiniQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMiniQuizViewController.swift; sourceTree = "<group>"; };
 		8E24AD2722E4E3E5003A60ED /* FinishedQuizMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedQuizMessage.swift; sourceTree = "<group>"; };
+		8E24AD2922E659C5003A60ED /* ContextuelMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextuelMenuController.swift; sourceTree = "<group>"; };
 		8E46BC631DA44C51005AD256 /* 100MostUseEnglishVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 100MostUseEnglishVerbs.plist; sourceTree = "<group>"; };
 		8E46BC651DA44C64005AD256 /* AllVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllVerbs.plist; sourceTree = "<group>"; };
 		8E66A66822C3F218005E5877 /* ContextualVerbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ContextualVerbs.plist; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 		8EEE211D22BEB0080080FB93 /* Contextuel Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8E24AD2922E659C5003A60ED /* ContextuelMenuController.swift */,
 				8EEE211E22BEB0960080FB93 /* ContextuelQuizOptionController.swift */,
 				8EEE212422BED2200080FB93 /* ContextuelQuizViewController.swift */,
 				8E66A66E22C9526A005E5877 /* ResultViewController.swift */,
@@ -725,6 +728,7 @@
 				8EEE211F22BEB0960080FB93 /* ContextuelQuizOptionController.swift in Sources */,
 				8ED90E9D2246CFA5008C5063 /* LogoViewController.swift in Sources */,
 				8E9C6B0A1EDF638500E2AC58 /* Item+CoreDataProperties.swift in Sources */,
+				8E24AD2A22E659C5003A60ED /* ContextuelMenuController.swift in Sources */,
 				8ED90EA72246D6DB008C5063 /* VerbListViewController.swift in Sources */,
 				8EEE212722BED7080080FB93 /* Sentence.swift in Sources */,
 				8E24AD2822E4E3E5003A60ED /* FinishedQuizMessage.swift in Sources */,

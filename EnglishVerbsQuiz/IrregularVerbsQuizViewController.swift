@@ -225,13 +225,10 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         cellIndexPath = indexPath
-        print("cellIndexPath")
-        print(cellIndexPath)
         let cell = irregularVerbCollectionView.cellForItem(at: cellIndexPath) as! VerbCollectionViewCell
         cell.verbeTextField.isUserInteractionEnabled = true
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print("deselect")
         let cell = irregularVerbCollectionView.cellForItem(at: indexPath) as! VerbCollectionViewCell
         cell.verbeTextField.isUserInteractionEnabled = false
     }
@@ -336,7 +333,6 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     @IBAction func unwindToMiniQuiz(_ unwindSegue: UIStoryboardSegue) {
-        print(cellIndexPath)
         var count = Int()
         for n in 0...14 {
             let cell = irregularVerbCollectionView.cellForItem(at: [0, n]) as! VerbCollectionViewCell

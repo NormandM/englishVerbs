@@ -159,10 +159,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         return true
     }
     func choiceOfSentence () {
-        print(indexSentence)
-        print(selectedSentences)
         sentences = Sentences(selectedSentences: selectedSentences, indexSentence: indexSentence)
-       
         questionInitialisation()
     }
     // MARK: - Navigation

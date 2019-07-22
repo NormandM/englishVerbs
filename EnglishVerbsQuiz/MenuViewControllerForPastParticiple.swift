@@ -14,7 +14,6 @@ class MenuViewControllerForPastParticiple: UIViewController {
     @IBOutlet weak var studyAndlearnTitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var verbFormButton: UIButton!
-    @IBOutlet weak var achievementButton: UIButton!
     @IBOutlet weak var mostCommonIrregularVerbsButton: UIButton!
     @IBOutlet var menuView: UIView!
     @IBOutlet weak var visualEffect: UIVisualEffectView!
@@ -38,7 +37,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
             UserDefaults.standard.set(0, forKey: "numberForQuizSimplePast")
             UserDefaults.standard.set(180, forKey: "numberForQuizPastParticiple")
         }
-        IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, pastButton: self.pastButton, participleButton: self.participlaButton, seeYourAchievementButton: self.achievementButton)
+        IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, pastButton: self.pastButton, participleButton: self.participlaButton, seeYourAchievementButton: nil)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +76,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
         navigationController?.navigationBar.barTintColor = colorReference.specialGray
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        IntroductionMessage.showMessageView(view: view, messageView: menuView, visualEffect: visualEffect, effect:effect, pastButton: pastButton, participleButton: participlaButton, seeYourAchievementButton: achievementButton)
+        IntroductionMessage.showMessageView(view: view, messageView: menuView, visualEffect: visualEffect, effect:effect, pastButton: pastButton, participleButton: participlaButton, seeYourAchievementButton: nil)
     }
 
     // MARK: - Navigation
@@ -138,11 +137,9 @@ class MenuViewControllerForPastParticiple: UIViewController {
             performSegue(withIdentifier: "showPastParticiple", sender: sender)
         }
     }
-    @IBAction func achievementsButtonWasPushed(_ sender: Any) {
-         seeAchievements()
-    }
+
     func seeAchievements() {
-        performSegue(withIdentifier: "showViewAchievement", sender: achievementButton)
+        performSegue(withIdentifier: "showViewAchievement", sender: self)
     }
     @IBAction func verbFormPushed(_ sender: UIButton) {
         performSegue(withIdentifier: "verbRules", sender: self)

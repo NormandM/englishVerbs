@@ -12,7 +12,6 @@ class OptionsViewController: UIViewController{
     @IBOutlet weak var listeDesVerbes: UILabel!
     @IBOutlet weak var quizDeBase: UILabel!
     @IBOutlet weak var quizContextuel: UILabel!
-    @IBOutlet weak var statistiques: UILabel!
     let fonts = FontsAndConstraintsOptions()
     let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
     var arrayVerbe: [[String]] = []
@@ -56,7 +55,6 @@ class OptionsViewController: UIViewController{
         AND KNOWLEDGE
         """
         quizContextuel.font = fonts.smallItaliqueBoldFont
-        statistiques.font = fonts.smallItaliqueBoldFont
     }
     override func viewDidAppear(_ animated: Bool) {
         self.title = "Choose an Option"
@@ -75,15 +73,13 @@ class OptionsViewController: UIViewController{
             controller.arrayVerbes = arrayVerbe
             controller.irregularVerbs = irregularVerbs
             controller.infiniveIrregular = infiniveIrregular
-        }else if segue.identifier == "showContextualQuizOptions"{
-            let controller = segue.destination as! ContextuelQuizOptionController
+        }else if segue.identifier == "showContextuelMenu"{
+            let controller = segue.destination as! ContextuelMenuController
             controller.sentenceArray = contextuelVerbs
             controller.arrayVerb = arrayVerbe
             controller.infiniveIrregular = infiniveIrregular
         }
-        if segue.identifier == "showStatistiques"{
-            
-        }
+
         let backItem = UIBarButtonItem()
         backItem.title = ""
         let colorReference = ColorReference()

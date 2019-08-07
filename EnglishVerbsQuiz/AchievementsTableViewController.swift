@@ -155,22 +155,30 @@ class AchievementsTableViewController: UITableViewController {
         All your achievments
         will be lost
         """
+        self.tableView.isScrollEnabled = false
         SecondMessageView.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: titleLabel, pastButton: morePracticeButton, participleButton: returnToachievementButton, consultAndLearnLabel: commentLabel, seeYourAchievementButton: nil)
     }
-    @IBAction func returnToAchievementsButtonPushed(_ sender: UIButton) {
-        SecondMessageView.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if messageView.isDescendant(of: view) {
+            SecondMessageView.showMessageView(view: view, messageView: messageView, visualEffect: blurEffectView, effect:effect, title: titleLabel, pastButton: morePracticeButton, participleButton: returnToachievementButton, consultAndLearnLabel: commentLabel, seeYourAchievementButton: nil)
+        }
+
         
     }
     @IBAction func needPracticeButtonPushed(_ sender: UIButton) {
         UserDefaults.standard.set(0, forKey: "quizNumber")
         UserDefaults.standard.set(0, forKey: "numberForQuizSimplePast")
         UserDefaults.standard.set(180, forKey: "numberForQuizPastParticiple")
+        self.tableView.isScrollEnabled = true
         SecondMessageView.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
         isFinishedArray = IsListOfVerbsFinished().arrayIsfinished
         tableView.reloadData()
     }
     @objc func backToMenu(sender: UIButton!) {
-        performSegue(withIdentifier: "showMainMenu", sender: sender)
+        performSegue(withIdentifier: "specialMenu", sender: sender)
+    }
+    @IBAction func returnToAchievementPushed(_ sender: UIButton) {
+        SecondMessageView.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
     }
     
 

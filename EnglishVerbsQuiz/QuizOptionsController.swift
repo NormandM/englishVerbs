@@ -41,21 +41,14 @@ class QuizOptionsController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Regular Verb Conjugation"
-        let yPosition = view.frame.height * 0.85
-        let buttonWidth = view.frame.height * 0.1
-        let xPosition = view.frame.width/2 - buttonWidth/2
-        let buttonHeight = buttonWidth
-        quizButton = UIButton(frame: CGRect(x: xPosition, y: yPosition, width: buttonWidth, height: buttonHeight))
-        quizButton.layer.cornerRadius = quizButton.frame.height/2
-        quizButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
-        quizButton.titleLabel?.textColor = UIColor.white
-        quizButton.setTitle("Quiz", for: .normal)
-        quizButton.titleLabel?.font = fontsAndConstraints.smallBoldFont
-        self.navigationController?.view.addSubview(quizButton)
-        quizButton.addTarget(self, action: #selector(quizButtonPushed), for: .touchUpInside)
+        quizButtonPosition ()
     }
     override func viewWillDisappear(_ animated: Bool) {
         quizButton.removeFromSuperview()
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        quizButton.removeFromSuperview()
+        quizButtonPosition ()
     }
 
     // MARK: - Table view data source
@@ -90,7 +83,7 @@ class QuizOptionsController: UITableViewController {
             let backItem = UIBarButtonItem()
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem
-            navigationItem.backBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
+            navigationItem.backBarButtonItem?.tintColor = .white
             let controller = segue.destination as! QuizViewController
             controller.arrayVerb = arrayVerb
             controller.arraySelection = [[groupeVerbe], arraySelectionTempsEtMode]
@@ -100,7 +93,7 @@ class QuizOptionsController: UITableViewController {
             let backItem = UIBarButtonItem()
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem
-            navigationItem.backBarButtonItem?.tintColor = UIColor(red: 27/255, green: 96/255, blue: 94/255, alpha: 1.0)
+            navigationItem.backBarButtonItem?.tintColor = .white
             let controller = segue.destination as! QuizViewController
            // controller.arraySelectionTempsEtMode = arraySelectionTempsEtMode
             controller.arrayVerb = arrayVerb
@@ -108,5 +101,19 @@ class QuizOptionsController: UITableViewController {
     }
     @objc func quizButtonPushed() {
         performSegue(withIdentifier: "showQuizController", sender: self)
+    }
+    func quizButtonPosition () {
+        let yPosition = view.frame.height * 0.85
+        let buttonWidth = view.frame.height * 0.1
+        let xPosition = view.frame.width/2 - buttonWidth/2
+        let buttonHeight = buttonWidth
+        quizButton = UIButton(frame: CGRect(x: xPosition, y: yPosition, width: buttonWidth, height: buttonHeight))
+        quizButton.layer.cornerRadius = quizButton.frame.height/2
+        quizButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
+        quizButton.titleLabel?.textColor = UIColor.white
+        quizButton.setTitle("Quiz", for: .normal)
+        quizButton.titleLabel?.font = fontsAndConstraints.smallBoldFont
+        self.navigationController?.view.addSubview(quizButton)
+        quizButton.addTarget(self, action: #selector(quizButtonPushed), for: .touchUpInside)
     }
 }

@@ -418,15 +418,6 @@
 	</array>
 	<array>
 		<string>Simple Past</string>
-		<string>He told me that he</string>
-		<string>might</string>
-		<string></string>
-		<string>may</string>
-		<string>come today.</string>
-		<string>may</string>
-	</array>
-	<array>
-		<string>Simple Past</string>
 		<string>I</string>
 		<string>made</string>
 		<string></string>
@@ -672,7 +663,7 @@
 		<string>Present Perfect Simple</string>
 		<string>My cousins</string>
 		<string>haven&apos;t decided</string>
-		<string></string>
+		<string>have not decided</string>
 		<string>(not to decide</string>
 		<string>where to go on holiday, perhaps in England.</string>
 		<string>decide</string>
@@ -852,7 +843,7 @@
 		<string>Present Perfect Simple</string>
 		<string>You</string>
 		<string>haven&apos;t finished</string>
-		<string></string>
+		<string>have not finished</string>
 		<string>finish / not</string>
 		<string>eating yet !</string>
 		<string>finish</string>
@@ -1823,7 +1814,7 @@
 	<array>
 		<string>Past Perfect Progressive</string>
 		<string>She staggered as she</string>
-		<string>had been drinking.</string>
+		<string>had been drinking</string>
 		<string></string>
 		<string>drink</string>
 		<string>.</string>
@@ -2381,7 +2372,7 @@
 	<array>
 		<string>Present Perfect Progressive</string>
 		<string>His eyes are red! He</string>
-		<string> has been crying</string>
+		<string>has been crying</string>
 		<string></string>
 		<string>cry</string>
 		<string>too long,</string>
@@ -3146,7 +3137,7 @@
 	<array>
 		<string>Future</string>
 		<string>We</string>
-		<string>will not stay </string>
+		<string>will not stay</string>
 		<string>won&apos;t stay</string>
 		<string>not / stay</string>
 		<string>long.</string>
@@ -3371,7 +3362,7 @@
 	<array>
 		<string>Future Perfect</string>
 		<string>My aunt</string>
-		<string> will have cooked</string>
+		<string>will have cooked</string>
 		<string></string>
 		<string>cook</string>
 		<string> that dish by lunch time.</string>
@@ -3572,7 +3563,7 @@
 		<string>say</string>
 		<string></string>
 		<string>say</string>
-		<string>.</string>
+		<string>again.</string>
 		<string>say</string>
 	</array>
 	<array>

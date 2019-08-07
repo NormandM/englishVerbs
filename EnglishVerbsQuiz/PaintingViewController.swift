@@ -130,6 +130,10 @@ class PaintingViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = colorReference.specialGray
          self.navigationController?.isNavigationBarHidden = false
     }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        tryAgainButton.layer.cornerRadius = tryAgainButton.frame.height/2
+        seeAchievements.layer.cornerRadius = seeAchievements.frame.height/2
+    }
 
     func questionSelection(){
         let question = relationArray[questionCount]
@@ -238,6 +242,8 @@ class PaintingViewController: UIViewController {
                 
             }else{
                 tryAgainButton.setTitle("Try Again", for: .normal)
+                soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
+                messageLabel.text = "Sorry... "
                 for button in cardButtons {
                     button.setImage(nil, for: .normal)
                     button.setTitle(nil, for: .normal)
@@ -245,8 +251,6 @@ class PaintingViewController: UIViewController {
                     button.layer.cornerRadius = 0
                     button.setNeedsDisplay()
                     button.isEnabled = false
-                    soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
-                    messageLabel.text = "Sorry... "
                 }
                 for label in answerLabelArray {
                     label.text = " "

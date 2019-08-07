@@ -54,6 +54,9 @@ class IrregularVerbsTableViewController: UITableViewController, UISearchBarDeleg
         header.addSubview(pastParticipleLabel)
         return header
     }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        tableView.reloadData()
+    }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
          searchActive = true
     }

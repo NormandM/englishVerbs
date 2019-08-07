@@ -33,25 +33,7 @@ class StatistiqueTableViewController: UITableViewController {
         fetchingData()
      }
     override func viewWillAppear(_ animated: Bool) {
-        let yPosition = view.frame.height * 0.85
-        let buttonWidth = view.frame.height * 0.1
-        let xPosition = view.frame.width/2 - buttonWidth/2
-        let buttonHeight = buttonWidth
-        deleteStatisticsButton = UIButton(frame: CGRect(x: xPosition, y: yPosition, width: buttonWidth, height: buttonHeight))
-        deleteStatisticsButton.layer.cornerRadius = deleteStatisticsButton.frame.height/2
-        deleteStatisticsButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
-        deleteStatisticsButton.titleLabel?.textColor = UIColor.white
-        let buttonName = """
-        Delete
-        Statistics
-        """
-        deleteStatisticsButton.titleLabel?.textAlignment = .center
-        deleteStatisticsButton.titleLabel?.numberOfLines = 0
-        deleteStatisticsButton.titleLabel?.lineBreakMode = .byWordWrapping
-        deleteStatisticsButton.setTitle(buttonName, for: .normal)
-        deleteStatisticsButton.titleLabel?.font = fonts.smallBoldFont
-        self.navigationController?.view.addSubview(deleteStatisticsButton)
-        deleteStatisticsButton.addTarget(self, action: #selector(deleteStatisticsButtonPushed), for: .touchUpInside)
+        deleteStatisticButtonSetUp()
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -60,6 +42,10 @@ class StatistiqueTableViewController: UITableViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
        deleteStatisticsButton.removeFromSuperview()
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        deleteStatisticsButton.removeFromSuperview()
+        deleteStatisticButtonSetUp()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -111,6 +97,27 @@ class StatistiqueTableViewController: UITableViewController {
             resultArray.append(result)
             resultStringArray.append(result.3)
         }
+    }
+    func deleteStatisticButtonSetUp() {
+        let yPosition = view.frame.height * 0.85
+        let buttonWidth = view.frame.height * 0.1
+        let xPosition = view.frame.width/2 - buttonWidth/2
+        let buttonHeight = buttonWidth
+        deleteStatisticsButton = UIButton(frame: CGRect(x: xPosition, y: yPosition, width: buttonWidth, height: buttonHeight))
+        deleteStatisticsButton.layer.cornerRadius = deleteStatisticsButton.frame.height/2
+        deleteStatisticsButton.backgroundColor = UIColor(red: 27/255, green: 95/255, blue: 94/255, alpha: 1.0)
+        deleteStatisticsButton.titleLabel?.textColor = UIColor.white
+        let buttonName = """
+        Delete
+        Statistics
+        """
+        deleteStatisticsButton.titleLabel?.textAlignment = .center
+        deleteStatisticsButton.titleLabel?.numberOfLines = 0
+        deleteStatisticsButton.titleLabel?.lineBreakMode = .byWordWrapping
+        deleteStatisticsButton.setTitle(buttonName, for: .normal)
+        deleteStatisticsButton.titleLabel?.font = fonts.smallBoldFont
+        self.navigationController?.view.addSubview(deleteStatisticsButton)
+        deleteStatisticsButton.addTarget(self, action: #selector(deleteStatisticsButtonPushed), for: .touchUpInside)
     }
 
 }

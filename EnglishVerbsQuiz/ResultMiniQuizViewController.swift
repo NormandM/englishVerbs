@@ -27,9 +27,15 @@ class ResultMiniQuizViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-         miniQuizStatisticsLabel.font = fonts.largeBoldFont
+        let resultSimplePast = Double(miniQuizGoodAnswerSimplePast) / Double(miniQuizGoodAnswerSimplePast + miniQuizBadAnswerSimplePast)
+        let resultPastParticiple = Double(miniQuizGoodAnswerPastParticiple) / Double(miniQuizGoodAnswerPastParticiple + miniQuizBadAnswerPastParticiple)
+        let simplePastPercent = String(round(resultSimplePast * 100)) + " %"
+        let pastParticiplePercent = String(round(resultPastParticiple * 100)) + " %"
+        miniQuizStatisticsLabel.font = fonts.largeBoldFont
+        simplePastLabel.text = "Simple Past \(simplePastPercent)"
         simplePastLabel.font = fonts.normalBoldFont
         pastParticipleLabel.font = fonts.normalBoldFont
+        pastParticipleLabel.text = "Past Participle \(pastParticiplePercent)"
         doneButton.layer.cornerRadius = doneButton.frame.height/2
         doneButton.titleLabel?.textAlignment = .center
         doneButton.titleLabel?.font = fonts.smallBoldFont
@@ -46,6 +52,9 @@ class ResultMiniQuizViewController: UIViewController {
         let pieChartSetUpPastParticiple = PieChartSetUp(entrieBon: Double(miniQuizGoodAnswerPastParticiple), entrieMal: Double(miniQuizBadAnswerPastParticiple), entrieAide: 0, pieChartView: pieChartPastParticiple)
         pieChartSimplePast.data = pieChartSetupSimplePast.piechartData
         pieChartPastParticiple.data = pieChartSetUpPastParticiple.piechartData
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        doneButton.layer.cornerRadius = doneButton.frame.height/2
     }
 
     /*

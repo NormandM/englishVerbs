@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AudioToolbox
+import AVFoundation
 class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var typeOfVerbLabel: UILabel!
@@ -32,13 +32,13 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     @IBOutlet weak var pickerTitleLabel: UILabel!
     @IBOutlet weak var verbTensetTitle: UILabel!
     @IBOutlet weak var verbTypeTitle: UILabel!
-    
     @IBOutlet weak var startQuizButton: UIButton!
     @IBOutlet weak var oK1Button: UIButton!
     @IBOutlet weak var oK2Button: UIButton!
     @IBOutlet weak var oK3Button: UIButton!
     @IBOutlet weak var oK4Button: UIButton!
     @IBOutlet var messageView: UIView!
+    var soundPlayer: SoundPlayer?
     var distanceFromTextField = CGFloat()
     var keyBoardRec = CGRect()
     var effect: UIVisualEffect!
@@ -48,8 +48,6 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     lazy var temps = modeAndTemp.temp
     var typeOfVerbs = [VerbForm.auxiliaryBe.rawValue, VerbForm.auxiliaryHave.rawValue, VerbForm.regularVerb.rawValue, VerbForm.irregularVerb.rawValue]
     var infinitive = String()
-    var soundURL: NSURL?
-    var soundID:SystemSoundID = 0
     var tenseSelected = String()
     var hint: String = ""
     var first: String = ""
@@ -73,6 +71,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     var keyBoardHeight = CGFloat()
     override func viewDidLoad() {
         super.viewDidLoad()
+        soundPlayer = SoundPlayer()
         self.title = "Quiz of Verb Forms"
         self.tensePicker.delegate = self
         self.tensePicker.dataSource = self
@@ -94,8 +93,8 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     }
     override func viewWillAppear(_ animated: Bool) {
         verbTypeTitle.textColor = UIColor.white
-        verbTypeTitle.font = fonts.normalBoldFont
-        verbTensetTitle.font = fonts.normalBoldFont
+        verbTypeTitle.font = fonts.normalFont
+        verbTensetTitle.font = fonts.normalFont
         verbTensetTitle.textColor = UIColor.white
         OkButtonSetUp.buttonHidden(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
         typeOfVerbLabel.isHidden = true
@@ -332,10 +331,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         }
         if message == "true"{
             goodResponseMessage.text = "Great!"
-            let filePath = Bundle.main.path(forResource: "Incoming Text 01", ofType: "wav")
-            soundURL = NSURL(fileURLWithPath: filePath!)
-            AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-            AudioServicesPlaySystemSound(soundID)
+            soundPlayer?.playSound(soundName: "chime_clickbell_octave_up", type: "mp3")
             premier.isUserInteractionEnabled = false
             deuxieme.isUserInteractionEnabled = false
             troisieme.isUserInteractionEnabled = false
@@ -352,11 +348,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
             
             
         }else if message == "false" {
-            let filePath = Bundle.main.path(forResource: "Error Warning", ofType: "wav")
-            soundURL = NSURL(fileURLWithPath: filePath!)
-            AudioServicesCreateSystemSoundID(soundURL!, &soundID)
-            AudioServicesPlaySystemSound(soundID)
-            //performSegue(withIdentifier: "showRightAnswer", sender: self)
+            soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
             premier.text = first
             deuxieme.text = second
             troisieme.text = third

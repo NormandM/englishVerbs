@@ -37,10 +37,11 @@ class MenuViewControllerForPastParticiple: UIViewController {
             UserDefaults.standard.set(0, forKey: "numberForQuizSimplePast")
             UserDefaults.standard.set(180, forKey: "numberForQuizPastParticiple")
         }
-        IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, pastButton: self.pastButton, participleButton: self.participlaButton, seeYourAchievementButton: nil)
+
 
     }
     override func viewWillAppear(_ animated: Bool) {
+        IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, pastButton: self.pastButton, participleButton: self.participlaButton, seeYourAchievementButton: nil)
         self.navigationController?.isNavigationBarHidden = true
         if UIDevice.current.orientation.isLandscape{
             ImageManager.choosImage(imageView: grandeJatte, imageName: "BigBen")
@@ -85,7 +86,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-        backItem.tintColor = colorReference.specialGreen
+        backItem.tintColor = .white
         if segue.identifier == "showSimplePastQuiz" {
             let typeOfQuiz = TypeOfQuiz.simplePast
             let controller = segue.destination as! PaintingViewController
@@ -118,6 +119,11 @@ class MenuViewControllerForPastParticiple: UIViewController {
 
         }
     }
+    @IBAction func unwindToSpecialMenu(_ unwindSegue: UIStoryboardSegue) {
+        
+    }
+
+    
     func userAlreadyExist(credit: String) -> Bool {
         return UserDefaults.standard.object(forKey: credit) != nil
     }
@@ -144,10 +150,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
     @IBAction func verbFormPushed(_ sender: UIButton) {
         performSegue(withIdentifier: "verbRules", sender: self)
     }
-    @IBAction func irregularVerbPushed(_ sender: UIButton) {
-        performSegue(withIdentifier: "showIrregularVerbs", sender: self)
-    }
-    
+
     
     func quizAlreadyStarted(quizNumber: String) -> Bool {
         return UserDefaults.standard.object(forKey: quizNumber) != nil

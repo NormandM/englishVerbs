@@ -30,9 +30,10 @@ class ContextuelMenuController: UIViewController {
         effect = visualEffect.effect
         MessageForVerbListMenu.layer.cornerRadius = 5
         visualEffect.effect = nil
-        VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: contextualQuizButton, seeIrregularVerb: contextualQuizStatisticsButton)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: contextualQuizButton, seeIrregularVerb: contextualQuizStatisticsButton)
         self.navigationController?.isNavigationBarHidden = true
         if UIDevice.current.orientation.isLandscape{
             ImageManager.choosImage(imageView: grandeJatte, imageName: "BigBen")
@@ -57,9 +58,8 @@ class ContextuelMenuController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
-        let colorReference = ColorReference()
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = colorReference.specialGreen
+        navigationItem.backBarButtonItem?.tintColor = .white
         if segue.identifier == "showContextQuiz"{
             let controller = segue.destination as! ContextuelQuizOptionController
             controller.sentenceArray = sentenceArray

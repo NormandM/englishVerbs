@@ -42,6 +42,37 @@ class ResultViewController: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        setUoTryAgainButton()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        let fonts = FontsAndConstraintsOptions()
+        titleLabel.font = fonts.largeBoldFont
+        resultat.font = fonts.normalBoldFont
+        message.font = fonts.normalItaliqueBoldFont
+        setupChart()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        tryAgainButton.removeFromSuperview()
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        tryAgainButton.removeFromSuperview()
+        setUoTryAgainButton()
+    }
+    func setupChart() {
+        let entrieBon = goodResponse
+        let entrieMal = badResponse
+        let entrieAide = aideCount
+        let pieChartSetUp = PieChartSetUp(entrieBon: entrieBon, entrieMal: entrieMal, entrieAide: entrieAide, pieChartView: scoreChart)
+        scoreChart.data = pieChartSetUp.piechartData
+    }
+   
+    // MARK: - Navigation
+    
+
+    @objc func tryAgainButtonPushed() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func setUoTryAgainButton(){
         let yPosition = view.frame.height * 0.9
         let buttonWidth = view.frame.height * 0.08
         let xPosition = view.frame.width/2 - buttonWidth/2
@@ -61,30 +92,7 @@ class ResultViewController: UIViewController {
         tryAgainButton.titleLabel?.font = fonts.smallBoldFont
         self.view.addSubview(tryAgainButton)
         tryAgainButton.addTarget(self, action: #selector(tryAgainButtonPushed), for: .touchUpInside)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        let fonts = FontsAndConstraintsOptions()
-        titleLabel.font = fonts.largeBoldFont
-        resultat.font = fonts.normalBoldFont
-        message.font = fonts.normalItaliqueBoldFont
-        setupChart()
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        tryAgainButton.removeFromSuperview()
-    }
-    func setupChart() {
-        let entrieBon = goodResponse
-        let entrieMal = badResponse
-        let entrieAide = aideCount
-        let pieChartSetUp = PieChartSetUp(entrieBon: entrieBon, entrieMal: entrieMal, entrieAide: entrieAide, pieChartView: scoreChart)
-        scoreChart.data = pieChartSetUp.piechartData
-    }
-   
-    // MARK: - Navigation
-    
 
-    @objc func tryAgainButtonPushed() {
-        self.dismiss(animated: true, completion: nil)
     }
     
 }

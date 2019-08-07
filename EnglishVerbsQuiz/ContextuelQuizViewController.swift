@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AudioToolbox
+import AVFoundation
 import CoreData
 
 class ContextuelQuizViewController: UIViewController, NSFetchedResultsControllerDelegate {
@@ -28,6 +28,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var rule3Label: UILabel!
     @IBOutlet weak var rule4Label: UILabel!
     @IBOutlet weak var rule5Label: UILabel!
+    var soundPlayer: SoundPlayer?
     var distanceFromTextField = CGFloat()
     var effect: UIVisualEffect!
     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
@@ -36,8 +37,6 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     let colorRefereences = ColorReference()
     var infiniveIrregular = [String]()
     var contextuelVerbs = [[String]]()
-    var soundURL: NSURL?
-    var soundID:SystemSoundID = 0
     var textFieldIsActivated = false
     var reponseBonne: String = ""
     var rightHintWasSelected = false
@@ -52,6 +51,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     var progressInt = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
+        soundPlayer = SoundPlayer()
         barreProgression.progress = 0.0
         for sentences in sentenceArray {
             for selection in modeEtTemps {
@@ -112,12 +112,17 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         if helpView.isDescendant(of: view) {
             MessageViewForHelp.showMessageView(view: view, messageView: helpView, visualEffect: blurEffectView, effect: effect, title: titleHelpViewLabel)
+        }else{
+            verbTextField.becomeFirstResponder()
         }
         distanceFromTextField = view.frame.size.height - verbTextField.frame.maxY
         uneAutreQuestionButton.layer.cornerRadius = uneAutreQuestionButton.frame.height / 2.0
         suggestionButton.layer.cornerRadius = suggestionButton.frame.height / 2.0
         uneAutreQuestionButton.setNeedsLayout()
-        verbTextField.becomeFirstResponder()
+        
+
+        
+
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3
@@ -204,11 +209,11 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         case .good, .help:
             sentenceLabel.attributedText = sentences.attributeBonneReponse
             verbTextField.text = "Great Job!"
-            SoundResponse.goodSound()
+            soundPlayer?.playSound(soundName: "chime_clickbell_octave_up", type: "mp3")
         case .bad:
-            SoundResponse.badSound()
             verbTextField.text = "Sorry..."
             verbTextField.textColor = colorRefereences.specialRed
+            soundPlayer?.playSound(soundName: "etc_error_drum", type: "mp3")
             sentenceLabel.attributedText = sentences.attributeMauvaiseReponse
         }
         checkButton.isEnabled = false

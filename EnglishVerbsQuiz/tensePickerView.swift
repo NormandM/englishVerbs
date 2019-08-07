@@ -30,13 +30,15 @@ class TensePickViewMessage {
         messageView.frame = CGRect(x: messageXPosition, y: messageYPosition , width: messageViewWidth, height: messageViewHeight)
         title.font = fontsAndConstraints.normalBoldFont
         title.textColor = UIColor.white
+        title.textAlignment = .center
+        
         title.text = """
-        Understand Verb Forms
-        and their Combinations
+        Verb Forms and their
+        Combinations
         """
         okButton.titleLabel?.textColor = UIColor.white
         okButton.setTitle("OK", for: .normal)
-        okButton.titleLabel?.font = fontsAndConstraints.largeBoldFont
+        okButton.titleLabel?.font = fontsAndConstraints.normalBoldFont
     }
     class func dismissMessageview(messageView: UIView, visualEffect: UIVisualEffectView, effect:UIVisualEffect) {
         UIView.animate(withDuration: 0.8, animations: {

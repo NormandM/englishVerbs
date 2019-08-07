@@ -87,7 +87,6 @@
 		8EEE211F22BEB0960080FB93 /* ContextuelQuizOptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE211E22BEB0960080FB93 /* ContextuelQuizOptionController.swift */; };
 		8EEE212522BED2200080FB93 /* ContextuelQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE212422BED2200080FB93 /* ContextuelQuizViewController.swift */; };
 		8EEE212722BED7080080FB93 /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE212622BED7080080FB93 /* Sentence.swift */; };
-		8EEE212922BED7C20080FB93 /* SoundResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE212822BED7C20080FB93 /* SoundResponse.swift */; };
 		8EEE212D22C01BC50080FB93 /* SecondMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE212C22C01BC50080FB93 /* SecondMessageView.swift */; };
 		8EEE213122C0248C0080FB93 /* TextFieldProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE213022C0248C0080FB93 /* TextFieldProperties.swift */; };
 		8EEE213322C024B00080FB93 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE213222C024B00080FB93 /* DifficultyLevel.swift */; };
@@ -206,7 +205,6 @@
 		8EEE211E22BEB0960080FB93 /* ContextuelQuizOptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextuelQuizOptionController.swift; sourceTree = "<group>"; };
 		8EEE212422BED2200080FB93 /* ContextuelQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextuelQuizViewController.swift; sourceTree = "<group>"; };
 		8EEE212622BED7080080FB93 /* Sentence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
-		8EEE212822BED7C20080FB93 /* SoundResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundResponse.swift; sourceTree = "<group>"; };
 		8EEE212C22C01BC50080FB93 /* SecondMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMessageView.swift; sourceTree = "<group>"; };
 		8EEE213022C0248C0080FB93 /* TextFieldProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldProperties.swift; sourceTree = "<group>"; };
 		8EEE213222C024B00080FB93 /* DifficultyLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
@@ -460,7 +458,6 @@
 				8E66A66E22C9526A005E5877 /* ResultViewController.swift */,
 				8EC48D6B22C2BFBA007FC00A /* RulesforConjugation.swift */,
 				8EEE213822C029280080FB93 /* ResponseEvaluation.swift */,
-				8EEE212822BED7C20080FB93 /* SoundResponse.swift */,
 				8EEE213222C024B00080FB93 /* DifficultyLevel.swift */,
 				8EEE213022C0248C0080FB93 /* TextFieldProperties.swift */,
 				8EEE212622BED7080080FB93 /* Sentence.swift */,
@@ -720,7 +717,6 @@
 			files = (
 				8EEE20FB22B4492C0080FB93 /* SoundPlayer.swift in Sources */,
 				8EC83558229B3B1D009468CD /* AttributedString.swift in Sources */,
-				8EEE212922BED7C20080FB93 /* SoundResponse.swift in Sources */,
 				8E24AD1E22D8F598003A60ED /* SubClassTextField.swift in Sources */,
 				8E9C6B091EDF638500E2AC58 /* Item+CoreDataClass.swift in Sources */,
 				8EC8355E22A6E7EF009468CD /* tensePickerView.swift in Sources */,

@@ -38,13 +38,14 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     var simplePast = [String]()
     var pastParticiple = [String]()
     var cellIndexPath: IndexPath = [0,0]
-    var quizNumber: Int = 1
+    var quizNumber: Int = 0
     let colorReference = ColorReference()
     let fonts =  FontsAndConstraintsOptions()
     var keiBoardHeight: CGFloat = 0
     var initialPosition: CGFloat = 0
     var titleButtonNext = String()
     var buttonString = String()
+    var disableButton = false
     var miniQuizGoodAnswerSimplePast = UserDefaults.standard.integer(forKey: "miniQuizGoodAnswerSimplePast")
     var miniQuizBadAnswerSimplePast = UserDefaults.standard.integer(forKey: "miniQuizBadAnswerSimplePast")
     var miniQuizGoodAnswerPastParticiple = UserDefaults.standard.integer(forKey: "miniQuizGoodAnswerPastParticiple")
@@ -300,7 +301,6 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
             cellIndexPath = [0, count]
         }
         if count == 14 &&  cell.verbeTextField.text != ""{
-            soundPlayer?.playSound(soundName: "music_harp_gliss_up", type: "wav")
             irregularVerbCollectionView.transform = .identity
             seeStatistics.transform = .identity
             quizLabel.transform = .identity
@@ -311,6 +311,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
             Next
             Quiz
             """
+            quizButton.isUserInteractionEnabled = true
             quizButton.setTitle(titleButtonNext, for: .normal)
             cell.verbeTextField.resignFirstResponder()
             if quizNumber == 20 {
@@ -330,8 +331,6 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         seeStatistics.layer.cornerRadius = seeStatistics.frame.height/2
     }
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
     @IBAction func unwindToMiniQuiz(_ unwindSegue: UIStoryboardSegue) {
         var count = Int()
         for n in 0...14 {
@@ -349,7 +348,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
                 cell.verbeTextField.becomeFirstResponder()
             }
         }
-        
+        irregularVerbCollectionView.reloadData()
 
     }
     func verbSelectionForQuiz() -> [String]{
@@ -364,13 +363,11 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
                     pastParticiple.append(exceptionsArray[indexPosition][3])
                 }
             }
-        }else{
-            
         }
         let totalNumbeOfQuiz = shuffledArray.count/5
         quizLabel.text = """
         Mini Quiz
-        number: \(quizNumber) of \(totalNumbeOfQuiz)
+        number: \(quizNumber + 1) of \(totalNumbeOfQuiz)
         """
         arrayForQuiz = chosenArray.flatMap { $0 }
         verbCountForQuiz = verbCountForQuiz + 5
@@ -379,9 +376,11 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     }
 
     @IBAction func readyButtonPushed(_ sender: UIButton) {
-        if quizButton.titleLabel?.text == titleButtonNext{
+        if quizButton.titleLabel?.text == titleButtonNext && disableButton != true{
+            disableButton = true
             formatForQuiz()
         }else{
+            disableButton = false
             for n in 0...14 {
                 let cell = irregularVerbCollectionView.cellForItem(at: [0 , n]) as! VerbCollectionViewCell
                 switch n {
@@ -406,14 +405,14 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     @IBAction func miniQuizStatitisticsButtonPushed(_ sender: UIButton) {
         performSegue(withIdentifier: "showStatistics", sender: self)
     }
-    @IBAction func startOverButtonPushed(_ sender: Any) {
+    @IBAction func startOverButtonPushed(_ sender: UIButton) {
         quizNumber = 0
-        arrayForQuiz = verbSelectionForQuiz()
+        verbCountForQuiz = 0
         formatForQuiz()
         FinishedQuizMessage.dismissMessageview(view: view, messageView: finishedQuizMessage, visualEffect: blurEffectView, effect: effect)
         
     }
-    @IBAction func goBackTomenuButtonPushed(_ sender: Any) {
+    @IBAction func goBackTomenuButtonPushed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     func formatForQuiz() {
@@ -427,6 +426,9 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         arrayForQuiz = verbSelectionForQuiz()
         irregularVerbCollectionView.reloadData()
         quizButton.setTitle(buttonString, for: .normal)
+        
+      //  quizButton.isUserInteractionEnabled = true
+      //  disableButton = false
     }
     
 

@@ -153,6 +153,9 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     override func viewDidAppear(_ animated: Bool) {
         quizButton.layer.cornerRadius = quizButton.frame.height/2
         seeStatistics.layer.cornerRadius = seeStatistics.frame.height/2
+        if quizNumber == 20 {
+            FinishedQuizMessage.showMessageView(view: view, messageView: finishedQuizMessage, visualEffect: blurEffectView, effect: effect)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
@@ -329,6 +332,10 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         irregularVerbCollectionView.reloadData()
         quizButton.layer.cornerRadius = quizButton.frame.height/2
         seeStatistics.layer.cornerRadius = seeStatistics.frame.height/2
+        if quizNumber == 20 {
+            FinishedQuizMessage.showMessageView(view: view, messageView: finishedQuizMessage, visualEffect: blurEffectView, effect: effect)
+        }
+
     }
     // MARK: - Navigation
     @IBAction func unwindToMiniQuiz(_ unwindSegue: UIStoryboardSegue) {

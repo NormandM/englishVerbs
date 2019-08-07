@@ -54,8 +54,8 @@ class SpecificAchievementViewController: UIViewController {
         \(painterName)
         (\(painterAnniversary))
         """
-        painterNameLabel.font = fontsAndConstraints.largeBoldFont
-        biotTextView.font = fontsAndConstraints.normalFont
+        painterNameLabel.font = fontsAndConstraints.normalBoldFont
+        biotTextView.font = fontsAndConstraints.smallFont
         self.navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor.black
     }

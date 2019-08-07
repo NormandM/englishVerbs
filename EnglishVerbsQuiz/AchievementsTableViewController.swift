@@ -144,6 +144,16 @@ class AchievementsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     @objc func StartOver(sender: UIButton!) {
+        self.tableView.setContentOffset(.zero, animated: true)
+        let when = DispatchTime.now()
+        DispatchQueue.main.asyncAfter(deadline: when + 1) {
+            UIView.animate(withDuration: 0, delay: 0, animations: {
+                
+            }, completion: {finished in self.specialEffect()})
+        }
+
+    }
+    func specialEffect() {
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)
@@ -178,6 +188,7 @@ class AchievementsTableViewController: UITableViewController {
         performSegue(withIdentifier: "specialMenu", sender: sender)
     }
     @IBAction func returnToAchievementPushed(_ sender: UIButton) {
+        self.tableView.isScrollEnabled = true
         SecondMessageView.dismissMessageview(messageView: messageView, visualEffect: blurEffectView, effect: effect)
     }
     

@@ -24,18 +24,31 @@ class ResultMiniQuizViewController: UIViewController {
     let colorReference = ColorReference()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
-        let resultSimplePast = Double(miniQuizGoodAnswerSimplePast) / Double(miniQuizGoodAnswerSimplePast + miniQuizBadAnswerSimplePast)
-        let resultPastParticiple = Double(miniQuizGoodAnswerPastParticiple) / Double(miniQuizGoodAnswerPastParticiple + miniQuizBadAnswerPastParticiple)
-        let simplePastPercent = String(round(resultSimplePast * 100)) + " %"
-        let pastParticiplePercent = String(round(resultPastParticiple * 100)) + " %"
+        var resultSimplePast: Double = 0
+        var resultPastParticiple: Double = 0
+        if miniQuizGoodAnswerSimplePast == 0 && miniQuizBadAnswerSimplePast == 0 {
+            simplePastLabel.text = "Simple Past: No Result"
+        }else{
+            resultSimplePast = Double(miniQuizGoodAnswerSimplePast) / Double(miniQuizGoodAnswerSimplePast + miniQuizBadAnswerSimplePast)
+            let simplePastPercent = String(round(resultSimplePast * 100)) + " %"
+            simplePastLabel.text = "Simple Past \(simplePastPercent)"
+        }
+        if miniQuizGoodAnswerPastParticiple == 0 && miniQuizBadAnswerPastParticiple == 0 {
+            pastParticipleLabel.text = "Past Participle: No Result"
+        }else{
+            resultPastParticiple = Double(miniQuizGoodAnswerPastParticiple) / Double(miniQuizGoodAnswerPastParticiple + miniQuizBadAnswerPastParticiple)
+            let pastParticiplePercent = String(round(resultPastParticiple * 100)) + " %"
+            pastParticipleLabel.text = "Past Participle \(pastParticiplePercent)"
+        }
+        
+        
+        
         miniQuizStatisticsLabel.font = fonts.largeBoldFont
-        simplePastLabel.text = "Simple Past \(simplePastPercent)"
         simplePastLabel.font = fonts.normalBoldFont
         pastParticipleLabel.font = fonts.normalBoldFont
-        pastParticipleLabel.text = "Past Participle \(pastParticiplePercent)"
+        
         doneButton.layer.cornerRadius = doneButton.frame.height/2
         doneButton.titleLabel?.textAlignment = .center
         doneButton.titleLabel?.font = fonts.smallBoldFont

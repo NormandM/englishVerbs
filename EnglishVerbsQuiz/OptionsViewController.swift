@@ -20,9 +20,9 @@ class OptionsViewController: UIViewController{
     var infiniveIrregular = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(0, forKey: "thisQuizHintAnswer")
-        UserDefaults.standard.set(0, forKey: "thisQuizGoodAnswer")
-        UserDefaults.standard.set(0, forKey: "thisQuizBadAnswer")
+//        UserDefaults.standard.set(0, forKey: "thisQuizHintAnswer")
+//        UserDefaults.standard.set(0, forKey: "thisQuizGoodAnswer")
+//        UserDefaults.standard.set(0, forKey: "thisQuizBadAnswer")
         if currentCount >= 10 {
             if #available(iOS 10.3, *) {
                 SKStoreReviewController.requestReview()

@@ -15,6 +15,7 @@
 		8E0E07DE1D8DC3BF0065BC87 /* EnglishVerbsQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07DD1D8DC3BF0065BC87 /* EnglishVerbsQuizTests.swift */; };
 		8E0E07E91D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07E81D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift */; };
 		8E0E07F91D8DC4540065BC87 /* AllVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0E07F81D8DC4540065BC87 /* AllVerbs.swift */; };
+		8E0F740822FC6B26008FE48D /* MovingViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F740722FC6B26008FE48D /* MovingViewAnimation.swift */; };
 		8E236E901DC5082D00A25209 /* Incoming Text 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E236E8F1DC5082D00A25209 /* Incoming Text 01.wav */; };
 		8E236E921DC5084600A25209 /* Error Warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8E236E911DC5084600A25209 /* Error Warning.wav */; };
 		8E24ACF822C95857003A60ED /* PieChartSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24ACF722C95857003A60ED /* PieChartSetUp.swift */; };
@@ -133,6 +134,7 @@
 		8E0E07E81D8DC3BF0065BC87 /* EnglishVerbsQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishVerbsQuizUITests.swift; sourceTree = "<group>"; };
 		8E0E07EA1D8DC3BF0065BC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E0E07F81D8DC4540065BC87 /* AllVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllVerbs.swift; sourceTree = "<group>"; };
+		8E0F740722FC6B26008FE48D /* MovingViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingViewAnimation.swift; sourceTree = "<group>"; };
 		8E236E8F1DC5082D00A25209 /* Incoming Text 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Incoming Text 01.wav"; sourceTree = "<group>"; };
 		8E236E911DC5084600A25209 /* Error Warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Error Warning.wav"; sourceTree = "<group>"; };
 		8E24ACF722C95857003A60ED /* PieChartSetUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartSetUp.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				8E66A66A22C3FA6E005E5877 /* MessageViewforHelp.swift */,
 				8E66A66C22C7EEC2005E5877 /* AttributedString2.swift */,
 				8E24ACF722C95857003A60ED /* PieChartSetUp.swift */,
+				8E0F740722FC6B26008FE48D /* MovingViewAnimation.swift */,
 			);
 			name = "Contextuel Quiz";
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				8E24AD1722D7BD17003A60ED /* IrregularVerbsQuizViewController.swift in Sources */,
 				8ED90EA52246D2AF008C5063 /* OptionsViewController.swift in Sources */,
 				8E24ACFF22CBAB93003A60ED /* FetchRequest.swift in Sources */,
+				8E0F740822FC6B26008FE48D /* MovingViewAnimation.swift in Sources */,
 				8EEE211422B6B7CD0080FB93 /* ColorRefernece.swift in Sources */,
 				8E66A66B22C3FA6E005E5877 /* MessageViewforHelp.swift in Sources */,
 				8EEE211A22B9489C0080FB93 /* IrregularVerbTableViewCell.swift in Sources */,

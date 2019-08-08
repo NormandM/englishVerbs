@@ -125,7 +125,7 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
 
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.3
+        let movementDuration:TimeInterval = 0.5
         let movement:CGFloat = ( up ? -moveValue : moveValue)
         UIView.beginAnimations( "animateView", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
@@ -144,18 +144,18 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
             if notification.name == UIResponder.keyboardWillShowNotification && !textFieldIsActivated{
                 textFieldIsActivated = true
                 animateViewMoving(true, moveValue: adjustement)
-                UIView.animate(withDuration: 3, animations: {
-                    self.suggestionButton.transform = CGAffineTransform(translationX: 0, y: adjustement/2)}, completion: nil)
-                UIView.animate(withDuration: 3, animations: {
-                    self.tempsLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/1.8)}, completion: nil)
-                UIView.animate(withDuration: 3, animations: {
-                    self.sentenceLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/4)}, completion: nil)
+                self.suggestionButton.transform = CGAffineTransform(translationX: 0, y: adjustement/2)
+                self.tempsLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/1.8)
+                self.sentenceLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/4)
             }else if notification.name == UIResponder.keyboardWillHideNotification{
                 textFieldIsActivated = false
                 animateViewMoving(true, moveValue: -adjustement)
-                suggestionButton.transform = .identity
-                tempsLabel.transform = .identity
-                sentenceLabel.transform = .identity
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.suggestionButton.transform = .identity}, completion: nil)
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.tempsLabel.transform = .identity}, completion: nil)
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.sentenceLabel.transform = .identity}, completion: nil)
             }
         }
     }

@@ -304,12 +304,24 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
             cellIndexPath = [0, count]
         }
         if count == 14 &&  cell.verbeTextField.text != ""{
-            irregularVerbCollectionView.transform = .identity
-            seeStatistics.transform = .identity
-            quizLabel.transform = .identity
-            simplePastLabel.transform = .identity
-            pastParticipleLabel.transform = .identity
-            infinitiveLabel.transform = .identity
+            UIView.animate(withDuration: 1, animations: {
+                self.irregularVerbCollectionView.transform = .identity}, completion: nil)
+           // irregularVerbCollectionView.transform = .identity
+            UIView.animate(withDuration: 1, animations: {
+                self.seeStatistics.transform = .identity}, completion: nil)
+           // seeStatistics.transform = .identit
+            UIView.animate(withDuration: 1, animations: {
+                self.quizLabel.transform = .identity}, completion: nil)
+            //quizLabel.transform = .identity
+            UIView.animate(withDuration: 1, animations: {
+                self.simplePastLabel.transform = .identity}, completion: nil)
+            //simplePastLabel.transform = .identity
+            UIView.animate(withDuration: 1, animations: {
+                self.pastParticipleLabel.transform = .identity}, completion: nil)
+           // pastParticipleLabel.transform = .identity
+            UIView.animate(withDuration: 1, animations: {
+                self.infinitiveLabel.transform = .identity}, completion: nil)
+            //infinitiveLabel.transform = .identity
             titleButtonNext = """
             Next
             Quiz
@@ -394,6 +406,9 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
                 case 1, 4, 7, 10, 13, 2, 5, 8, 11, 14:
                     cell.isUserInteractionEnabled = false
                     cell.verbeTextField.isUserInteractionEnabled = false
+                    cell.verbeTextField.backgroundColor = .white
+                    cell.verbeTextField2.backgroundColor = .white
+                    cell.verbeTextField.textColor = .black
                     cell.verbeTextField.text = ""
                     cell.verbeTextField2.text = ""
                 default:

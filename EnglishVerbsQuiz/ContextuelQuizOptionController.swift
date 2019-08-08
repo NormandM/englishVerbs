@@ -18,7 +18,6 @@ class ContextuelQuizOptionController: UITableViewController {
     var arraySelectionTempsEtMode = [[String]]()
     let fontsAndConstraints = FontsAndConstraintsOptions()
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-       
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
         header.textLabel!.textColor = UIColor.white //make the text white

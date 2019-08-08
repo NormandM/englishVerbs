@@ -124,6 +124,8 @@ class PaintingViewController: UIViewController {
         seeAchievements.titleLabel?.textAlignment = .center
         seeAchievements.titleLabel?.font = fontsAndConstraints.smallBoldFont
         seeAchievements.layer.cornerRadius = seeAchievements.frame.height/2
+ 
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isTranslucent = true
@@ -345,6 +347,7 @@ class PaintingViewController: UIViewController {
     }
     
     @IBAction func returnToMenuPushed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func seeAchievementWasPushed(_ sender: UIButton) {
         performSegue(withIdentifier: "showAchievements", sender: self)

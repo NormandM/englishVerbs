@@ -27,8 +27,8 @@ class MenuViewControllerForPastParticiple: UIViewController {
     let colorReference = ColorReference()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.white
+    //    self.navigationController?.navigationBar.isTranslucent = false
+    //    navigationController?.navigationBar.barTintColor = UIColor.white
         effect = visualEffect.effect
         menuView.layer.cornerRadius = 5
         visualEffect.effect = nil
@@ -42,7 +42,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         IntroductionMessage.showMessageView(view: self.view, messageView: self.menuView, visualEffect: self.visualEffect, effect: self.effect, pastButton: self.pastButton, participleButton: self.participlaButton, seeYourAchievementButton: nil)
-        self.navigationController?.isNavigationBarHidden = true
+     //   self.navigationController?.isNavigationBarHidden = true
         if UIDevice.current.orientation.isLandscape{
             ImageManager.choosImage(imageView: grandeJatte, imageName: "BigBen")
         }else{
@@ -71,11 +71,6 @@ class MenuViewControllerForPastParticiple: UIViewController {
         backButton.titleLabel?.font = fontsAndConstraints.largeFont
         
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barTintColor = colorReference.specialGray
-    }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         IntroductionMessage.showMessageView(view: view, messageView: menuView, visualEffect: visualEffect, effect:effect, pastButton: pastButton, participleButton: participlaButton, seeYourAchievementButton: nil)
     }
@@ -86,7 +81,7 @@ class MenuViewControllerForPastParticiple: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-        backItem.tintColor = .white
+        navigationItem.backBarButtonItem?.tintColor = .white
         if segue.identifier == "showSimplePastQuiz" {
             let typeOfQuiz = TypeOfQuiz.simplePast
             let controller = segue.destination as! PaintingViewController

@@ -32,10 +32,14 @@ class AchievementsTableViewController: UITableViewController {
         super.viewDidLoad()
         effect = visualEffect.effect
         visualEffect.effect = nil
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: fonts.normalBoldFont,
+            .foregroundColor: UIColor.white
+        ]
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start Over?", style: .plain, target: self, action: #selector(StartOver))
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: fonts.normalBoldFont], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(backToMenu))
-        navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: fonts.normalBoldFont], for: .normal)
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
         if let plistPath = Bundle.main.path(forResource: "ArtistesAndPaintings", ofType: "plist"),
             let verbArray = NSArray(contentsOfFile: plistPath){
             arrayPaintingInfo = verbArray as! [[String]]
@@ -47,8 +51,8 @@ class AchievementsTableViewController: UITableViewController {
         AllInfinitiveVerbs = [quiz, quiz]
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barTintColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
+    //    self.navigationController?.navigationBar.isTranslucent = true
+     //   navigationController?.navigationBar.barTintColor = UIColor(red: 178/255, green: 208/255, blue: 198/255, alpha: 1.0)
     }
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView

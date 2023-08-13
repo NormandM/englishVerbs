@@ -9,6 +9,7 @@
 import UIKit
 
 class IrregularVerbsTableViewController: UITableViewController, UISearchBarDelegate {
+    let notificationCenter = NotificationCenter.default
     var irregularVerbs = [[String]]()
     let colorReference = ColorReference()
     let fonts = FontsAndConstraintsOptions()
@@ -17,6 +18,7 @@ class IrregularVerbsTableViewController: UITableViewController, UISearchBarDeleg
     var infiniveIrregular = [String]()
     var simplePast = [String]()
     var pastParticiple = [String]()
+    var cell = IrregularVerbTableViewCell()
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +98,7 @@ class IrregularVerbsTableViewController: UITableViewController, UISearchBarDeleg
         return infiniveIrregular.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! IrregularVerbTableViewCell
+        cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! IrregularVerbTableViewCell
         cell.infinitive.text = "to \(irregularVerbs[indexPath.row][0])"
         cell.simplePast.text = irregularVerbs[indexPath.row][1]
         cell.PastParticiple.text = irregularVerbs[indexPath.row][2]
@@ -111,9 +113,13 @@ class IrregularVerbsTableViewController: UITableViewController, UISearchBarDeleg
         }
         return cell
     }
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print(indexPath)
+    }
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.resignFirstResponder()
     }
- 
+
+
 
 }

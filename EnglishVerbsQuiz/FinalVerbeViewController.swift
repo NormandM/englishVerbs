@@ -9,6 +9,7 @@
 import UIKit
 
 class FinalVerbeViewController: UIViewController {
+    let notificationCenter = NotificationCenter.default
     @IBOutlet weak var backgrounColorView: UIView!
     @IBOutlet weak var infinitif: UILabel!
     @IBOutlet weak var mode: UILabel!
@@ -25,6 +26,7 @@ class FinalVerbeViewController: UIViewController {
     @IBOutlet weak var fourth: UILabel!
     @IBOutlet weak var fifth: UILabel!
     @IBOutlet weak var sixth: UILabel!
+    @IBOutlet weak var listenLabel: UILabel!
     let screenSize: CGRect = UIScreen.main.bounds
     let fonts = FontsAndConstraintsOptions()
     var verbInfinitif = String()
@@ -43,6 +45,9 @@ class FinalVerbeViewController: UIViewController {
         let toChooseVerb = ToChooseVerb()
         _ = AllVerbs(allVerbs: arrayVerbe, n: n)
         let verb = toChooseVerb.chooseVerb(temps: temp, indexChoice: n , verbArray: arrayVerbe)
+        listenLabel.text = "Click on the verb to hear the pronunciation"
+        listenLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        listenLabel.textColor = .red
         premier.text = verb[0]
         deuxieme.text = verb[1]
         troisieme.text = verb[2]
@@ -99,6 +104,23 @@ class FinalVerbeViewController: UIViewController {
         fourth.font = fonts.smallFont
         fifth.font = fonts.smallFont
         sixth.font = fonts.smallFont
+        let voiceStopped = Notification.Name("voiceStopped")
+        notificationCenter.addObserver(self,selector: #selector(voiceDidTerminate),name: voiceStopped,object: nil)
+        premier.clickLabel()
+        deuxieme.clickLabel()
+        troisieme.clickLabel()
+        quatrieme.clickLabel()
+        cinquieme.clickLabel()
+        sixieme.clickLabel()
+
+    }
+    @objc func voiceDidTerminate(_ notification: NSNotification){
+        premier.textColor = .black
+        deuxieme.textColor = .black
+        troisieme.textColor = .black
+        quatrieme.textColor = .black
+        cinquieme.textColor = .black
+        sixieme.textColor = .black
     }
 }
 

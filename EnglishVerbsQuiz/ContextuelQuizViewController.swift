@@ -10,7 +10,8 @@ import UIKit
 import AVFoundation
 import CoreData
 
-class ContextuelQuizViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class ContextuelQuizViewController: UIViewController, NSFetchedResultsControllerDelegate, UITextFieldDelegate {
+    let notificationCenter = NotificationCenter.default
     @IBOutlet weak var tempsLabel: UILabel!
     @IBOutlet weak var suggestionButton: UIButton!
     @IBOutlet weak var sentenceLabel: UILabel!
@@ -28,6 +29,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var rule3Label: UILabel!
     @IBOutlet weak var rule4Label: UILabel!
     @IBOutlet weak var rule5Label: UILabel!
+    
+    @IBOutlet weak var clickToListenLabel: UILabel!
     var soundPlayer: SoundPlayer?
     var distanceFromTextField = CGFloat()
     var effect: UIVisualEffect!
@@ -48,11 +51,15 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
     var modeEtTemps = [[String]]()
     var userRespone = String()
     lazy var sentences = Sentences(selectedSentences: selectedSentences, indexSentence: indexSentence)
+    @IBOutlet weak var sentenceConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tempConstraint: NSLayoutConstraint!
+    var reponseEvaluation = QuizResult.bad
     var progressInt = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         soundPlayer = SoundPlayer()
         barreProgression.progress = 0.0
+   //     self.navigationController?.isNavigationBarHidden = false
         for sentences in sentenceArray {
             for selection in modeEtTemps {
                 if selection[0].caseInsensitiveCompare(sentences[0]) == .orderedSame {
@@ -60,6 +67,9 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
                 }
             }
         }
+        let voiceStopped = Notification.Name("voiceStopped")
+        notificationCenter.addObserver(self,selector: #selector(voiceDidTerminate),name: voiceStopped,object: nil)
+        sentenceLabel.clickLabel()
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
         selectedSentences.shuffle()
@@ -79,6 +89,9 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         checkButton.titleLabel!.font = fonts.largeBoldFont
         doneViewButton.titleLabel!.font = fonts.normalBoldFont
         uneAutreQuestionButton.titleLabel?.font = fonts.smallItaliqueBoldFont
+        clickToListenLabel.text = "(Click on the sentence to hear the pronunciation)"
+        clickToListenLabel.font = fonts.smallItaliqueBoldFont
+        clickToListenLabel.textColor = .red
         let buttonText = """
         One More
         Verb!
@@ -86,8 +99,8 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         uneAutreQuestionButton.titleLabel?.textAlignment = .center
         uneAutreQuestionButton.titleLabel?.numberOfLines = 0
         uneAutreQuestionButton.setTitle(buttonText, for: .normal)
-        uneAutreQuestionButton.isHidden = true
-        suggestionButton.isHidden = true
+     //   uneAutreQuestionButton.isHidden = true
+     //   suggestionButton.isHidden = true
         choiceOfSentence()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -125,40 +138,34 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
 
     }
     func animateViewMoving (_ up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.5
+        
         let movement:CGFloat = ( up ? -moveValue : moveValue)
-        UIView.beginAnimations( "animateView", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration )
-        self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
-        UIView.commitAnimations()
+
+        if up{
+            self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+            self.navigationController?.navigationBar.isHidden = true
+            textFieldIsActivated = true
+        }else{
+            self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: -movement)
+            self.navigationController?.navigationBar.isHidden = false
+            textFieldIsActivated = false
+        }
     }
     @objc func keyBoardWillChange(notification: Notification) {
-        suggestionButton.isHidden = false
-        uneAutreQuestionButton.isHidden = false
+        let distanceFromTextField = view.frame.size.height - (verbTextField.frame.size.height + verbTextField.frame.origin.y)
         guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
             return
         }
-        if (keyBoardRec.height - distanceFromTextField + 5) > 0{
-            let adjustement = keyBoardRec.height - distanceFromTextField + 5
-            if notification.name == UIResponder.keyboardWillShowNotification && !textFieldIsActivated{
-                textFieldIsActivated = true
-                animateViewMoving(true, moveValue: adjustement)
-                self.suggestionButton.transform = CGAffineTransform(translationX: 0, y: adjustement/2)
-                self.tempsLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/1.8)
-                self.sentenceLabel.transform = CGAffineTransform(translationX: 0, y: adjustement/4)
-            }else if notification.name == UIResponder.keyboardWillHideNotification{
-                textFieldIsActivated = false
-                animateViewMoving(true, moveValue: -adjustement)
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.suggestionButton.transform = .identity}, completion: nil)
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.tempsLabel.transform = .identity}, completion: nil)
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.sentenceLabel.transform = .identity}, completion: nil)
-            }
+        if notification.name == UIResponder.keyboardWillShowNotification && !textFieldIsActivated{
+            textFieldIsActivated = true
+            let moveValue = keyBoardRec.height - distanceFromTextField
+            animateViewMoving(true, moveValue: moveValue)
+        }else if notification.name == UIResponder.keyboardWillHideNotification{
+            textFieldIsActivated = false
+            animateViewMoving(false, moveValue: distanceFromTextField - keyBoardRec.height)
         }
     }
+
     @objc func textFieldShouldReturn(_ reponse: UITextField) -> Bool {
         afterUserResponse()
         return true
@@ -314,6 +321,12 @@ class ContextuelQuizViewController: UIViewController, NSFetchedResultsController
         MessageViewForHelp.dismissMessageview(view: view, messageView: helpView, visualEffect: blurEffectView, effect: effect)
         verbTextField.becomeFirstResponder()
     }
+    @objc func voiceDidTerminate(_ notification: NSNotification){
+        print("clicked")
+        sentenceLabel.textColor = .black
+
+    }
     
 }
+
 

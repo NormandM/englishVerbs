@@ -128,9 +128,6 @@ class PaintingViewController: UIViewController {
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barTintColor = colorReference.specialGray
-         self.navigationController?.isNavigationBarHidden = false
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         tryAgainButton.layer.cornerRadius = tryAgainButton.frame.height/2
@@ -175,6 +172,10 @@ class PaintingViewController: UIViewController {
             let controller = segue.destination as! AchievementsTableViewController
             controller.arrayVerbe  = arrayVerbe
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        navigationItem.backBarButtonItem?.tintColor = .white
     }
     @IBAction func cardPushed(_ sender: UIButton) {
         if let cardNumberGood = cardButtons.firstIndex(of: sender){

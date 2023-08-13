@@ -94,9 +94,10 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
     override func viewWillAppear(_ animated: Bool) {
         verbTypeTitle.textColor = UIColor.white
         verbTypeTitle.font = fonts.normalFont
-        verbTensetTitle.font = fonts.normalFont
         verbTensetTitle.textColor = UIColor.white
         OkButtonSetUp.buttonHidden(oK1Button: oK1Button, oK2Button: oK2Button, oK3Button: oK3Button, oK4Button: oK4Button)
+        typeOfVerbLabel.font = fonts.largeBoldFont
+        verbTenseLabel.font = fonts.largeFont
         typeOfVerbLabel.isHidden = true
         verbTenseLabel.isHidden = true
         commentLabel.font = fonts.normalItaliqueBoldFont
@@ -186,6 +187,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
  // MARK: All functions
     func reinitializeTextFields() {
         textIndex = 0
+        goodResponseMessage.text = ""
         message = ""
         let buttonText = """
             Try another
@@ -398,7 +400,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         animateViewMoving(true, moveValue: distanceFromTextField)
     }
     @objc func keyboardWillHide (_ notification: Notification){
-        self.view.frame.origin.y = 0
+      //  self.view.frame.origin.y = 0
         distanceFromTextField = 0
     }
 // Mark: Function chosing verb randomly according to chosen parameters
@@ -544,14 +546,14 @@ class QuizViewController: UIViewController, UITextFieldDelegate, UIPopoverPresen
         }
         animateViewMoving(true, moveValue: fromTextField)
     }
-    func animateViewMoving (_ up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.3
-        let movement:CGFloat = ( up ? -moveValue : moveValue)
-        UIView.beginAnimations( "animateView", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration )
-        self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
-        UIView.commitAnimations()
+
+    func animateViewMoving(_ up: Bool, moveValue: CGFloat) {
+        let movementDuration: TimeInterval = 0.3
+        let movement: CGFloat = (up ? -moveValue : moveValue)
+
+        UIView.animate(withDuration: movementDuration, animations: {
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        })
     }
     func pickerViewSelected() {
         reinitializeTextFields()

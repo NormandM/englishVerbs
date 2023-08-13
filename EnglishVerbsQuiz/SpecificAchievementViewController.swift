@@ -56,8 +56,6 @@ class SpecificAchievementViewController: UIViewController {
         """
         painterNameLabel.font = fontsAndConstraints.normalBoldFont
         biotTextView.font = fontsAndConstraints.smallFont
-        self.navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.black
     }
     override func viewDidAppear(_ animated: Bool) {
         biotTextView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)

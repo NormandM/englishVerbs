@@ -13,20 +13,17 @@ class LogoViewController: UIViewController {
     @IBOutlet weak var appsLabel: UILabel!
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var appsLabel2: UILabel!
-    var soundPlayer: SoundPlayer?
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-        soundPlayer = SoundPlayer()
         let appsLabelFrame  = appsLabel.frame
         let appsLabel2Frame = appsLabel2.frame
         let maxXappsLabel = appsLabelFrame.maxX
         let maxXappsLabel2 = appsLabel2Frame.maxX
-        soundPlayer?.playSound(soundName: "Acoustic Trio", type: "wav")
         UIView.animate(withDuration: 3, animations: {
             self.appsLabel2.transform = CGAffineTransform(translationX: maxXappsLabel - maxXappsLabel2 , y: 0)}, completion: {finished in self.completionAnimation()})
     }
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = UIColor.black
     }
     func completionAnimation() {
         let when = DispatchTime.now() + 0.5

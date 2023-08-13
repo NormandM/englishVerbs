@@ -29,7 +29,8 @@ class QuizOptionsController: UITableViewController {
     }()
     let colorReference = ColorReference()
     override func viewDidLoad() {
-        
+        self.navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = UIColor.black
 
     }
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -80,24 +81,19 @@ class QuizOptionsController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showQuizController"{
             verbInfinitif = ["Tous les verbes"]
-            let backItem = UIBarButtonItem()
-            backItem.title = ""
-            navigationItem.backBarButtonItem = backItem
-            navigationItem.backBarButtonItem?.tintColor = .white
             let controller = segue.destination as! QuizViewController
             controller.arrayVerb = arrayVerb
             controller.arraySelection = [[groupeVerbe], arraySelectionTempsEtMode]
             
         }
         if segue.identifier == "showQuizController"{
-            let backItem = UIBarButtonItem()
-            backItem.title = ""
-            navigationItem.backBarButtonItem = backItem
-            navigationItem.backBarButtonItem?.tintColor = .white
             let controller = segue.destination as! QuizViewController
-           // controller.arraySelectionTempsEtMode = arraySelectionTempsEtMode
             controller.arrayVerb = arrayVerb
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        navigationItem.backBarButtonItem?.tintColor = .white
     }
     @objc func quizButtonPushed() {
         performSegue(withIdentifier: "showQuizController", sender: self)

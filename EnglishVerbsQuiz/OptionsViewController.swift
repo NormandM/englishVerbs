@@ -18,17 +18,16 @@ class OptionsViewController: UIViewController{
     var contextuelVerbs = [[String]]()
     var irregularVerbs = [[String]]()
     var infiniveIrregular = [String]()
+    var launchCount =  UserDefaults.standard.integer(forKey: "launchCount")
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserDefaults.standard.set(0, forKey: "thisQuizHintAnswer")
-//        UserDefaults.standard.set(0, forKey: "thisQuizGoodAnswer")
-//        UserDefaults.standard.set(0, forKey: "thisQuizBadAnswer")
-        if currentCount >= 10 {
-            if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
-                UserDefaults.standard.set(0, forKey: "launchCount")
+        if launchCount >= 10 {
+            if let scene = UIApplication.shared.currentScene {
+                SKStoreReviewController.requestReview(in: scene)
             }
+            UserDefaults.standard.set(0, forKey: "launchCount")
         }
+
         if let plistPath = Bundle.main.path(forResource: "AllVerbs", ofType: "plist"),
             let verbArray = NSArray(contentsOfFile: plistPath){
             arrayVerbe = verbArray as! [[String]]
@@ -44,9 +43,11 @@ class OptionsViewController: UIViewController{
         for verb in irregularVerbs {
             infiniveIrregular.append(verb[0])
         }
+
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.setHidesBackButton(true, animated:true)
+        self.title = "Choose an Option"
         let fonts = FontsAndConstraintsOptions()
         listeDesVerbes.font = fonts.smallItaliqueBoldFont
         quizDeBase.font = fonts.smallItaliqueBoldFont
@@ -57,7 +58,7 @@ class OptionsViewController: UIViewController{
         quizContextuel.font = fonts.smallItaliqueBoldFont
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.title = "Choose an Option"
+        
     }
 
 
@@ -82,9 +83,8 @@ class OptionsViewController: UIViewController{
 
         let backItem = UIBarButtonItem()
         backItem.title = ""
-        let colorReference = ColorReference()
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = colorReference.specialGreen
+        navigationItem.backBarButtonItem?.tintColor = .black
     }
     @IBAction func unwindToMainMenu(_ unwindSegue: UIStoryboardSegue) {
 

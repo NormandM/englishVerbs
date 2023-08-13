@@ -9,6 +9,7 @@
 import UIKit
 
 class IrregularVerbTableViewCell: UITableViewCell {
+    let notificationCenter = NotificationCenter.default
     @IBOutlet weak var infinitive: UILabel!
     @IBOutlet weak var simplePast: UILabel!
     @IBOutlet weak var PastParticiple: UILabel!

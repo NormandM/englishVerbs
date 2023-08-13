@@ -24,7 +24,7 @@ class MenuOfVerbListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
         effect = visualEffect.effect
         MessageForVerbListMenu.layer.cornerRadius = 5
         visualEffect.effect = nil
@@ -32,7 +32,6 @@ class MenuOfVerbListViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: seeConjugatedVerbButton, seeIrregularVerb: seeIrregularVerbButton)
-        self.navigationController?.isNavigationBarHidden = true
         if UIDevice.current.orientation.isLandscape{
             ImageManager.choosImage(imageView: grandeJatte, imageName: "BigBen")
         }else{
@@ -42,11 +41,6 @@ class MenuOfVerbListViewController: UIViewController {
         seeIrregularVerbButton.titleLabel?.font = fonts.smallBoldFont
         backButton.titleLabel?.font = fonts.largeFont
         
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barTintColor = colorReference.specialGray
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         VerbListMenu.showMessageView(view: view, messageView: MessageForVerbListMenu, visualEffect: visualEffect, effect: effect, seeConjugatedVerb: seeConjugatedVerbButton, seeIrregularVerb: seeIrregularVerbButton)
@@ -58,6 +52,7 @@ class MenuOfVerbListViewController: UIViewController {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         navigationItem.backBarButtonItem?.tintColor = .white
+
         if segue.identifier == "showVerbList"{
             let controller = segue.destination as! VerbListViewController
             controller.arrayVerbe = arrayVerbe

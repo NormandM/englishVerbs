@@ -94,8 +94,6 @@ class VerbListViewController: UIViewController, UITableViewDataSource, UITableVi
             if let indexPath = self.tableView.indexPathForSelectedRow, let verbeChoisi = tableView.cellForRow(at: indexPath)?.textLabel?.text {
                 let backItem = UIBarButtonItem()
                 backItem.title = ""
-                navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-                navigationItem.backBarButtonItem?.tintColor = .white
                 let controller = segue.destination as! tempsDeVerbeTableViewController
                 controller.verbInfinitif = verbeChoisi
                 controller.arrayVerbe = arrayVerbe
@@ -103,5 +101,9 @@ class VerbListViewController: UIViewController, UITableViewDataSource, UITableVi
                 
             }
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        navigationItem.backBarButtonItem?.tintColor = .white
     }
 }

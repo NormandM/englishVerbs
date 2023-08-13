@@ -23,7 +23,6 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet weak var miniQuizStatisticsButton: UIButton!
     @IBOutlet weak var startOverButton: UIButton!
     @IBOutlet weak var backToMenuButton: UIButton!
-    
     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
     lazy var blurEffectView = UIVisualEffectView(effect: blurEffect)
     var effect: UIVisualEffect!
@@ -50,6 +49,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     var miniQuizBadAnswerSimplePast = UserDefaults.standard.integer(forKey: "miniQuizBadAnswerSimplePast")
     var miniQuizGoodAnswerPastParticiple = UserDefaults.standard.integer(forKey: "miniQuizGoodAnswerPastParticiple")
     var miniQuizBadAnswerPastParticiple = UserDefaults.standard.integer(forKey: "miniQuizBadAnswerPastParticiple")
+    var keyboardShown = false
     override func viewDidLoad() {
         super.viewDidLoad()
         soundPlayer = SoundPlayer()
@@ -81,7 +81,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         shuffledArray = irregularVerbs.shuffled()
         arrayForQuiz = verbSelectionForQuiz()
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -134,7 +134,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         let sartOverButtonText = """
         Start Over!
         I need more
-        peractice.
+        practice.
         """
         startOverButton.setTitle(sartOverButtonText, for: .normal)
         startOverButton.titleLabel?.numberOfLines = 0
@@ -205,26 +205,44 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         default:
             break
         }
+        cell.verbeTextField.delegate = self
         return cell
     }
-    @objc func keyBoardWillChange(notification: Notification) {
+    @objc func keyBoardWillHide(notification: Notification) {
+        let low = irregularVerbCollectionView.frame.maxY
+        let distanceFromTextField = view.frame.size.height - (low)
         guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
             return
         }
-        if keiBoardHeight == 0 {
-            keiBoardHeight = keyBoardRec.height
-            initialPosition = irregularVerbCollectionView.frame.minY
+            if notification.name == UIResponder.keyboardWillHideNotification{
+                animateViewMoving(false, moveValue: distanceFromTextField - keyBoardRec.height)
+            }
+        keyboardShown = false
+    }
+
+    func animateViewMoving (_ up:Bool, moveValue :CGFloat){
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        if up{
+            self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+            self.navigationController?.navigationBar.isHidden = true
+        }else{
+            self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: -movement)
+            self.navigationController?.navigationBar.isHidden = false
         }
+    }
+    @objc func keyBoardWillChange(notification: Notification) {
         let low = irregularVerbCollectionView.frame.maxY
-        let corr = view.frame.height - low
-        let adjustement = keiBoardHeight - corr
-        if notification.name == UIResponder.keyboardWillShowNotification && irregularVerbCollectionView.frame.minY ==  initialPosition{
-            irregularVerbCollectionView.transform = CGAffineTransform(translationX: 0, y: -adjustement)
-            seeStatistics.transform = CGAffineTransform(translationX: 0, y: -adjustement)
-            quizLabel.transform = CGAffineTransform(translationX: 0, y: -adjustement)
-            simplePastLabel.transform = CGAffineTransform(translationX: 0, y: -adjustement)
-            pastParticipleLabel.transform = CGAffineTransform(translationX: 0, y: -adjustement)
-            infinitiveLabel.transform = CGAffineTransform(translationX: 0, y: -adjustement)
+        let distanceFromTextField = view.frame.size.height - (low)
+        guard let keyBoardRec = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+            return
+        }
+        if cellIndexPath.item <= 14 && !keyboardShown{
+            if notification.name == UIResponder.keyboardWillShowNotification {
+                let moveValue = keyBoardRec.height - distanceFromTextField
+                animateViewMoving(true, moveValue: moveValue)
+            }
+
+            keyboardShown = true
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -300,28 +318,25 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
             count = count + 1
             cell = irregularVerbCollectionView.cellForItem(at: [0 , count]) as! VerbCollectionViewCell
             cell.verbeTextField.isUserInteractionEnabled = true
-            cell.verbeTextField.becomeFirstResponder()
+                cell.verbeTextField.becomeFirstResponder()
+        
+            
             cellIndexPath = [0, count]
         }
         if count == 14 &&  cell.verbeTextField.text != ""{
+            keyboardShown = false
             UIView.animate(withDuration: 1, animations: {
                 self.irregularVerbCollectionView.transform = .identity}, completion: nil)
-           // irregularVerbCollectionView.transform = .identity
             UIView.animate(withDuration: 1, animations: {
                 self.seeStatistics.transform = .identity}, completion: nil)
-           // seeStatistics.transform = .identit
             UIView.animate(withDuration: 1, animations: {
                 self.quizLabel.transform = .identity}, completion: nil)
-            //quizLabel.transform = .identity
             UIView.animate(withDuration: 1, animations: {
                 self.simplePastLabel.transform = .identity}, completion: nil)
-            //simplePastLabel.transform = .identity
             UIView.animate(withDuration: 1, animations: {
                 self.pastParticipleLabel.transform = .identity}, completion: nil)
-           // pastParticipleLabel.transform = .identity
             UIView.animate(withDuration: 1, animations: {
                 self.infinitiveLabel.transform = .identity}, completion: nil)
-            //infinitiveLabel.transform = .identity
             titleButtonNext = """
             Next
             Quiz
@@ -338,7 +353,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
             }
         }
 
-        return true
+        return false
     }
      override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         irregularVerbCollectionView.reloadData()
@@ -368,6 +383,10 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
             }
         }
         irregularVerbCollectionView.reloadData()
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        navigationItem.backBarButtonItem?.tintColor = .white
 
     }
     func verbSelectionForQuiz() -> [String]{
@@ -395,6 +414,7 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
     }
 
     @IBAction func readyButtonPushed(_ sender: UIButton) {
+        keyboardShown = false
         if quizButton.titleLabel?.text == titleButtonNext && disableButton != true{
             disableButton = true
             formatForQuiz()
@@ -448,9 +468,6 @@ class IrregularVerbsQuizViewController: UIViewController, UICollectionViewDataSo
         arrayForQuiz = verbSelectionForQuiz()
         irregularVerbCollectionView.reloadData()
         quizButton.setTitle(buttonString, for: .normal)
-        
-      //  quizButton.isUserInteractionEnabled = true
-      //  disableButton = false
     }
     
 
